@@ -1,31 +1,31 @@
 /* ==UserStyle==
 @name           Libreddit - Create Your Theme
 @namespace      https://github.com/Tsyron/Create-Your-Theme/blob/main/Libreddit.user.styl
-@version        1.0.0
+@version        1.0.1
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
 @license        AGPLv3
 
-@var            color color-background-light "Light Mode" #eee
+@var            color color-background-light "Light Mode: Background" #fff
 
-@var            color color-text-light "--- Text" #000
+@var            color color-foreground-light "--- Foreground" #000
 
 @var            color color-accent-light "--- Accent" #009a9a
 
-@var            color color-green-light "--- Green" #00a229
-
 @var            color color-red-light "--- Red" #f00
 
-@var            color color-background-dark "Dark Mode" #0f0f0f
+@var            color color-green-light "--- Green" #00a229
 
-@var            color color-text-dark "--- Text" #fff
+@var            color color-background-dark "Dark Mode: Background" #0f0f0f
+
+@var            color color-foreground-dark "--- Foreground" #fff
 
 @var            color color-accent-dark "--- Accent" aqua
 
-@var            color color-green-dark "--- Green" #5cff85
-
 @var            color color-red-dark "--- Red" #f00
+
+@var            color color-green-dark "--- Green" #5cff85
 
 ==/UserStyle== */
 @-moz-document url-prefix("https://libreddit."),
@@ -39,90 +39,133 @@ url-prefix("https://r."),
 domain("bob.fr.to"),
 domain("safereddit.com"),
 domain("spjmllawtheisznfs7uryhxumin26ssv2draj7oope3ok3wuhy43eoyd.onion") {
-
-    /* Dark Theme */
-    bgd=color-background-dark
-    bgd1=lighten(bgd, 8%)
-    bgd2=lighten(bgd, 6.5%)
-    bgd3=lighten(bgd, 2.75%)
-    bgd4=lighten(bgd, 15%)
-    bgd5=lighten(bgd, 1%)
-    
-    fgd=color-text-dark
-    fgd1=rgba(fgd, 0.5)
-    
-    acd=color-accent-dark
-    
-    grd=color-green-dark
-    
-    redd=color-red-dark
-    redd1=lighten(redd, 38.5%)
-    redd2=rgba(redd, 0.15)
     
     /* Light Theme */
-    bgl=color-background-light
-    bgl1=darken(bgl, 5%)
-    bgl2=darken(bgl, 3%)
-    bgl3=darken(bgl, 7%)
-    bgl6=darken(bgl, 30%)
+    bg1l=color-background-light
+    bg2l=darken(bg1l, 1.5%)
+    bg3l=darken(bg1l, 2%)
     
-    fgl=color-text-light
-    fgl1=rgba(fgl, 0.5)
-    fgl2=rgba(fgl, 0.05)
+    fg1l=color-foreground-light
+    fg2l=rgba(fg1l, 0.5)
+    fg3l=rgba(fg1l, 0.05)
+    ca1l=color-accent-light
     
-    acl=color-accent-light
+    cg1l=color-green-light
     
-    grl=color-green-light
+    cr1l=color-red-light
+    cr2l=lighten(cr1l, 38.5%)
+    cr3l=rgba(cr1l, 0.15)
+
+    /* Dark Theme */
+    bg1d=color-background-dark
+    bg2d=lighten(bg1d, 8%)
+    bg3d=lighten(bg1d, 6.5%)
+    bg4d=lighten(bg1d, 2.75%)
+    bg5d=lighten(bg1d, 15%)
+    bg6d=lighten(bg1d, 1%)
     
-    redl=color-red-light
-    redl1=lighten(redl, 38.5%)
-    redl2=rgba(redl, 0.15)
+    fg1d=color-foreground-dark
+    fg2d=rgba(fg1d, 0.5)
+    
+    ca1d=color-accent-dark
+    
+    cg1d=color-green-dark
+    
+    cr1d=color-red-dark
+    cr2d=lighten(cr1d, 38.5%)
+    cr3d=rgba(cr1d, 0.15)
 
     @media (prefers-color-scheme: light) {
-        :root {
-            --accent: acl;
-            --green: grl;
-            --text: fgl;
-            --foreground: bgl1;
-            --background: bgl;
-            --outside: bgl2;
-            --post: bgl2;
-            --panel-border: 1px solid fgl2;
-            --highlighted: bgl3;
-            --visited: fgl1;
+        :root, .light {
+            --accent: ca1l;
+            --green: cg1l;
+            --text: fg1l;
+            --foreground: bg3l;
+            --background: bg2l;
+            --outside: bg1l;
+            --post: bg1l;
+            --panel-border: 1px solid fg3l;
+            --highlighted: bg3l;
+            --visited: fg2l;
             --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             color-scheme: light;
-            --popup: redl;
-            --nsfw: redl1;
-            --admin: redl;
-            --popup-red: redl;
-            --popup-goback-text: bgl1;
-            --popup-black: bgdl;
-            --popup-text: fgd;
-            --popup-background-1: bgd;
-            --popup-background-2: redl2; } }
+            --popup: cr1l;
+            --nsfw: cr2l;
+            --admin: cr1l;
+            --popup-red: cr1l;
+            --popup-goback-text: bg3l;
+            --popup-black: bg1dl;
+            --popup-text: bg2l;
+            --popup-background-1: fg1l;
+            --popup-background-2: cr3l; } }
+            
+    .light {
+            --accent: ca1l;
+            --green: cg1l;
+            --text: fg1l;
+            --foreground: bg3l;
+            --background: bg2l;
+            --outside: bg1l;
+            --post: bg1l;
+            --panel-border: 1px solid fg3l;
+            --highlighted: bg3l;
+            --visited: fg2l;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: light;
+            --popup: cr1l;
+            --nsfw: cr2l;
+            --admin: cr1l;
+            --popup-red: cr1l;
+            --popup-goback-text: bg3l;
+            --popup-black: bg1dl;
+            --popup-text: bg2l;
+            --popup-background-1: fg1l;
+            --popup-background-2: cr3l; }
 
     @media (prefers-color-scheme: dark) {
         :root,
         .dark {
-            --accent: acd;
-            --green: grd;
-            --text: fgd;
-            --foreground: bgd1;
-            --background: bgd;
-            --outside: bgd2;
-            --post: bgd3;
-            --panel-border: 1px solid bgd4;
-            --highlighted: bgd4;
-            --visited: fgd1;
+            --accent: ca1d;
+            --green: cg1d;
+            --text: fg1d;
+            --foreground: bg2d;
+            --background: bg1d;
+            --outside: bg3d;
+            --post: bg4d;
+            --panel-border: 1px solid bg5d;
+            --highlighted: bg5d;
+            --visited: fg2d;
             --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             color-scheme: dark;
-            --popup: redd;
-            --nsfw: redd1;
-            --admin: redd;
-            --popup-red: redd;
-            --popup-goback-text: bgd1;
-            --popup-black: bgd5;
-            --popup-text: fgd;
-            --popup-background-1: bgd;
-            --popup-background-2: redd2; } } }
+            --popup: cr1d;
+            --nsfw: cr2d;
+            --admin: cr1d;
+            --popup-red: cr1d;
+            --popup-goback-text: bg2d;
+            --popup-black: bg6d;
+            --popup-text: fg1d;
+            --popup-background-1: bg1d;
+            --popup-background-2: cr3d; } }
+        
+    .dark {
+            --accent: ca1d;
+            --green: cg1d;
+            --text: fg1d;
+            --foreground: bg2d;
+            --background: bg1d;
+            --outside: bg3d;
+            --post: bg4d;
+            --panel-border: 1px solid bg5d;
+            --highlighted: bg5d;
+            --visited: fg2d;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: dark;
+            --popup: cr1d;
+            --nsfw: cr2d;
+            --admin: cr1d;
+            --popup-red: cr1d;
+            --popup-goback-text: bg2d;
+            --popup-black: bg6d;
+            --popup-text: fg1d;
+            --popup-background-1: bg1d;
+            --popup-background-2: cr3d; } }
