@@ -1,0 +1,127 @@
+/* ==UserStyle==
+@name           Libreddit - Create Your Theme
+@namespace      github.com/Tsyron/Libreddit-Theme
+@version        1.0.0
+@description    Choose a couple of colors to create your theme
+@author         Tsyron
+@preprocessor   stylus
+
+@var            color color-background-light "Light Mode" #eee
+
+@var            color color-text-light "--- Text" #000
+
+@var            color color-accent-light "--- Accent" #009a9a
+
+@var            color color-green-light "--- Green" #00a229
+
+@var            color color-red-light "--- Red" #f00
+
+@var            color color-background-dark "Dark Mode" #0f0f0f
+
+@var            color color-text-dark "--- Text" #fff
+
+@var            color color-accent-dark "--- Accent" aqua
+
+@var            color color-green-dark "--- Green" #5cff85
+
+@var            color color-red-dark "--- Red" #f00
+
+==/UserStyle== */
+@-moz-document url-prefix("https://libreddit."),
+url-prefix("https://libredd."),
+url-prefix("https://lr."),
+url-prefix("https://l."),
+url-prefix("https://reddit."),
+url-prefix("https://reddi."),
+url-prefix("https://rd"),
+url-prefix("https://r."),
+domain("bob.fr.to"),
+domain("safereddit.com"),
+domain("spjmllawtheisznfs7uryhxumin26ssv2draj7oope3ok3wuhy43eoyd.onion") {
+
+    /* Dark Theme */
+    bgd=color-background-dark
+    bgd1=lighten(bgd, 8%)
+    bgd2=lighten(bgd, 6.5%)
+    bgd3=lighten(bgd, 2.75%)
+    bgd4=lighten(bgd, 15%)
+    bgd5=lighten(bgd, 1%)
+    
+    fgd=color-text-dark
+    fgd1=rgba(fgd, 0.5)
+    
+    acd=color-accent-dark
+    
+    grd=color-green-dark
+    
+    redd=color-red-dark
+    redd1=lighten(redd, 38.5%)
+    redd2=rgba(redd, 0.15)
+    
+    /* Light Theme */
+    bgl=color-background-light
+    bgl1=darken(bgl, 5%)
+    bgl2=darken(bgl, 3%)
+    bgl3=darken(bgl, 7%)
+    bgl6=darken(bgl, 30%)
+    
+    fgl=color-text-light
+    fgl1=rgba(fgl, 0.5)
+    fgl2=rgba(fgl, 0.05)
+    
+    acl=color-accent-light
+    
+    grl=color-green-light
+    
+    redl=color-red-light
+    redl1=lighten(redl, 38.5%)
+    redl2=rgba(redl, 0.15)
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --accent: acl;
+            --green: grl;
+            --text: fgl;
+            --foreground: bgl1;
+            --background: bgl;
+            --outside: bgl2;
+            --post: bgl2;
+            --panel-border: 1px solid fgl2;
+            --highlighted: bgl3;
+            --visited: fgl1;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: light;
+            --popup: redl;
+            --nsfw: redl1;
+            --admin: redl;
+            --popup-red: redl;
+            --popup-goback-text: bgl1;
+            --popup-black: bgdl;
+            --popup-text: fgd;
+            --popup-background-1: bgd;
+            --popup-background-2: redl2; } }
+
+    @media (prefers-color-scheme: dark) {
+        :root,
+        .dark {
+            --accent: acd;
+            --green: grd;
+            --text: fgd;
+            --foreground: bgd1;
+            --background: bgd;
+            --outside: bgd2;
+            --post: bgd3;
+            --panel-border: 1px solid bgd4;
+            --highlighted: bgd4;
+            --visited: fgd1;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: dark;
+            --popup: redd;
+            --nsfw: redd1;
+            --admin: redd;
+            --popup-red: redd;
+            --popup-goback-text: bgd1;
+            --popup-black: bgd5;
+            --popup-text: fgd;
+            --popup-background-1: bgd;
+            --popup-background-2: redd2; } } }
