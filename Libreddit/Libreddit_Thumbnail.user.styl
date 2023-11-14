@@ -1,0 +1,239 @@
+/* ==UserStyle==
+@name           Libreddit - Create Your Theme Thumbnail
+@namespace      https://github.com/Tsyron/Create-Your-Theme/blob/main/Libreddit/Libreddit.user.styl
+@version        1.0.1
+@description    Create Your Theme by choosing a couple colours
+@author         Tsyron
+@preprocessor   stylus
+@license        AGPLv3
+
+@var            color color-background-light "Light Mode: Background" #fff
+
+@var            color color-foreground-light "--- Foreground" #000
+
+@var            color color-accent-light "--- Accent" #009a9a
+
+@var            color color-red-light "--- Red" #f00
+
+@var            color color-green-light "--- Green" #00a229
+
+@var            color color-background-dark "Dark Mode: Background" #0f0f0f
+
+@var            color color-foreground-dark "--- Foreground" #fff
+
+@var            color color-accent-dark "--- Accent" aqua
+
+@var            color color-red-dark "--- Red" #f00
+
+@var            color color-green-dark "--- Green" #5cff85
+
+==/UserStyle== */
+@-moz-document url-prefix("https://libreddit."),
+url-prefix("https://libredd."),
+url-prefix("https://lr."),
+url-prefix("https://l."),
+url-prefix("https://reddit."),
+url-prefix("https://reddi."),
+url-prefix("https://rd"),
+url-prefix("https://r."),
+domain("bob.fr.to"),
+domain("safereddit.com"),
+domain("spjmllawtheisznfs7uryhxumin26ssv2draj7oope3ok3wuhy43eoyd.onion") {
+    
+    /* Light Theme */
+    bg1l=color-background-light
+    bg2l=darken(bg1l, 1.5%)
+    bg3l=darken(bg1l, 2%)
+    bg4l=darken(bg1l, 5%)
+    
+    fg1l=color-foreground-light
+    fg2l=rgba(fg1l, 0.5)
+    fg3l=rgba(fg1l, 0.05)
+    ca1l=color-accent-light
+    fg4l=rgba(fg1l, 0.075)
+    
+    cg1l=color-green-light
+    
+    cr1l=color-red-light
+    cr2l=lighten(cr1l, 38.5%)
+    cr3l=rgba(cr1l, 0.15)
+
+    /* Dark Theme */
+    bg1d=color-background-dark
+    bg2d=lighten(bg1d, 8%)
+    bg3d=lighten(bg1d, 6.5%)
+    bg4d=lighten(bg1d, 2.75%)
+    bg5d=lighten(bg1d, 15%)
+    bg6d=lighten(bg1d, 1%)
+    
+    fg1d=color-foreground-dark
+    fg2d=rgba(fg1d, 0.5)
+    fg3d=rgba(fg1d, 0.095)
+    
+    ca1d=color-accent-dark
+    
+    cg1d=color-green-dark
+    
+    cr1d=color-red-dark
+    cr2d=lighten(cr1d, 38.5%)
+    cr3d=rgba(cr1d, 0.15)
+
+    @media (prefers-color-scheme: light) {
+        :root, .light {
+            --accent: ca1l;
+            --green: cg1l;
+            --text: transparent;
+            --foreground: bg3l;
+            --background: bg2l;
+            --outside: bg1l;
+            --post: bg1l;
+            --panel-border: 1px solid fg3l;
+            --highlighted: bg3l;
+            --visited: fg2l;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: light;
+            --popup: cr1l;
+            --nsfw: cr2l;
+            --admin: cr1l;
+            --popup-red: cr1l;
+            --popup-goback-text: bg3l;
+            --popup-black: bg1dl;
+            --popup-text: bg2l;
+            --popup-background-1: fg1l;
+            --popup-background-2: cr3l; }
+        
+        .post_title,
+        .post_subreddit,
+        .post_author,
+        .created,
+        #reddit_link,
+        #settings_link,
+        #libreddit {
+            background-color: fg4l;
+            border-radius: 10px; }
+            
+        .post_thumbnail span {
+            background-color: fg4l; }
+
+        .selected {
+            color: acl1; }
+
+        image,
+        img,
+        .post_media_content {
+            filter: opacity(0%) brightness(100%);
+            background-color: fg4l;
+            border-radius: 10px; }
+
+        .post_thumbnail span {
+            background-color: fg4l;
+            color: transparent; } }
+            
+    .light {
+            --accent: ca1l;
+            --green: cg1l;
+            --text: transparent;
+            --foreground: bg3l;
+            --background: bg2l;
+            --outside: bg1l;
+            --post: bg1l;
+            --panel-border: 1px solid fg3l;
+            --highlighted: bg3l;
+            --visited: fg2l;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: light;
+            --popup: cr1l;
+            --nsfw: cr2l;
+            --admin: cr1l;
+            --popup-red: cr1l;
+            --popup-goback-text: bg3l;
+            --popup-black: bg1dl;
+            --popup-text: bg2l;
+            --popup-background-1: fg1l;
+            --popup-background-2: cr3l; }
+
+    @media (prefers-color-scheme: dark) {
+        :root,
+        .dark {
+            --accent: ca1d;
+            --green: cg1d;
+            --text: transparent;
+            --foreground: bg2d;
+            --background: bg1d;
+            --outside: bg3d;
+            --post: bg4d;
+            --panel-border: 1px solid bg5d;
+            --highlighted: bg5d;
+            --visited: fg2d;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: dark;
+            --popup: cr1d;
+            --nsfw: cr2d;
+            --admin: cr1d;
+            --popup-red: cr1d;
+            --popup-goback-text: bg2d;
+            --popup-black: bg6d;
+            --popup-text: fg1d;
+            --popup-background-1: bg1d;
+            --popup-background-2: cr3d; } 
+        
+        .post_title,
+        .post_subreddit,
+        .post_author,
+        .created,
+        #reddit_link,
+        #settings_link,
+        #libreddit {
+            background-color: fg3d;
+            border-radius: 10px; }
+            
+        .post_thumbnail span {
+            background-color: fg3d; }
+
+        .selected {
+            color: acld; }
+
+        image,
+        img,
+        .post_media_content {
+            filter: opacity(0%) brightness(100%);
+            background-color: fg3d;
+            border-radius: 10px; }
+
+        .post_thumbnail span {
+            background-color: fg3d;
+            color: transparent; } }
+        
+    .dark {
+            --accent: ca1d;
+            --green: cg1d;
+            --text: fg1d;
+            --foreground: bg2d;
+            --background: bg1d;
+            --outside: bg3d;
+            --post: bg4d;
+            --panel-border: 1px solid bg5d;
+            --highlighted: bg5d;
+            --visited: fg2d;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            color-scheme: dark;
+            --popup: cr1d;
+            --nsfw: cr2d;
+            --admin: cr1d;
+            --popup-red: cr1d;
+            --popup-goback-text: bg2d;
+            --popup-black: bg6d;
+            --popup-text: fg1d;
+            --popup-background-1: bg1d;
+            --popup-background-2: cr3d;  }
+        
+         .post_score,
+         .post_flair,
+         nav #reddit {
+            background: transparent !important;
+            color: transparent !important; }
+            
+            .selected, ::placeholder {
+                color: transparent !important;
+            }
+        }
