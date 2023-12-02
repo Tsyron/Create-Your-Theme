@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
-@namespace      https://github.com/Tsyron/Create-Your-Theme/blob/main/YouTube/YouTube.user.styl
-@version        1.2.1
+@namespace      github.com/Tsyron/YouTube-Theme
+@version        1.2.2
 @description    Make a Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
-@license        AGPLv3
+@license        GPLv2
 
 @var            color color-background-light "Light Mode: Background" #fff
 
@@ -707,6 +707,17 @@ domain("studio.youtube.com") {
              background-color: cb1l;
              border-color: cb1l; }
              
+        .ytp-promotooltip-container {
+            background-color: cb1l;
+            color: fg1l; }
+            
+        .ytp-promotooltip-pointer {
+                border-color: cb1l transparent transparent transparent; }
+        
+        /* Survey */
+        .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--text {
+            color: fg8l; }
+             
         /* Tooltip*/
         #tooltip.tp-yt-paper-tooltip {
             color: bg1l; }
@@ -1018,7 +1029,18 @@ domain("studio.youtube.com") {
         /* Callout */ 
         #callout, #divot, #divot.ytcp-feature-discovery-callout {
              background-color: cbd;
-             border-color: cbd; } 
+             border-color: cbd; }
+             
+        .ytp-promotooltip-container {
+            background-color: cb1d;
+            color: fg1d; }
+            
+        .ytp-promotooltip-pointer {
+                border-color: cb1d transparent transparent transparent; }
+        
+        /* Survey */
+        .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--text {
+            color: fg8d; }
              
         /* Tooltip*/
         #tooltip.tp-yt-paper-tooltip, .ytp-tooltip:not([aria-hidden="true"]) {
