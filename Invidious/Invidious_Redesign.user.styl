@@ -1,0 +1,2391 @@
+/* ==UserStyle==
+@name           Invidious - Create Your Theme [Redesign]
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Create Your Theme by choosing a couple colours
+@author         Tsyron
+@preprocessor   stylus
+@license        AGPLv3
+
+@var            color color-background-light "Light Mode: Background" #fff
+
+@var            color color-foreground-light "--- Foreground" #0f0f0f
+
+@var            color color-accent-light "--- Accent" #f00
+
+@var            color color-links-light "--- Links" #065fd4
+
+@var            color color-blue-light "--- Blue" #065fd4
+
+@var            checkbox checkbox-subscribe-text-light "--- Subscribe Button Text Inverse" 0
+
+@var            color color-background-dark "Dark Mode: Background" #0f0f0f
+
+@var            color color-foreground-dark "--- Foreground" #f1f1f1
+
+@var            color color-accent-dark "--- Accent" #f00
+
+@var            color color-links-dark "--- Links" #3ea6ff
+
+@var            color color-blue-dark "--- Blue" #3ea6ff
+
+@var            checkbox checkbox-subscribe-text-dark "--- Subscribe Button Text Inverse" 0
+
+==/UserStyle== */
+@-moz-document url-prefix("https://iv."),
+url-prefix("https://inv"),
+url-prefix("https://invidio."),
+url-prefix("https://invidious"),
+url-prefix("https://vid."),
+url-prefix("https://y.com."),
+url-prefix("https://yt"),
+url-prefix("https://tube."),
+domain("yewtu.be"),
+domain("watch.thekitty.zone"),
+domain("onion.tube"),
+domain("not-ytb.blocus.ch"),
+domain("youtube.076.ne.jp"),
+domain("youtube.owacon.moe"),
+domain("sea1.iv.ggtyler.dev"),
+domain("anontube.lvkaszus.pl"),
+domain("am74vkcrjp2d5v36lcdqgsj2m6x36tbrkhsruoegwfcizzabnfgf5zyd.onion"),
+domain("c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion"),
+domain("euxxcnhsynwmfidvhjf6uzptsmh4dipkmgdmcmxxuo7tunp3ad2jrwyd.onion"),
+domain("grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion"),
+domain("kbjggqkzv65ivcqj6bumvp337z6264huv5kpkwuv6gu5yjiskvan7fad.onion"),
+domain("ng27owmagn5amdm7l5s3rsqxwscl5ynppnis5dqcasogkyxcfqn7psid.onion"),
+domain("osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion"),
+domain("u2cvlit75owumwpy4dj2hsmvkq7nvrclkpht7xgyye2pyoxhpmclkrad.onion"),
+domain("w6ijuptxiku4xpnnaetxvnkc5vqcdu7mgns2u77qefoixi63vbvnpnqd.onion"),
+domain("inv.vern.i2p"),
+domain("pjsfhqamc7k6htnumrvn4cwqqdoggeepj7u5viyimgnxg3gar72q.b32.i2p"),
+domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
+    
+    /* Light Theme */
+    bg1l=color-background-light
+    bg2l=darken(bg1l, 1.5%) /* select focus, .watched buttons */
+    bg3l=darken(bg1l, 5%) /* Video player: hover controls */
+    bg5l=darken(bg1l, 2.5%) /* search filter box */
+    
+    fg1l=color-foreground-light
+    fg2l=rgba(fg1l, 0.7) /* links hover */
+    fg3l=rgba(fg1l, 0.2) /* border colour */
+    fg4l=rgba(fg1l, 0.05) /* button background colour, redirect bg table */
+    fg5l=rgba(fg1l, 0.1) /* button background hover colour, selection */
+    fg6l=rgba(fg1l, 0.025) /* checkbox, radio */
+    fg7l=rgba(fg1l, 0.2) /* progress bar unloaded */
+    fg8l=rgba(fg1l, 0.8) /* time */
+    fg9l=rgba(fg1l, 0.75)
+
+    ca1l=color-accent-light
+    ca2l=rgba(ca1l, 0.8) /* hover */
+    ca3l=rgba(ca1l, 0.4) /* thumbnail overlay after watch */
+    ca4l=rgba(ca1l, 0.675)
+
+    cl1l=color-links-light
+    cl2l=rgba(cl1l, 0.8) /* hover */
+
+    cb1l=color-blue-light
+    cb2l=rgba(cb1l, 0.8) /* hover */
+
+    /* Dark Theme */
+    bg1d=color-background-dark
+    bg2d=lighten(bg1d, 2.5%) /* select focus, .watched buttons, search filter box */
+    bg3d=rgba(bg1d, 0.8) /* time */
+    bg4d=darken(bg1d, 50%)
+    bg6d=rgba(bg1d, 0.75)
+    
+    fg1d=color-foreground-dark
+    fg2d=rgba(fg1d, 0.8) /* links hover */
+    fg3d=rgba(fg1d, 0.2) /* border colour */
+    fg4d=rgba(fg1d, 0.1) /* button background colour, redirect bg table */
+    fg5d=rgba(fg1d, 0.15) /* button background hover colour */
+    fg6d=rgba(fg1d, 0.035) /* checkbox, radio */
+    fg7d=rgba(fg1d, 0.25) /* selection */
+
+    ca1d=color-accent-dark
+    ca2d=rgba(ca1d, 0.9) /* hover */
+    ca3d=rgba(ca1d, 0.4) /* thumbnail overlay after watch */
+    ca4d=rgba(ca1d, 0.8)
+
+    cl1d=color-links-dark
+    cl2d=rgba(cl1d, 0.8) /* hover */
+
+    cb1d=color-blue-dark
+    cb2d=rgba(cb1d, 0.8) /* hover */
+
+    /* Border-Radius */
+    br1=6px
+    br2=12px
+    br3=18px
+
+    /* Light Theme */
+    @media (prefers-color-scheme: light) {
+
+        .no-theme {
+            /* Background, Foreground */
+            body,
+            .pure-g,
+            .pure-form legend {
+                background: bg1l;
+                color: fg1l; }
+
+            /* Links */
+            summary,
+            a.feed-menu-item.pure-menu-heading,
+            a:link:not(.pure-button):not(.channel-owner) {
+                color: fg2l; }
+
+            a,
+            a:active,
+            a:visited,
+            footer a {
+                color: fg2l !important; }
+
+            a.feed-menu-item.pure-menu-heading:hover,
+            a:link:not(.pure-button):not(.channel-owner):hover {
+                color: fg1l; }
+
+            summary:hover,
+            summary:focus,
+            a:hover,
+            footer a:hover {
+                color: fg1l !important; }
+
+            /* Links Outside of Invidious */
+            a[href^="https://www.youtube.com"],
+            a[href^="https://redirect.invidious.io"],
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+            #descriptionWrapper a {
+                color: cl2l !important; }
+
+            a[href^="https://www.youtube.com"]:hover,
+            a[href^="https://redirect.invidious.io"]:hover,
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+            #descriptionWrapper a:hover {
+                color: cl1l !important; }
+
+            /* Input, select & textarea */
+            input,
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            input[type="text"],
+            input[type="submit"],
+            input[type="checkbox"],
+            input[type="radio"],
+            input[type="range"],
+            select,
+            textarea {
+                border: 1px solid fg3l;
+                -webkit-border: 1px solid fg3l;
+                background-color: fg4l;
+                color: fg1l; }
+
+            input:focus,
+            input[type="email"]:focus,
+            input[type="number"]:focus,
+            input[type="password"]:focus,
+            input[type="text"]:focus,
+            input[type="submit"]:focus,
+            input[type="checkbox"]:focus,
+            input[type="radio"]:focus,
+            input[type="range"]:focus,
+            select:focus,
+            textarea:focus {
+                border: 1px solid cb1l;
+                -webkit-border: 1px solid cb1l; }
+
+            select {
+                background-color: fg4l; }
+
+            select:focus {
+                background-color: bg2l; }
+
+            /* Checkbox & Radio */
+            input[type="checkbox"],
+            input[type="radio"] {
+                background-color: fg6l; }
+
+            /* Checkbox & Radio: Color check */
+            input[type="checkbox"]:before,
+            input[type="checkbox"]:checked,
+            input[type="checkbox"]:checked:before,
+            input[type="radio"]:before,
+            input[type="radio"]:checked,
+            input[type="radio"]:checked:before {
+                background-color: fg4l !important; }
+
+            input[type="radio"]:checked:after {
+                background-color: fg1l !important; }
+
+            /* Range */
+            input[type="range"]::-webkit-slider-thumb {
+                background: fg4l;
+                box-shadow: -80px 0 0 75px fg4l;
+                border-right: 1px solid fg3l !important; }
+
+            input[disabled] {
+                background-color: fg6l; }
+
+            /* Button */
+            .pure-button-primary,
+            .pure-button-secondary,
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid fg3l !important;
+                color: fg1l !important; }
+
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid cb1l !important; }
+
+            .pure-button-primary,
+            .pure-button-secondary {
+                background-color: fg4l !important; }
+
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                background-color: fg5l !important; }
+
+            /* Button: Subscribe */
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus {
+                border: 1px solid fg3l !important;
+                color: bg1l !important; }
+
+            #subscribe:focus {
+                border: 1px solid cb1l !important; }
+
+            #subscribe {
+                background-color: ca2l !important; }
+
+            #subscribe:hover,
+            #subscribe:focus {
+                background-color: ca1l !important; }
+
+            if checkbox-subscribe-text-light {
+                #subscribe,
+                #subscribe:hover,
+                #subscribe:focus,
+                .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                    color: fg1l !important; } }
+
+            /* Invidious Logo */
+            .navbar .index-link,
+            #search-widget #logo .pure-menu-heading {
+                color: ca2l; }
+
+            .navbar {
+                .index-link:hover,
+                .index-link:visited,
+                .index-link:focus {
+                    color: ca1l !important; } }
+
+            /* Log in & Icons */
+            .pure-g .navbar i,
+            a.pure-menu-heading input,
+            .pure-u-1-3 a.pure-menu-heading {
+                color: fg2l !important; }
+
+            .pure-g .navbar i:hover,
+            a.pure-menu-heading input:hover,
+            .pure-u-1-3 a.pure-menu-heading:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Only Highlights YouTube Video's */
+            a[href^="/watch?v="] p:not(.length),
+            a[href^="/watch?v="] p:not(.length):hover {
+                color: fg1l; }
+
+            /* Thumbnail: Length Time*/
+            p.length {
+                color: bg1l !important;
+                background-color: fg8l !important; }
+
+            /* Thumbnail: Little icons beside video */
+            i.icon.ion-logo-youtube,
+            i.icon.ion-md-headset,
+            i.icon.ion-md-jet {
+                color: fg2l !important; }
+
+            i.icon.ion-logo-youtube:hover,
+            i.icon.ion-md-headset:hover,
+            i.icon.ion-md-jet:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Link Channel Name */
+            p.channel-name,
+            #channel-name,
+            .pure-u-1 .pure-u-14-24 a {
+                color: fg2l !important; }
+
+            p.channel-name:hover,
+            #channel-name:hover,
+            .pure-u-1 .pure-u-14-24 a:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Video Data */
+            p.video-data,
+            div.pure-u-10-24,
+            p.video-data:hover,
+            div.pure-u-10-24:hover {
+                color: fg1l; }
+
+            /* Thumbnail: Watched */
+            div.watched-indicator {
+                background-color: ca1l; }
+
+            div.watched-overlay {
+                background-color: ca3l; }
+
+            /* Thumbnail Button: Watch, Delete from history */
+            .top-left-overlay,
+            .bottom-right-overlay,
+            .watched {
+                .pure-button-secondary {
+                    color: fg1l !important;
+                    border: 1px solid fg5l !important;
+                    background-color: bg1l !important; }
+
+                .pure-button-secondary:hover,
+                .pure-button-secondary:focus {
+                    background-color: bg2l !important; }
+
+                .pure-button-secondary:focus {
+                    border: 1px solid cb1l !important; } }
+
+            /* Searchbox */
+            .pure-form input[type="search"] {
+                border: 1px solid fg3l;
+                background-color: transparent;
+                color: fg1l; }
+
+            .pure-form input[type="search"]:focus {
+                border: 1px solid cb1l; }
+
+            /* Search: Filter box */
+            #filters-box {
+                border: 1px solid fg3l;
+                background-color: fg4l !important; }
+
+            /* Video Player */
+            .video-js {
+                /* Video player: Title Overlay */
+                .vjs-overlay-top a {
+                    color: bg1l !important; }
+
+                .vjs-overlay-top {
+                    background-color: fg9l !important; }
+
+                /* Play button */
+                .vjs-big-play-button {
+                    background-color: ca1l !important; }
+
+                .vjs-big-play-button .vjs-icon-placeholder {
+                    color: bg1l; }
+
+                /* Video player: Controls: Color */
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content {
+                    background-color: bg1l;
+                    color: fg1l; }
+
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content,
+                .vjs-share__social {
+                    border: 1px solid fg3l !important; }
+
+                /* Button */
+                button,
+                .vjs-slider,
+                .vjs-control-bar button,
+                .vjs-icon-placeholder,
+                .vjs-icon-share,
+                .vjs-playback-rate-value .vjs-control-text,
+                button:hover,
+                .vjs-slider::before,
+                .vjs-control-bar button:hover,
+                .vjs-icon-placeholder:hover,
+                .vjs-icon-share:hover,
+                .vjs-playback-rate-value .vjs-control-text:hover {
+                    color: fg1l; }
+
+                /* Progress Bar */
+                .vjs-load-progress,
+                .vjs-load-progress div {
+                    background-color: fg5l; }
+
+                .vjs-slider {
+                    background-color: fg7l !important; }
+
+                /* Sliders */
+                .vjs-volume-level {
+                    background-color: ca1l !important; }
+
+                .vjs-play-progress,
+                .vjs-volume-level {
+                    color: ca1l; }
+
+                /* Controls Options: Hover */
+                .vjs-menu li.vjs-menu-item:focus,
+                .vjs-menu li.vjs-menu-item:hover {
+                    background-color: ca4l;
+                    color: bg3l; }
+
+                .vjs-menu li.vjs-selected,
+                .vjs-menu li.vjs-selected:focus,
+                .vjs-menu li.vjs-selected:hover {
+                    background-color: ca1l;
+                    color: bg1l; }
+
+                /* Tooltip time */
+                .vjs-mouse-display .vjs-time-tooltip {
+                    background-color: bg1l;
+                    color: fg1l; }
+
+                /* Settings, Share */
+                .vjs-share__short-link,
+                .vjs-share__btn,
+                .vjs-share__short-link-wrapper {
+                    background-color: bg3l;
+                    color: fg1l; }
+
+                .vjs-share__btn {
+                    border: 1px solid fg3l; }
+
+                .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+                .vjs-share__subtitle,
+                .vjs-share__title,
+                .vjs-text-track-settings legend {
+                    color: fg1l; }
+
+                /* Video player: Share Links */
+                .vjs-share__btn svg {
+                    filter: invert(1); }
+
+                /* Subtitles */
+                .vjs-text-track-display > div > div > div {
+                    background-color: fg9l !important;
+                    color: bg1l !important; }
+                
+                /* Loading */
+                .vjs-loading-spinner::before, .vjs-loading-spinner::after {
+                    border: 6px solid ca1l } }
+
+            #player,
+            #player_html5_api {
+                background-color: bg1l !important; }
+
+            /*.player-dimensions.vjs-fluid {
+                border: 1px solid fg3l; }*/
+            /* Video player: Controls: Progress Bar */
+            .video-js.player-style-invidious .vjs-play-progress {
+                background-color: ca1l !important; }
+
+            /* Video player: close button */
+            .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+                color: fg1l; }
+
+            /* Description: Genre */
+            p#genre a,
+            p#genre a:hover {
+                color: fg1l; }
+
+            /* Description: Show More */
+            #description-box label a,
+            #description-box label a:hover,
+            #description-box label a:focus {
+                color: fg1l !important; }
+
+            /* Comment Section: By creator */
+            a.channel-owner,
+            a.channel-owner:hover {
+                border: 1px solid fg3l !important; }
+
+            a.channel-owner {
+                background-color: fg4l !important; }
+
+            a.channel-owner:hover {
+                background-color: fg4l !important; }
+
+            .pure-u-md-22-24 {
+                .channel-owner a,
+                .channel-owner a:hover,
+                .channel-owner a:visited,
+                .channel-owner .icon.ion.ion-md-checkmark-circle {
+                    color: fg2l !important; } }
+
+            /* Comment Section: Replies */
+            .pure-u-23-24 a[href="javascript:void(0)"] {
+                color: cb2l !important; }
+
+            .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+                color: cb1l !important; }
+
+            /* Comment Section: Heart icon */
+            .icon.ion-ios-heart.creator-heart-small-container {
+                color: ca1l; }
+
+            /* Settings: Volume Text */
+            span#volume-value {
+                color: fg1l; }
+
+            /* Hr, Section */
+            hr,
+            .pure-form legend,
+            .pure-form-aligned legend,
+            .underlined {
+                border-color: fg3l; }
+
+            /* Placeholder */
+            ::placeholder {
+                color: fg2l; } }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            background-color: bg6l; }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: bg7l; } }
+
+    .light-theme {
+        /* Background, Foreground */
+        body,
+        .pure-g,
+        .pure-form legend {
+            background: bg1l;
+            color: fg1l; }
+
+        /* Links */
+        summary,
+        a.feed-menu-item.pure-menu-heading,
+        a:link:not(.pure-button):not(.channel-owner) {
+            color: fg2l; }
+
+        a,
+        a:active,
+        a:visited,
+        footer a {
+            color: fg2l !important; }
+
+        a.feed-menu-item.pure-menu-heading:hover,
+        a:link:not(.pure-button):not(.channel-owner):hover {
+            color: fg1l; }
+
+        summary:hover,
+        summary:focus,
+        a:hover,
+        footer a:hover {
+            color: fg1l !important; }
+
+        /* Links Outside of Invidious */
+        a[href^="https://www.youtube.com"],
+        a[href^="https://redirect.invidious.io"],
+        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+        #descriptionWrapper a {
+            color: cl2l !important; }
+
+        a[href^="https://www.youtube.com"]:hover,
+        a[href^="https://redirect.invidious.io"]:hover,
+        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+        #descriptionWrapper a:hover {
+            color: cl1l !important; }
+
+        /* Input, select & textarea */
+        input,
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="text"],
+        input[type="submit"],
+        input[type="checkbox"],
+        input[type="radio"],
+        input[type="range"],
+        select,
+        textarea {
+            border: 1px solid fg3l;
+            -webkit-border: 1px solid fg3l;
+            background-color: fg4l;
+            color: fg1l; }
+
+        input:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="password"]:focus,
+        input[type="text"]:focus,
+        input[type="submit"]:focus,
+        input[type="checkbox"]:focus,
+        input[type="radio"]:focus,
+        input[type="range"]:focus,
+        select:focus,
+        textarea:focus {
+            border: 1px solid cb1l;
+            -webkit-border: 1px solid cb1l; }
+
+        select {
+            background-color: fg4l; }
+
+        select:focus {
+            background-color: bg2l; }
+
+        /* Checkbox & Radio */
+        input[type="checkbox"],
+        input[type="radio"] {
+            background-color: fg6l; }
+
+        /* Checkbox & Radio: Color check */
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked,
+        input[type="checkbox"]:checked:before,
+        input[type="radio"]:before,
+        input[type="radio"]:checked,
+        input[type="radio"]:checked:before {
+            background-color: fg4l !important; }
+
+        input[type="radio"]:checked:after {
+            background-color: fg1l !important; }
+
+        /* Range */
+        input[type="range"]::-webkit-slider-thumb {
+            background: fg4l;
+            box-shadow: -80px 0 0 75px fg4l;
+            border-right: 1px solid fg3l !important; }
+
+        input[disabled] {
+            background-color: fg6l; }
+
+        /* Button */
+        .pure-button-primary,
+        .pure-button-secondary,
+        .pure-button-primary:hover,
+        .pure-button-secondary:hover,
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            border: 1px solid fg3l !important;
+            color: fg1l !important; }
+
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            border: 1px solid cb1l !important; }
+
+        .pure-button-primary,
+        .pure-button-secondary {
+            background-color: fg4l !important; }
+
+        .pure-button-primary:hover,
+        .pure-button-secondary:hover,
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            background-color: fg5l !important; }
+
+        /* Button: Subscribe */
+        #subscribe,
+        #subscribe:hover,
+        #subscribe:focus {
+            border: 1px solid fg3l !important;
+            color: bg1l !important; }
+
+        #subscribe:focus {
+            border: 1px solid cb1l !important; }
+
+        #subscribe {
+            background-color: ca2l !important; }
+
+        #subscribe:hover,
+        #subscribe:focus {
+            background-color: ca1l !important; }
+
+        if checkbox-subscribe-text-light {
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus,
+            .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                color: fg1l !important; } }
+
+        /* Invidious Logo */
+        .navbar .index-link,
+        #search-widget #logo .pure-menu-heading {
+            color: ca2l; }
+
+        .navbar .index-link:hover {
+            color: ca1l !important; }
+
+        /* Log in & Icons */
+        .pure-g .navbar i,
+        a.pure-menu-heading input,
+        .pure-u-1-3 a.pure-menu-heading {
+            color: fg2l !important; }
+
+        .pure-g .navbar i:hover,
+        a.pure-menu-heading input:hover,
+        .pure-u-1-3 a.pure-menu-heading:hover {
+            color: fg1l !important; }
+
+        /* Thumbnail: Only Highlights YouTube Video's */
+        a[href^="/watch?v="] p:not(.length),
+        a[href^="/watch?v="] p:not(.length):hover {
+            color: fg1l; }
+
+        /* Thumbnail: Length Time*/
+        p.length {
+            color: bg1l !important;
+            background-color: fg8l !important; }
+
+        /* Thumbnail: Little icons beside video */
+        i.icon.ion-logo-youtube,
+        i.icon.ion-md-headset,
+        i.icon.ion-md-jet {
+            color: fg2l !important; }
+
+        i.icon.ion-logo-youtube:hover,
+        i.icon.ion-md-headset:hover,
+        i.icon.ion-md-jet:hover {
+            color: fg1l !important; }
+
+        /* Thumbnail: Link Channel Name */
+        p.channel-name,
+        #channel-name,
+        .pure-u-1 .pure-u-14-24 a {
+            color: fg2l !important; }
+
+        p.channel-name:hover,
+        #channel-name:hover,
+        .pure-u-1 .pure-u-14-24 a:hover {
+            color: fg1l !important; }
+
+        /* Thumbnail: Video Data */
+        p.video-data,
+        div.pure-u-10-24,
+        p.video-data:hover,
+        div.pure-u-10-24:hover {
+            color: fg1l; }
+
+        /* Thumbnail: Watched */
+        div.watched-indicator {
+            background-color: ca1l; }
+
+        div.watched-overlay {
+            background-color: ca3l; }
+
+        /* Thumbnail Button: Watch, Delete from history */
+        .top-left-overlay,
+        .bottom-right-overlay,
+        .watched {
+            .pure-button-secondary {
+                color: fg1l !important;
+                border: 1px solid fg5l !important;
+                background-color: bg1l !important; }
+
+            .pure-button-secondary:hover,
+            .pure-button-secondary:focus {
+                background-color: bg2l !important; }
+
+            .pure-button-secondary:focus {
+                border: 1px solid cb1l !important; } }
+
+        /* Searchbox */
+        .pure-form input[type="search"] {
+            border: 1px solid fg3l;
+            background-color: transparent;
+            color: fg1l; }
+
+        .pure-form input[type="search"]:focus {
+            border: 1px solid cb1l; }
+
+        /* Search: Filter box */
+        #filters-box {
+            border: 1px solid fg3l;
+            background-color: fg4l !important; }
+
+        /* Video Player */
+        .video-js {
+            /* Video player: Title Overlay */
+            .vjs-overlay-top a {
+                color: bg1l !important; }
+
+            .vjs-overlay-top {
+                background-color: fg9l !important; }
+
+            /* Play button */
+            .vjs-big-play-button {
+                background-color: ca1l !important; }
+
+            .vjs-big-play-button .vjs-icon-placeholder {
+                color: bg1l; }
+
+            /* Video player: Controls: Color */
+            .vjs-control-bar,
+            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+            .vjs-modal-dialog .vjs-modal-dialog-content {
+                background-color: bg1l;
+                color: fg1l; }
+
+            .vjs-control-bar,
+            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+            .vjs-modal-dialog .vjs-modal-dialog-content,
+            .vjs-share__social {
+                border: 1px solid fg3l !important; }
+
+            /* Button */
+            button,
+            .vjs-slider,
+            .vjs-control-bar button,
+            .vjs-icon-placeholder,
+            .vjs-icon-share,
+            .vjs-playback-rate-value .vjs-control-text,
+            button:hover,
+            .vjs-slider::before,
+            .vjs-control-bar button:hover,
+            .vjs-icon-placeholder:hover,
+            .vjs-icon-share:hover,
+            .vjs-playback-rate-value .vjs-control-text:hover {
+                color: fg1l; }
+
+            /* Progress Bar */
+            .vjs-load-progress,
+            .vjs-load-progress div {
+                background-color: fg5l; }
+
+            .vjs-slider {
+                background-color: fg7l !important; }
+
+            /* Sliders */
+            .vjs-volume-level {
+                background-color: ca1l !important; }
+
+            .vjs-play-progress,
+            .vjs-volume-level {
+                color: ca1l; }
+
+            /* Controls Options: Hover */
+            .vjs-menu li.vjs-menu-item:focus,
+            .vjs-menu li.vjs-menu-item:hover {
+                background-color: ca2l;
+                color: bg3l; }
+
+            .vjs-menu li.vjs-selected,
+            .vjs-menu li.vjs-selected:focus,
+            .vjs-menu li.vjs-selected:hover {
+                background-color: ca1l;
+                color: bg1l; }
+
+            /* Tooltip time */
+            .vjs-mouse-display .vjs-time-tooltip {
+                background-color: bg1l;
+                color: fg1l; }
+
+            /* Settings, Share */
+            .vjs-share__short-link,
+            .vjs-share__btn,
+            .vjs-share__short-link-wrapper {
+                background-color: bg3l;
+                color: fg1l; }
+
+            .vjs-share__btn {
+                border: 1px solid fg3l; }
+
+            .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+            .vjs-share__subtitle,
+            .vjs-share__title,
+            .vjs-text-track-settings legend {
+                color: fg1l; }
+
+            /* Video player: Share Links */
+            .vjs-share__btn svg {
+                filter: invert(1); }
+
+            /* Subtitles */
+            .vjs-text-track-display > div > div > div {
+                background-color: fg9l !important;
+                color: bg1l !important; } }
+
+        #player,
+        #player_html5_api {
+            background-color: bg1l !important; }
+
+        .player-dimensions.vjs-fluid {
+            border: 1px solid fg3l; }
+
+        /* Video player: Controls: Progress Bar */
+        .video-js.player-style-invidious .vjs-play-progress {
+            background-color: ca1l !important; }
+
+        /* Video player: close button */
+        .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+            color: fg1l; }
+
+        /* Description: Genre */
+        p#genre a,
+        p#genre a:hover {
+            color: fg1l; }
+
+        /* Description: Show More */
+        #description-box label a,
+        #description-box label a:hover,
+        #description-box label a:focus {
+            color: fg1l !important; }
+
+        /* Comment Section: By creator */
+        a.channel-owner,
+        a.channel-owner:hover {
+            border: 1px solid fg3l !important; }
+
+        a.channel-owner {
+            background-color: fg4l !important; }
+
+        a.channel-owner:hover {
+            background-color: fg4l !important; }
+
+        .pure-u-md-22-24 {
+            .channel-owner a,
+            .channel-owner a:hover,
+            .channel-owner a:visited,
+            .channel-owner .icon.ion.ion-md-checkmark-circle {
+                color: fg2l !important; } }
+
+        /* Comment Section: Replies */
+        .pure-u-23-24 a[href="javascript:void(0)"] {
+            color: cb2l !important; }
+
+        .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+            color: cb1l !important; }
+
+        /* Comment Section: Heart icon */
+        .icon.ion-ios-heart.creator-heart-small-container {
+            color: ca1l; }
+
+        /* Settings: Volume Text */
+        span#volume-value {
+            color: fg1l; }
+
+        /* Hr, Section */
+        hr,
+        .pure-form legend,
+        .pure-form-aligned legend,
+        .underlined {
+            border-color: fg3l; }
+
+        /* Placeholder */
+        ::placeholder {
+            color: fg2l; } }
+
+    /* Dark Theme */
+    @media (prefers-color-scheme: dark) {
+
+        .no-theme {
+            /* Background, Foreground */
+            body,
+            .pure-g,
+            .pure-form legend {
+                background: bg1d;
+                color: fg1d; }
+
+            /* Links */
+            a,
+            a:active,
+            a:visited,
+            summary,
+            a.feed-menu-item.pure-menu-heading,
+            a:link:not(.pure-button):not(.channel-owner) {
+                color: fg2d; }
+
+            footer a {
+                color: fg2d !important; }
+
+            a:hover,
+            summary:hover,
+            a.feed-menu-item.pure-menu-heading:hover,
+            a:link:not(.pure-button):not(.channel-owner):hover {
+                color: fg1d; }
+
+            footer a:hover {
+                color: fg1d !important; }
+
+            /* Links Outside of Invidious */
+            a[href^="https://www.youtube.com"],
+            a[href^="https://redirect.invidious.io"],
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+            #descriptionWrapper a {
+                color: cl2d !important; }
+
+            a[href^="https://www.youtube.com"]:hover,
+            a[href^="https://redirect.invidious.io"]:hover,
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+            #descriptionWrapper a:hover {
+                color: cl1d !important; }
+
+            /* Input, select & textarea */
+            input,
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            input[type="text"],
+            input[type="submit"],
+            input[type="checkbox"],
+            input[type='radio'],
+            input[type='range'],
+            select,
+            textarea {
+                border: 1px solid fg3d;
+                -webkit-border: 1px solid fg3d;
+                background-color: fg4d;
+                color: fg1d; }
+
+            input:focus,
+            input[type="email"]:focus,
+            input[type="number"]:focus,
+            input[type="password"]:focus,
+            input[type="text"]:focus,
+            input[type="submit"]:focus,
+            input[type="checkbox"]:focus,
+            input[type="radio"]:focus,
+            input[type='range']:focus,
+            select:focus,
+            textarea:focus {
+                border: 1px solid cb1d;
+                -webkit-border: 1px solid cb1d; }
+
+            select {
+                background-color: fg4d; }
+
+            select:focus {
+                background-color: bg2d; }
+
+            /* Checkbox & Radio */
+            input[type="checkbox"],
+            input[type='radio'] {
+                background-color: fg6d; }
+
+            /* Checkbox & Radio: Color check */
+            input[type="checkbox"]:before,
+            input[type="checkbox"]:checked,
+            input[type="checkbox"]:checked:before,
+            input[type='radio']:before,
+            input[type='radio']:checked,
+            input[type='radio']:checked:before {
+                background-color: fg4d !important; }
+
+            input[type='radio']:checked:after {
+                background-color: fg1d !important; }
+
+            /* Range */
+            input[type='range']::-webkit-slider-thumb {
+                background: fg3d;
+                box-shadow: -80px 0 0 75px fg3d;
+                border-right: 1px solid fg3d !important; }
+
+            input[disabled] {
+                background-color: fg6d; }
+
+            /* Button */
+            .pure-button-primary,
+            .pure-button-secondary,
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid fg3d !important;
+                color: fg1d !important; }
+
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid cb1d !important; }
+
+            .pure-button-primary,
+            .pure-button-secondary {
+                background-color: fg4d !important; }
+
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                background-color: fg5d !important; }
+
+            /* Button: Subscribe */
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus {
+                border: 1px solid fg3d !important;
+                color: fg1d !important; }
+
+            #subscribe:focus {
+                border: 1px solid cb1d !important; }
+
+            #subscribe {
+                background-color: ca2d !important; }
+
+            #subscribe:hover,
+            #subscribe:focus {
+                background-color: ca1d !important; }
+
+            if checkbox-subscribe-text-dark {
+                #subscribe,
+                #subscribe:hover,
+                #subscribe:focus,
+                .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                    color: bg1d !important; } }
+
+            /* Invidious Logo */
+            .navbar .index-link,
+            #search-widget #logo .pure-menu-heading {
+                color: ca2d; }
+
+            .navbar .index-link:hover {
+                color: ca1d !important; }
+
+            /* Log in & Icons */
+            .pure-g .navbar i,
+            a.pure-menu-heading input,
+            .pure-u-1-3 a.pure-menu-heading {
+                color: fg2d !important; }
+
+            .pure-g .navbar i:hover,
+            a.pure-menu-heading input:hover,
+            .pure-u-1-3 a.pure-menu-heading:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Only Highlights YouTube Video's */
+            a[href^="/watch?v="] p:not(.length),
+            a[href^="/watch?v="] p:not(.length):hover {
+                color: fg1d; }
+
+            /* Thumbnail: Length Time*/
+            p.length {
+                color: fg1d !important;
+                background-color: bg3d !important; }
+
+            /* Thumbnail: Little icons beside video */
+            i.icon.ion-logo-youtube,
+            i.icon.ion-md-headset,
+            i.icon.ion-md-jet {
+                color: fg2d !important; }
+
+            i.icon.ion-logo-youtube:hover,
+            i.icon.ion-md-headset:hover,
+            i.icon.ion-md-jet:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Link Channel Name */
+            p.channel-name,
+            #channel-name,
+            .pure-u-1 .pure-u-14-24 a {
+                color: fg2d !important; }
+
+            p.channel-name:hover,
+            #channel-name:hover,
+            .pure-u-1 .pure-u-14-24 a:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Video Data */
+            p.video-data,
+            div.pure-u-10-24,
+            p.video-data:hover,
+            div.pure-u-10-24:hover {
+                color: fg2d; }
+
+            /* Thumbnail: Watched */
+            div.watched-indicator {
+                background-color: ca1d; }
+
+            div.watched-overlay {
+                background-color: ca3d; }
+
+            /* Thumbnail Button: Watch, Delete from history */
+            .top-left-overlay,
+            .bottom-right-overlay,
+            .watched {
+                .pure-button-secondary {
+                    color: fg1d !important;
+                    border: 1px solid fg3d !important;
+                    background-color: bg1d !important; }
+
+                .pure-button-secondary:hover,
+                .pure-button-secondary:focus {
+                    background-color: bg2d !important; }
+
+                .pure-button-secondary:focus {
+                    border: 1px solid cb1d !important; } }
+
+            /* Searchbox */
+            .pure-form input[type="search"] {
+                border: 1px solid fg3d;
+                background-color: transparent;
+                color: fg1d; }
+
+            .pure-form input[type="search"]:focus {
+                border: 1px solid cb1d; }
+
+            /* Search: Filter box */
+            #filters-box {
+                border: 1px solid fg3d;
+                background: fg6d !important; }
+
+            /* Video Player */
+            .video-js {
+                /* Video player: Title Overlay */
+                .vjs-overlay-top a {
+                    color: fg1d !important; }
+
+                .vjs-overlay-top {
+                    background-color: bg6d !important; }
+
+                /* Play button */
+                .vjs-big-play-button {
+                    border: 1px solid fg3d;
+                    background-color: ca1d !important; }
+
+                .vjs-big-play-button .vjs-icon-placeholder {
+                    color: fg1d; }
+
+                /* Video player: Controls: Color */
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content {
+                    background-color: bg1d;
+                    color: fg1d; }
+
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content,
+                .vjs-share__social {
+                    border: 1px solid fg3d !important; }
+
+                /* Button */
+                button,
+                .vjs-slider,
+                .vjs-control-bar button,
+                .vjs-icon-placeholder,
+                .vjs-icon-share,
+                .vjs-playback-rate-value .vjs-control-text,
+                button:hover,
+                .vjs-slider::before,
+                .vjs-control-bar button:hover,
+                .vjs-icon-placeholder:hover,
+                .vjs-icon-share:hover,
+                .vjs-playback-rate-value .vjs-control-text:hover {
+                    color: fg1d; }
+
+                /* Progress Bar */
+                .vjs-load-progress,
+                .vjs-load-progress div {
+                    background-color: fg3d !important }
+
+                .vjs-slider {
+                    background-color: fg4d !important; }
+
+                /* Sliders */
+                .vjs-volume-level {
+                    background-color: ca1d !important; }
+
+                .vjs-play-progress,
+                .vjs-volume-level {
+                    color: ca1d; }
+
+                /* Controls Options: Hover */
+                .vjs-menu li.vjs-menu-item:focus,
+                .vjs-menu li.vjs-menu-item:hover {
+                    background-color: ca4d;
+                    color: fg1d; }
+
+                .vjs-menu li.vjs-selected,
+                .vjs-menu li.vjs-selected:focus,
+                .vjs-menu li.vjs-selected:hover {
+                    background-color: ca1d;
+                    color: fg1d; }
+
+                /* Tooltip time */
+                .vjs-mouse-display .vjs-time-tooltip {
+                    background-color: bg1d;
+                    color: fg1d; }
+
+                /* Settings, Share */
+                .vjs-share__short-link,
+                .vjs-share__btn,
+                .vjs-share__short-link-wrapper {
+                    background-color: bg2d;
+                    color: fg1d; }
+
+                .vjs-share__btn {
+                    border: 1px solid fg3d; }
+
+                .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+                .vjs-share__subtitle,
+                .vjs-share__title,
+                .vjs-text-track-settings legend {
+                    color: fg1d; }
+
+                /* Subtitles */
+                .vjs-text-track-display > div > div > div {
+                    background-color: bg6d !important;
+                    color: fg1d !important; }
+
+                /* Loading */
+                .vjs-loading-spinner::before, .vjs-loading-spinner::after {
+                    border: 6px solid ca1l } }
+
+            #player,
+            #player_html5_api {
+                background-color: bg4d !important; }
+
+            /* Video player: Controls: Progress Bar */
+            .video-js.player-style-invidious .vjs-play-progress {
+                background-color: ca1d !important; }
+
+            /* Video player: close button */
+            .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+                color: fg1d; }
+
+            /* Description: Genre */
+            p#genre a,
+            p#genre a:hover {
+                color: fg1d; }
+
+            /* Description: Show More */
+            #description-box label a,
+            #description-box label a:hover,
+            #description-box label a:focus {
+                color: fg1d; }
+
+            /* Comment Section: By creator */
+            a.channel-owner,
+            a.channel-owner:hover {
+                border: 1px solid fg3d !important; }
+
+            a.channel-owner {
+                background-color: fg4d !important; }
+
+            a.channel-owner:hover {
+                background-color: fg4d !important; }
+
+            body a.channel-owner,
+            body a.channel-owner:hover,
+            .channel-owner:visited,
+            .channel-owner .icon.ion.ion-md-checkmark-circle {
+                color: fg1d !important; }
+
+            /* Comment Section: Replies */
+            .pure-u-23-24 a[href="javascript:void(0)"] {
+                color: cb2d !important; }
+
+            .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+                color: cb1d !important; }
+
+            /* Comment Section: Heart icon */
+            .icon.ion-ios-heart.creator-heart-small-container {
+                color: ca1d; }
+
+            /* Settings: Volume Text */
+            span#volume-value {
+                color: fg1d; }
+
+            /* Hr, Section */
+            hr,
+            .pure-form legend,
+            .pure-form-aligned legend,
+            .underlined {
+                border-color: fg3d; }
+
+            /* Placeholder */
+            ::placeholder {
+                color: fg1d; } }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            background-color: bg4d; }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: bg5d; } }
+
+    .dark-theme {
+        /* Background, Foreground */
+        body,
+        .pure-g,
+        .pure-form legend {
+            background: bg1d;
+            color: fg1d; }
+
+        /* Links */
+        a,
+        a:active,
+        a:visited,
+        summary,
+        a.feed-menu-item.pure-menu-heading,
+        a:link:not(.pure-button):not(.channel-owner) {
+            color: fg2d; }
+
+        footer a {
+            color: fg2d !important; }
+
+        a:hover,
+        summary:hover,
+        a.feed-menu-item.pure-menu-heading:hover,
+        a:link:not(.pure-button):not(.channel-owner):hover {
+            color: fg1d; }
+
+        footer a:hover {
+            color: fg1d !important; }
+
+        /* Links Outside of Invidious */
+        a[href^="https://www.youtube.com"],
+        a[href^="https://redirect.invidious.io"],
+        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+        #descriptionWrapper a {
+            color: cl2d !important; }
+
+        a[href^="https://www.youtube.com"]:hover,
+        a[href^="https://redirect.invidious.io"]:hover,
+        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+        #descriptionWrapper a:hover {
+            color: cl1d !important; }
+
+        /* Input, select & textarea */
+        input,
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="text"],
+        input[type="submit"],
+        input[type="checkbox"],
+        input[type='radio'],
+        input[type='range'],
+        select,
+        textarea {
+            border: 1px solid fg3d;
+            -webkit-border: 1px solid fg3d;
+            background-color: fg4d;
+            color: fg1d; }
+
+        input:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="password"]:focus,
+        input[type="text"]:focus,
+        input[type="submit"]:focus,
+        input[type="checkbox"]:focus,
+        input[type="radio"]:focus,
+        input[type='range']:focus,
+        select:focus,
+        textarea:focus {
+            border: 1px solid cb1d;
+            -webkit-border: 1px solid cb1d; }
+
+        select {
+            background-color: fg4d; }
+
+        select:focus {
+            background-color: bg2d; }
+
+        /* Checkbox & Radio */
+        input[type="checkbox"],
+        input[type='radio'] {
+            background-color: fg6d; }
+
+        /* Checkbox & Radio: Color check */
+        input[type="checkbox"]:before,
+        input[type="checkbox"]:checked,
+        input[type="checkbox"]:checked:before,
+        input[type='radio']:before,
+        input[type='radio']:checked,
+        input[type='radio']:checked:before {
+            background-color: fg4d !important; }
+
+        input[type='radio']:checked:after {
+            background-color: fg1d !important; }
+
+        /* Range */
+        input[type='range']::-webkit-slider-thumb {
+            background: fg3d;
+            box-shadow: -80px 0 0 75px fg3d;
+            border-right: 1px solid fg3d !important; }
+
+        input[disabled] {
+            background-color: fg6d; }
+
+        /* Button */
+        .pure-button-primary,
+        .pure-button-secondary,
+        .pure-button-primary:hover,
+        .pure-button-secondary:hover,
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            border: 1px solid fg3d !important;
+            color: fg1d !important; }
+
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            border: 1px solid cb1d !important; }
+
+        .pure-button-primary,
+        .pure-button-secondary {
+            background-color: fg4d !important; }
+
+        .pure-button-primary:hover,
+        .pure-button-secondary:hover,
+        .pure-button-primary:focus,
+        .pure-button-secondary:focus {
+            background-color: fg5d !important; }
+
+        /* Button: Subscribe */
+        #subscribe,
+        #subscribe:hover,
+        #subscribe:focus {
+            border: 1px solid fg3d !important;
+            color: fg1d !important; }
+
+        #subscribe:focus {
+            border: 1px solid cb1d !important; }
+
+        #subscribe {
+            background-color: ca2d !important; }
+
+        #subscribe:hover,
+        #subscribe:focus {
+            background-color: ca1d !important; }
+
+        if checkbox-subscribe-text-dark {
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus,
+            .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                color: bg1d !important; } }
+
+        /* Invidious Logo */
+        .navbar .index-link,
+        #search-widget #logo .pure-menu-heading {
+            color: ca2d; }
+
+        .navbar .index-link:hover {
+            color: ca1d !important; }
+
+        /* Log in & Icons */
+        .pure-g .navbar i,
+        a.pure-menu-heading input,
+        .pure-u-1-3 a.pure-menu-heading {
+            color: fg2d !important; }
+
+        .pure-g .navbar i:hover,
+        a.pure-menu-heading input:hover,
+        .pure-u-1-3 a.pure-menu-heading:hover {
+            color: fg1d !important; }
+
+        /* Thumbnail: Only Highlights YouTube Video's */
+        a[href^="/watch?v="] p:not(.length),
+        a[href^="/watch?v="] p:not(.length):hover {
+            color: fg1d; }
+
+        /* Thumbnail: Length Time*/
+        p.length {
+            color: fg1d !important;
+            background-color: bg3d !important; }
+
+        /* Thumbnail: Little icons beside video */
+        i.icon.ion-logo-youtube,
+        i.icon.ion-md-headset,
+        i.icon.ion-md-jet {
+            color: fg2d !important; }
+
+        i.icon.ion-logo-youtube:hover,
+        i.icon.ion-md-headset:hover,
+        i.icon.ion-md-jet:hover {
+            color: fg1d !important; }
+
+        /* Thumbnail: Link Channel Name */
+        p.channel-name,
+        #channel-name,
+        .pure-u-1 .pure-u-14-24 a {
+            color: fg2d !important; }
+
+        p.channel-name:hover,
+        #channel-name:hover,
+        .pure-u-1 .pure-u-14-24 a:hover {
+            color: fg1d !important; }
+
+        /* Thumbnail: Video Data */
+        p.video-data,
+        div.pure-u-10-24,
+        p.video-data:hover,
+        div.pure-u-10-24:hover {
+            color: fg2d; }
+
+        /* Thumbnail: Watched */
+        div.watched-indicator {
+            background-color: ca1d; }
+
+        div.watched-overlay {
+            background-color: ca3d; }
+
+        /* Thumbnail Button: Watch, Delete from history */
+        .top-left-overlay,
+        .bottom-right-overlay,
+        .watched {
+            .pure-button-secondary {
+                color: fg1d !important;
+                border: 1px solid fg3d !important;
+                background-color: bg1d !important; }
+
+            .pure-button-secondary:hover,
+            .pure-button-secondary:focus {
+                background-color: bg2d !important; }
+
+            .pure-button-secondary:focus {
+                border: 1px solid cb1d !important; } }
+
+        /* Searchbox */
+        .pure-form input[type="search"] {
+            border: 1px solid fg3d;
+            background-color: transparent;
+            color: fg1d; }
+
+        .pure-form input[type="search"]:focus {
+            border: 1px solid cb1d; }
+
+        /* Search: Filter box */
+        #filters-box {
+            border: 1px solid fg3d;
+            background: fg6d !important; }
+
+        /* Video Player */
+        .video-js {
+            /* Video player: Title Overlay */
+            .vjs-overlay-top a {
+                color: fg1d !important; }
+
+            .vjs-overlay-top {
+                background-color: bg6d !important; }
+
+            /* Play button */
+            .vjs-big-play-button {
+                border: 1px solid fg3d;
+                background-color: ca1d !important; }
+
+            .vjs-big-play-button .vjs-icon-placeholder {
+                color: fg1d; }
+
+            /* Video player: Controls: Color */
+            .vjs-control-bar,
+            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+            .vjs-modal-dialog .vjs-modal-dialog-content {
+                background-color: bg1d;
+                color: fg1d; }
+
+            .vjs-control-bar,
+            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+            .vjs-modal-dialog .vjs-modal-dialog-content,
+            .vjs-share__social {
+                border: 1px solid fg3d !important; }
+
+            /* Button */
+            button,
+            .vjs-slider,
+            .vjs-control-bar button,
+            .vjs-icon-placeholder,
+            .vjs-icon-share,
+            .vjs-playback-rate-value .vjs-control-text,
+            button:hover,
+            .vjs-slider::before,
+            .vjs-control-bar button:hover,
+            .vjs-icon-placeholder:hover,
+            .vjs-icon-share:hover,
+            .vjs-playback-rate-value .vjs-control-text:hover {
+                color: fg1d; }
+
+            /* Progress Bar */
+            .vjs-load-progress,
+            .vjs-load-progress div {
+                background-color: fg3d !important }
+
+            .vjs-slider {
+                background-color: bg2d !important; }
+
+            /* Sliders */
+            .vjs-volume-level {
+                background-color: ca1d !important; }
+
+            .vjs-play-progress,
+            .vjs-volume-level {
+                color: ca1d; }
+
+            /* Controls Options: Hover */
+            .vjs-menu li.vjs-menu-item:focus,
+            .vjs-menu li.vjs-menu-item:hover {
+                background-color: ca4d;
+                color: fg1d; }
+
+            .vjs-menu li.vjs-selected,
+            .vjs-menu li.vjs-selected:focus,
+            .vjs-menu li.vjs-selected:hover {
+                background-color: ca1d;
+                color: fg1d; }
+
+            /* Tooltip time */
+            .vjs-mouse-display .vjs-time-tooltip {
+                background-color: bg1d;
+                color: fg1d; }
+
+            /* Settings, Share */
+            .vjs-share__short-link,
+            .vjs-share__btn,
+            .vjs-share__short-link-wrapper {
+                background-color: bg2d;
+                color: fg1d; }
+
+            .vjs-share__btn {
+                border: 1px solid fg3d; }
+
+            .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+            .vjs-share__subtitle,
+            .vjs-share__title,
+            .vjs-text-track-settings legend {
+                color: fg1d; }
+
+            /* Subtitles */
+            .vjs-text-track-display > div > div > div {
+                background-color: bg6d !important;
+                color: fg1d !important; } }
+
+        #player,
+        #player_html5_api {
+            background-color: bg1d !important; }
+
+        .player-dimensions.vjs-fluid {
+            border: 1px solid fg3d; }
+
+        /* Video player: Controls: Progress Bar */
+        .video-js.player-style-invidious .vjs-play-progress {
+            background-color: ca1d !important; }
+
+        /* Video player: close button */
+        .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+            color: fg1d; }
+
+        /* Description: Genre */
+        p#genre a,
+        p#genre a:hover {
+            color: fg1d; }
+
+        /* Description: Show More */
+        #description-box label a,
+        #description-box label a:hover,
+        #description-box label a:focus {
+            color: fg1d; }
+
+        /* Comment Section: By creator */
+        a.channel-owner,
+        a.channel-owner:hover {
+            border: 1px solid fg3d !important; }
+
+        a.channel-owner {
+            background-color: fg4d !important; }
+
+        a.channel-owner:hover {
+            background-color: fg4d !important; }
+
+        body a.channel-owner,
+        body a.channel-owner:hover,
+        .channel-owner:visited,
+        .channel-owner .icon.ion.ion-md-checkmark-circle {
+            color: fg1d !important; }
+
+        /* Comment Section: Replies */
+        .pure-u-23-24 a[href="javascript:void(0)"] {
+            color: cb2d !important; }
+
+        .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+            color: cb1d !important; }
+
+        /* Comment Section: Heart icon */
+        .icon.ion-ios-heart.creator-heart-small-container {
+            color: ca1d; }
+
+        /* Settings: Volume Text */
+        span#volume-value {
+            color: fg1d; }
+
+        /* Hr, Section */
+        hr,
+        .pure-form legend,
+        .pure-form-aligned legend,
+        .underlined {
+            border-color: fg3d; }
+
+        /* Placeholder */
+        ::placeholder {
+            color: fg1d; } }
+
+    /* Font */
+    html,
+    body,
+    .pure-g [class*="pure-u"] {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt; }
+
+    /* General Button */
+    .pure-button-primary,
+    .pure-button-secondary {
+        padding: .5em 1em;
+        margin: 0px;
+        border-radius: br3 !important; }
+
+    .pure-button-primary:hover,
+    .pure-button-secondary:hover,
+    .pure-button-primary:focus,
+    .pure-button-secondary:focus {
+        background-image: linear-gradient(transparent, transparent, transparent); }
+
+    /* Subscribe Button */
+    #subscribe {
+        border-radius: br3; }
+
+    /* Button: Watch/Delete Button*/
+    .watched,
+    .pure-button-secondary.low-profile {
+        border-radius: br1 !important; }
+
+    /* Input, select */
+    input,
+    select,
+    textarea {
+        border-radius: br1;
+        box-shadow: transparent 0px 1px 3px inset !important; }
+
+    /* Select */
+    select {
+        max-width: 350px !important;
+        margin-top: 10px; }
+
+    .pure-form-stacked .pure-button-primary {
+        margin-top: 5px; }
+
+    /* Checkbox & Radio */
+    input[type="checkbox"],
+    input[type='radio'] {
+        border-radius: br1;
+        height: 1.3em;
+        width: 1.3em;
+        cursor: pointer;
+        position: relative;
+        vertical-align: middle;
+        -webkit-appearance: none; }
+
+    input[type="checkbox"]:focus {
+        outline: thin solid transparent !important;
+        outline-color: transparent !important; }
+
+    /* Checkbox & Radio: Icons */
+    input[type='radio'] {
+        border-radius: 50%; }
+
+    input[type='radio']:checked:after {
+        content: "";
+        height: 5px;
+        width: 5px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1); }
+
+    input[type="checkbox"]:checked:before {
+        content: '✔'; }
+
+    /* Color checkbox and radio button */
+    input[type="checkbox"]:before,
+    input[type="checkbox"]:checked:before {
+        border-radius: 6px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 1.3em;
+        text-align: center; }
+
+    input[disabled] {
+        opacity: 0.45; }
+
+    /* Checkbox: Autoplay */
+    .pure-u-lg-1-5 #continue {
+        margin-left: 3px; }
+
+    /* Range slider: Slider and Round */
+    input[type='range']::-webkit-slider-thumb {
+        width: 15px;
+        border-radius: 15px;
+        -webkit-appearance: none;
+        height: 15px; }
+
+    /* Range slider: Padding */
+    input[type='range'] {
+        cursor: pointer;
+        overflow: hidden;
+        -webkit-appearance: none;
+        border-radius: 1em; }
+
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 15px;
+        -webkit-appearance: none; }
+
+    /* Screen Width */
+    @media screen and (min-width: 48em) {
+        .pure-u-md-1-6,
+        .pure-u-md-1-12,
+        .pure-u-md-4-24,
+        .pure-u-md-20-24,
+        .pure-u-md-12-24 {
+            width: 0% !important; } }
+
+    .pure-u-1.pure-u-md-2-24 {
+        width: 0%; }
+
+    #comments {
+        max-width: 100%; }
+
+    /* Home Screen: Thumbnail */
+    img,
+    div.watched-overlay {
+        border-radius: br2; }
+
+    div.watched-indicator {
+        border-radius: 0 0 br2 br2; }
+
+    /* Thumbnail */
+    .pure-u-1 {
+        .pure-u-lg-1-5,
+        .pure-u-md-1-4 {
+            div.video-card-row a[href^="/watch?v="] p {
+                font-weight: bold; }
+
+            b,
+            .pure-u-14-24,
+            .pure-u-10-24,
+            .video-card-row .flex-left p,
+            .video-card-row .flex-right p {
+                font-weight: normal !important;
+                font-size: 10pt; } }
+
+        .pure-u-md-1-4 .video-card-row,
+        .pure-u-lg-1-5 > .h-box > .pure-u-1 {
+            margin-bottom: 10px; }
+
+        .pure-u-lg-1-5 > .h-box > .pure-u-1 > h5.pure-g {
+            margin-top: 16px; }
+
+        div.video-card-row {
+            a[href^="/watch?v="] p {
+                margin: 15px 0px 0px 0px; }
+
+            p.video-data,
+            p.channel-name,
+            .icon-buttons {
+                margin: -2px; }
+
+            p.channel-name,
+            .icon-buttons {
+                margin-top: 0px; } }
+
+        .video-card-row .flex-left p,
+        .video-card-row .flex-right p {
+            margin: -5px 0; }
+
+        .pure-u-14-24,
+        .pure-u-10-24 {
+            margin: -5px 0px; }
+
+        /* Thumbnail: Length Time*/
+        p.length {
+            padding: 2px 4px;
+            margin-bottom: -0.45em;
+            margin-right: -0.45em;
+            font-size: 9pt;
+            font-weight: bold;
+            border-radius: br1; } }
+
+    /* Video: Margin */
+    .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box {
+        /*margin-left: 0px 0px 0px 32px;*/
+        border-radius: br2;
+        padding: 0px 8px; }
+
+    #contents .pure-g .pure-u-md-1-4 > .h-box {
+        margin-bottom: 50px;
+        /*margin: 25px 0px !important;*/ }
+
+    /* Search: filters */
+    #filters-box {
+        border-radius: br3; }
+
+    #filters-apply {
+        text-align: right; }
+
+    /* Searchbox */
+    .pure-form input[type="search"] {
+        padding-left: 15px !important;
+        box-shadow: transparent;
+        border-radius: br3;
+        margin: 0px; }
+
+    #search-widget #searchbox {
+        margin: 25px 0;
+        max-width: 550px; }
+
+    /* Padding */
+    .pure-g:not(.searchbar) > .searchbar,
+    .pure-form-aligned {
+        border-radius: br2;
+        padding: 12px; }
+
+    .video-js {
+        /* Video player: play button: Border */
+        .vjs-big-play-button {
+            border-radius: br2;
+            border: 0em solid transparent;
+            font-size: 4.5em;
+            top: 50%;
+            left: 50%;
+            margin-top: -0.81666em;
+            margin-left: -1.5em; }
+
+        /* Volume Slider */
+        .vjs-volume-level,
+        .vjs-slider,
+        .vjs-control-bar {
+            border-radius: br1; }
+
+        /* Video player: Controls: Floating */
+        .vjs-control-bar,
+        .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+            font-family: sans-serif;
+            opacity: 1;
+            left: 0.5%;
+            right: 0.5%;
+            width: 99%; }
+            
+        .vjs-control-bar {
+            margin-bottom: 0.45%; }
+            
+        .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+            margin-bottom: -1.5% !important; }
+
+        .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+            border-radius: br1 br1 0 0; }
+
+        /*Video player: Controls: share shadow*/
+        .vjs-control:hover::before,
+        .vjs-control:focus,
+        .vjs-control:focus::before,
+        button:hover,
+        button:focus,
+        .vjs-slider:hover,
+        .vjs-slider:focus {
+            box-shadow: 0 0 1em transparent;
+            text-shadow: 0em 0em 1em transparent !important; }
+
+        /* Video Player: Tooltip */
+        .vjs-time-tooltip {
+            border-radius: br1;
+            top: -3.8em; }
+
+        .vjs-vtt-thumbnail-display {
+            bottom: 56px;
+            border-radius: br1; }
+
+        .vjs-slider-bar .vjs-time-tooltip {
+            display: none !important; }
+
+        /* Video player: Share Links */
+        .vjs-videojs-share_open .vjs-modal-dialog .vjs-modal-dialog-content,
+        .vjs-modal-dialog {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            border-radius: br2; }
+
+        .vjs-share__social_fbFeed,
+        .vjs-share__social_tw,
+        .vjs-share__social_reddit,
+        .vjs-share__social_mail,
+        .vjs-share__social_email,
+        .vjs-share__short-link,
+        .vjs-share__btn,
+        .vjs-share__short-link-wrapper {
+            font-family: sans-serif !important;
+            border-radius: br1; }
+
+        .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+        .vjs-share__subtitle,
+        .vjs-share__title {
+            font-family: sans-serif !important; }
+
+        /* Video player: Settings */
+        .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button::before,
+        .vjs-close-button span.vjs-icon-placeholder::before {
+            display: none; }
+
+        /* Subtitles */
+        .vjs-text-track-display > div > div > div {
+            border-radius: br1 !important;
+            padding: 1px 6px !important;
+            font-size: 20pt; }
+
+        .vjs-fullscreen .vjs-text-track-display > div > div > div {
+            border-radius: br2 !important;
+            padding: 1px 12px !important;
+            font-size: 30pt; }
+
+        .vjs-modal-dialog {
+            background: linear-gradient(180deg, transparent, transparent); }
+
+        .vjs-overlay-background {
+            border-radius: 0px;
+            padding: 0px; } }
+
+    .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-modal-dialog-content {
+        background-image: linear-gradient(to bottom, transparent, transparent); }
+
+    .vjs-play-progress,
+    .vjs-load-progress,
+    .vjs-load-progress div,
+    .vjs-slider {
+        border-radius: br3 !important; }
+
+    /* Video player: Size */
+    .pure-u-md-20-24 {
+        width: 94% !important;
+        max-width: 100em !important;
+        margin: auto; }
+
+    /* Video player: Title Overlay */
+    .video-js .vjs-overlay-top {
+        width: 100%;
+        left: 0%;
+        margin-left: 0px;
+        top: 0px; }
+
+    /* Video player: Aspect ratio */
+    .player-dimensions.vjs-fluid {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        padding-top: 0%; }
+
+    .video-js {
+        aspect-ratio: 16 / 9; }
+
+    #player-container {
+        border-radius: br2;
+        padding-bottom: 54.5% !important; }
+
+    #player,
+    #player_html5_api,
+    .video-js .vjs-poster {
+        border-radius: br2; }
+
+    .vjs-fullscreen #player_html5_api {
+        border-radius: 0px; }
+
+    @media screen and (max-width: 48em) {
+        #player-container {
+            padding-bottom: 47% !important;
+            margin-bottom: 8%; } }
+
+    /* Padding and Form */
+    .h-box {
+        padding-left: 1em;
+        padding-right: 1em; }
+
+    @media screen and (min-width: 64em) {
+        .pure-u-lg-3-5 .title {
+            margin: 0px; } }
+
+    @media screen and (min-width:690px) {
+        .pure-u-md-1-4,
+        .pure-u-md-6-24 {
+            width: calc(100% / 2); } }
+
+    @media screen and (min-width:1000px) {
+        .pure-u-md-1-4,
+        .pure-u-md-6-24 {
+            width: calc(100% / 3); } }
+
+    @media screen and (min-width:1400px) {
+        .pure-u-md-1-4,
+        .pure-u-md-6-24 {
+            width: calc(100% / 4); } }
+
+    /* Description: Title */
+    @media screen and (max-width: 767px) {
+        h1 {
+            margin: .67em 0; } }
+
+    /* Description: Channel Image */
+    .channel-profile > img {
+        width: 36px !important;
+        margin-right: 6px;
+        height: auto; }
+
+    .pure-u-md-2-24 > img {
+        width: 36px !important;
+        height: auto; }
+
+    .pure-u-md-2-24 {
+        max-width: 46px; }
+
+    /* Description: Genre */
+    p#genre a,
+    p#genre a:hover {
+        pointer-events: none;
+        cursor: default; }
+
+    #likes {
+        float: right;
+        margin-top: -25px !important; }
+
+    /* Desctiption: Show more */
+    #description-box label {
+        font-weight: bold; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 15px; }
+
+    /* Comment Section: By creator */
+    body a.channel-owner {
+        padding: 2px 5px;
+        border-radius: br3; }
+
+    /* Banner on Channel */
+    .pure-u-md-20-24 > .h-box > img {
+        border-radius: br2;
+        opacity: 1;
+        transition: all 0.2s; }
+
+    /* Channel, Trending UI Links */
+    .pure-g {
+        .pure-u-1 .pure-md-1-3 {
+            margin-bottom: 0.5em; } }
+
+    .pure-u-lg-1-5 .h-box > {
+        #watch-on-youtube,
+        p,
+        .pure-control-group label {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em; }
+
+        .pure-form-stacked {
+            margin-top: 1.25em;
+            margin-bottom: 1.25em; } }
+
+    /* White Line (Spacer/padding) */
+    hr {
+        margin: 1.25em 0; }
+
+    .pure-form legend {
+        text-align: center;
+        margin-bottom: 1.25em;
+        padding: 1.25em; }
+
+    /* Settings */
+    .pure-form-aligned .pure-control-group label,
+    .pure-form-aligned .pure-control-group a,
+    .pure-form-aligned .pure-control-group input {
+        text-align: left !important;
+        margin: 6px; }
+
+    .pure-form-aligned .pure-control-group select {
+        margin: 0px 0px 0px 6px }
+
+    .pure-form-aligned .pure-controls {
+        margin: 0px;
+        text-align: right; }
+
+    #max_results {
+        width: 209.783px; }
+
+    @media screen and (max-width: 1280px) {
+        .pure-form-aligned .pure-control-group label,
+        .pure-form-aligned .pure-control-group a,
+        .pure-form-aligned .pure-controls {
+            padding: 0px; } }
+
+   /* if checkbox-animations {
+        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box,
+        .pure-g:not(.searchbar) > .searchbar,
+        .pure-form-aligned {
+            transition: all 0.2s; }
+
+        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box:hover {
+            transform: scale(1.020);
+            transition: all 0.2s;
+            opacity: 1;
+            z-index: 99999; }
+
+        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box:hover {
+            box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3); }
+
+        .pure-u-md-20-24 > .h-box > img {
+            box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.3); }
+
+        #player-container {
+            transition: all 0.2s; } }*/
+
+    .feed-menu {
+        margin-bottom: 1.25em; } }
+
+@-moz-document domain("redirect.invidious.io") {
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-primary: bg1l;
+            --bg-secondary: fg4l;
+            --bg-tertiary: fg4l;
+            --fg-header: fg1l;
+            --fg-primary: fg1l;
+            --fg-link: cl1l;
+            --fg-linkHover: cl2l;
+            --fg-dim: fg4l;
+            --edge-table: fg3l; }
+
+        ::selection,
+        ::selection {
+            background-color: fg7d;
+            color: fg1l; } }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-primary: bg1d;
+            --bg-secondary: fg4d;
+            --bg-tertiary: fg4d;
+            --fg-header: fg1d;
+            --fg-primary: fg1d;
+            --fg-link: cl1d;
+            --fg-linkHover: cl2d;
+            --fg-dim: fg4d;
+            --edge-table: fg3d; }
+
+        ::selection,
+        ::selection {
+            background-color: fg7d;
+            color: fg1d; } }
+
+    /* Hovering over links */
+    a:hover {
+        color: var(--fg-linkHover); }
+
+    .instances-table .requires-scripts table thead tr th.col {
+        border-collapse: seperate;
+        border-spacing: 0; }
+
+    .script-warning {
+        border-radius: br2 !important;
+        border: 1px solid var(--edge-table);
+        background: var(--fg-dim);
+        color: var(--fg-primary); } }
