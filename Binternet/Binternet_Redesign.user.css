@@ -2,8 +2,9 @@
 @name           Binternet - Create Your Theme [Redesign]
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/Binternet
 @version        1.0.0
-@description    A new userstyle
+@description    Create Your Theme by choosing a couple colours
 @author         Tsyron
+@license        AGPLv3
 @preprocessor   stylus
 
 @var            color color-background-light "Light Mode: Background" white
