@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
-@namespace      github.com/Tsyron/YouTube-Theme
+@namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
 @version        1.2.2
-@description    Make a Theme by choosing a couple colours
+@description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
 @license        AGPLv3
@@ -144,7 +144,7 @@ domain("studio.youtube.com") {
         --yt-spec-general-background-b: bg2l;
         --yt-spec-general-background-c: bg2l;
         --yt-spec-icon-active-other: fg1l;
-        --yt-spec-icon-disabled: bg5d;
+        --yt-spec-icon-disabled: fg8l;
         --yt-spec-icon-inactive: fg1l;
         --yt-spec-inverted-background: fg1l;
         --yt-spec-menu-background: bg3l;
@@ -207,6 +207,7 @@ domain("studio.youtube.com") {
         --paper-toggle-button-checked-button-color: cb1l;
         --paper-toggle-button-unchecked-button-color: bg1l;
         --paper-tooltip-background: fg1l !important;
+        --paper-dialog-background-color: var(--yt-spec-base-background);
         
         --yt-compact-link-icon-color: c1fl !important;
         --yt-deprecated-white-opacity-lighten-1: fg10l;
@@ -290,7 +291,7 @@ domain("studio.youtube.com") {
         --yt-spec-general-background-b: bg1d;
         --yt-spec-general-background-c: bg8d;
         --yt-spec-icon-active-other: fg1d;
-        --yt-spec-icon-disabled: bg4l;
+        --yt-spec-icon-disabled: fg8d;
         --yt-spec-icon-inactive: fg1d;
         --yt-spec-inverted-background: fg1d;
         --yt-spec-menu-background: bg5d;
@@ -357,6 +358,7 @@ domain("studio.youtube.com") {
         --paper-toggle-button-checked-button-color: cbd;
         --paper-toggle-button-unchecked-button-color: fg1d;
         --paper-tooltip-background: bg6d !important;
+        --paper-dialog-background-color: var(--yt-spec-base-background);
         
         --disabled-text-color: fg9d !important;
 
@@ -542,9 +544,9 @@ domain("studio.youtube.com") {
             color: fg1l; }
             
         /* Comment by creator */
-        ytd-author-comment-badge-renderer {
+        /*ytd-author-comment-badge-renderer {
             background-color: fg13l;
-            color: bg1l; }
+            color: bg1l; }*/
             
         /* Video player: subscribe */
         .ytp-sb-subscribe, a.ytp-sb-subscribe {
@@ -799,10 +801,6 @@ domain("studio.youtube.com") {
             
         .yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__icon {
             color: fg1d; }
-
-        /* Subscribe Button */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover {
-            background-color: fg10d !important; }
             
         /* Like Button */
         yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(2) > path:nth-child(1),
@@ -820,10 +818,13 @@ domain("studio.youtube.com") {
         #ryd-bar-container {
             background: fg8d; }
             
-        /* Cookies */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+        /* Filled Button: Subscribe, Cookies */
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled, .ytp-sb-subscribe, a.ytp-sb-subscribe {
             color: bg1d;
             background-color: fg1d; }
+            
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover, .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover, .ytp-sb-subscribe:hover, a.ytp-sb-subscribe:hover {
+            background-color: fg10d; }
             
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
             color: fg1d;
@@ -857,6 +858,10 @@ domain("studio.youtube.com") {
             color: bg1d;
             background-color: cb2d; }
             
+        /* Label */
+        .yt-spec-button-shape-with-label__label {
+            color: fg1d; }
+            
         /* Description: Video's, About */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
             color: fg1d;
@@ -871,13 +876,9 @@ domain("studio.youtube.com") {
             color: fg1d; }
             
         /* Comment by creator */
-        ytd-author-comment-badge-renderer {
+        /*ytd-author-comment-badge-renderer {
             background-color: bg6d;
-            color: fg1d; }
-
-        /* Video player: subscribe */
-        .ytp-sb-subscribe, a.ytp-sb-subscribe {
-             background: fg1d; }
+            color: fg1d; }*/
 
         .ytp-sb-unsubscribe {
             color: fg1d; }
