@@ -127,6 +127,9 @@ domain("5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p") {
                 
         a[href^="/search.php?"]:hover, #inputWrapper button:hover {
                 background-color: var(--main-fourth); }
+                
+        .search-container {
+            margin: 20px 40px 40px 40px; }
             
         .search-container input, #inputWrapper input {
             color: var(--fg-color);
@@ -162,7 +165,9 @@ domain("5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p") {
             padding: .54em 1em;
             height: 37px; }
                 
-        .search-container input:focus, a[href^="/search.php?"]:focus, #inputWrapper input:focus, #inputWrapper button:focus {
+        .search-container input:focus, a[href^="/search.php?"]:focus,
+        #inputWrapper input:focus,
+        #inputWrapper button:focus {
             border: 1px solid var(--blue-color); }
                 
         ::placeholder {
@@ -170,6 +175,8 @@ domain("5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p") {
             
         .img-container {
             grid-gap: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
             /*margin: 0px;
             width: 100%;*/
             .img-result {
