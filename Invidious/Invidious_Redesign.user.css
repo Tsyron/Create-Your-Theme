@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Invidious - Create Your Theme [Redesign]
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/Invidious
-@version        1.0.0
+@version        1.0.1
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -76,6 +76,8 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
     fg7l=rgba(fg1l, 0.2) /* progress bar unloaded */
     fg8l=rgba(fg1l, 0.8) /* time */
     fg9l=rgba(fg1l, 0.75)
+    fg10l=darken(fg1l, 50%)
+    fg11l=rgba(fg10l, 0.75)
 
     ca1l=color-accent-light
     ca2l=rgba(ca1l, 0.8) /* hover */
@@ -94,6 +96,7 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
     bg3d=rgba(bg1d, 0.8) /* time */
     bg4d=darken(bg1d, 50%)
     bg6d=rgba(bg1d, 0.75)
+    bg7d=rgba(bg4d, 0.75)
     
     fg1d=color-foreground-dark
     fg2d=rgba(fg1d, 0.8) /* links hover */
@@ -448,6 +451,7 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
 
                 /* Tooltip time */
                 .vjs-mouse-display .vjs-time-tooltip {
+                    border: 1px solid fg3l !important; 
                     background-color: bg1l;
                     color: fg1l; }
 
@@ -473,7 +477,7 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
 
                 /* Subtitles */
                 .vjs-text-track-display > div > div > div {
-                    background-color: fg9l !important;
+                    background-color: fg11l !important;
                     color: bg1l !important; }
                 
                 /* Loading */
@@ -551,436 +555,867 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
 
         /* Scrollbar */
         ::-webkit-scrollbar {
-            background-color: bg6l; }
+            background-color: bg1l; }
 
         ::-webkit-scrollbar-thumb {
-            background-color: bg7l; } }
+            background-color: fg1l; } }
 
     .light-theme {
-        /* Background, Foreground */
-        body,
-        .pure-g,
-        .pure-form legend {
-            background: bg1l;
-            color: fg1l; }
-
-        /* Links */
-        summary,
-        a.feed-menu-item.pure-menu-heading,
-        a:link:not(.pure-button):not(.channel-owner) {
-            color: fg2l; }
-
-        a,
-        a:active,
-        a:visited,
-        footer a {
-            color: fg2l !important; }
-
-        a.feed-menu-item.pure-menu-heading:hover,
-        a:link:not(.pure-button):not(.channel-owner):hover {
-            color: fg1l; }
-
-        summary:hover,
-        summary:focus,
-        a:hover,
-        footer a:hover {
-            color: fg1l !important; }
-
-        /* Links Outside of Invidious */
-        a[href^="https://www.youtube.com"],
-        a[href^="https://redirect.invidious.io"],
-        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
-        #descriptionWrapper a {
-            color: cl2l !important; }
-
-        a[href^="https://www.youtube.com"]:hover,
-        a[href^="https://redirect.invidious.io"]:hover,
-        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
-        #descriptionWrapper a:hover {
-            color: cl1l !important; }
-
-        /* Input, select & textarea */
-        input,
-        input[type="email"],
-        input[type="number"],
-        input[type="password"],
-        input[type="text"],
-        input[type="submit"],
-        input[type="checkbox"],
-        input[type="radio"],
-        input[type="range"],
-        select,
-        textarea {
-            border: 1px solid fg3l;
-            -webkit-border: 1px solid fg3l;
-            background-color: fg4l;
-            color: fg1l; }
-
-        input:focus,
-        input[type="email"]:focus,
-        input[type="number"]:focus,
-        input[type="password"]:focus,
-        input[type="text"]:focus,
-        input[type="submit"]:focus,
-        input[type="checkbox"]:focus,
-        input[type="radio"]:focus,
-        input[type="range"]:focus,
-        select:focus,
-        textarea:focus {
-            border: 1px solid cb1l;
-            -webkit-border: 1px solid cb1l; }
-
-        select {
-            background-color: fg4l; }
-
-        select:focus {
-            background-color: bg2l; }
-
-        /* Checkbox & Radio */
-        input[type="checkbox"],
-        input[type="radio"] {
-            background-color: fg6l; }
-
-        /* Checkbox & Radio: Color check */
-        input[type="checkbox"]:before,
-        input[type="checkbox"]:checked,
-        input[type="checkbox"]:checked:before,
-        input[type="radio"]:before,
-        input[type="radio"]:checked,
-        input[type="radio"]:checked:before {
-            background-color: fg4l !important; }
-
-        input[type="radio"]:checked:after {
-            background-color: fg1l !important; }
-
-        /* Range */
-        input[type="range"]::-webkit-slider-thumb {
-            background: fg4l;
-            box-shadow: -80px 0 0 75px fg4l;
-            border-right: 1px solid fg3l !important; }
-
-        input[disabled] {
-            background-color: fg6l; }
-
-        /* Button */
-        .pure-button-primary,
-        .pure-button-secondary,
-        .pure-button-primary:hover,
-        .pure-button-secondary:hover,
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            border: 1px solid fg3l !important;
-            color: fg1l !important; }
-
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            border: 1px solid cb1l !important; }
-
-        .pure-button-primary,
-        .pure-button-secondary {
-            background-color: fg4l !important; }
-
-        .pure-button-primary:hover,
-        .pure-button-secondary:hover,
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            background-color: fg5l !important; }
-
-        /* Button: Subscribe */
-        #subscribe,
-        #subscribe:hover,
-        #subscribe:focus {
-            border: 1px solid fg3l !important;
-            color: bg1l !important; }
-
-        #subscribe:focus {
-            border: 1px solid cb1l !important; }
-
-        #subscribe {
-            background-color: ca2l !important; }
-
-        #subscribe:hover,
-        #subscribe:focus {
-            background-color: ca1l !important; }
-
-        if checkbox-subscribe-text-light {
-            #subscribe,
-            #subscribe:hover,
-            #subscribe:focus,
-            .video-js .vjs-big-play-button .vjs-icon-placeholder {
-                color: fg1l !important; } }
-
-        /* Invidious Logo */
-        .navbar .index-link,
-        #search-widget #logo .pure-menu-heading {
-            color: ca2l; }
-
-        .navbar .index-link:hover {
-            color: ca1l !important; }
-
-        /* Log in & Icons */
-        .pure-g .navbar i,
-        a.pure-menu-heading input,
-        .pure-u-1-3 a.pure-menu-heading {
-            color: fg2l !important; }
-
-        .pure-g .navbar i:hover,
-        a.pure-menu-heading input:hover,
-        .pure-u-1-3 a.pure-menu-heading:hover {
-            color: fg1l !important; }
-
-        /* Thumbnail: Only Highlights YouTube Video's */
-        a[href^="/watch?v="] p:not(.length),
-        a[href^="/watch?v="] p:not(.length):hover {
-            color: fg1l; }
-
-        /* Thumbnail: Length Time*/
-        p.length {
-            color: bg1l !important;
-            background-color: fg8l !important; }
-
-        /* Thumbnail: Little icons beside video */
-        i.icon.ion-logo-youtube,
-        i.icon.ion-md-headset,
-        i.icon.ion-md-jet {
-            color: fg2l !important; }
-
-        i.icon.ion-logo-youtube:hover,
-        i.icon.ion-md-headset:hover,
-        i.icon.ion-md-jet:hover {
-            color: fg1l !important; }
-
-        /* Thumbnail: Link Channel Name */
-        p.channel-name,
-        #channel-name,
-        .pure-u-1 .pure-u-14-24 a {
-            color: fg2l !important; }
-
-        p.channel-name:hover,
-        #channel-name:hover,
-        .pure-u-1 .pure-u-14-24 a:hover {
-            color: fg1l !important; }
-
-        /* Thumbnail: Video Data */
-        p.video-data,
-        div.pure-u-10-24,
-        p.video-data:hover,
-        div.pure-u-10-24:hover {
-            color: fg1l; }
-
-        /* Thumbnail: Watched */
-        div.watched-indicator {
-            background-color: ca1l; }
-
-        div.watched-overlay {
-            background-color: ca3l; }
-
-        /* Thumbnail Button: Watch, Delete from history */
-        .top-left-overlay,
-        .bottom-right-overlay,
-        .watched {
-            .pure-button-secondary {
-                color: fg1l !important;
-                border: 1px solid fg5l !important;
-                background-color: bg1l !important; }
-
-            .pure-button-secondary:hover,
-            .pure-button-secondary:focus {
-                background-color: bg2l !important; }
-
-            .pure-button-secondary:focus {
-                border: 1px solid cb1l !important; } }
-
-        /* Searchbox */
-        .pure-form input[type="search"] {
-            border: 1px solid fg3l;
-            background-color: transparent;
-            color: fg1l; }
-
-        .pure-form input[type="search"]:focus {
-            border: 1px solid cb1l; }
-
-        /* Search: Filter box */
-        #filters-box {
-            border: 1px solid fg3l;
-            background-color: fg4l !important; }
-
-        /* Video Player */
-        .video-js {
-            /* Video player: Title Overlay */
-            .vjs-overlay-top a {
-                color: bg1l !important; }
-
-            .vjs-overlay-top {
-                background-color: fg9l !important; }
-
-            /* Play button */
-            .vjs-big-play-button {
-                background-color: ca1l !important; }
-
-            .vjs-big-play-button .vjs-icon-placeholder {
-                color: bg1l; }
-
-            /* Video player: Controls: Color */
-            .vjs-control-bar,
-            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
-            .vjs-modal-dialog .vjs-modal-dialog-content {
-                background-color: bg1l;
+            /* Background, Foreground */
+            body,
+            .pure-g,
+            .pure-form legend {
+                background: bg1l;
                 color: fg1l; }
 
-            .vjs-control-bar,
-            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
-            .vjs-modal-dialog .vjs-modal-dialog-content,
-            .vjs-share__social {
-                border: 1px solid fg3l !important; }
+            /* Links */
+            summary,
+            a.feed-menu-item.pure-menu-heading,
+            a:link:not(.pure-button):not(.channel-owner) {
+                color: fg2l; }
+
+            a,
+            a:active,
+            a:visited,
+            footer a {
+                color: fg2l !important; }
+
+            a.feed-menu-item.pure-menu-heading:hover,
+            a:link:not(.pure-button):not(.channel-owner):hover {
+                color: fg1l; }
+
+            summary:hover,
+            summary:focus,
+            a:hover,
+            footer a:hover {
+                color: fg1l !important; }
+
+            /* Links Outside of Invidious */
+            a[href^="https://www.youtube.com"],
+            a[href^="https://redirect.invidious.io"],
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+            #descriptionWrapper a {
+                color: cl2l !important; }
+
+            a[href^="https://www.youtube.com"]:hover,
+            a[href^="https://redirect.invidious.io"]:hover,
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+            #descriptionWrapper a:hover {
+                color: cl1l !important; }
+
+            /* Input, select & textarea */
+            input,
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            input[type="text"],
+            input[type="submit"],
+            input[type="checkbox"],
+            input[type="radio"],
+            input[type="range"],
+            select,
+            textarea {
+                border: 1px solid fg3l;
+                -webkit-border: 1px solid fg3l;
+                background-color: fg4l;
+                color: fg1l; }
+
+            input:focus,
+            input[type="email"]:focus,
+            input[type="number"]:focus,
+            input[type="password"]:focus,
+            input[type="text"]:focus,
+            input[type="submit"]:focus,
+            input[type="checkbox"]:focus,
+            input[type="radio"]:focus,
+            input[type="range"]:focus,
+            select:focus,
+            textarea:focus {
+                border: 1px solid cb1l;
+                -webkit-border: 1px solid cb1l; }
+
+            select {
+                background-color: fg4l; }
+
+            select:focus {
+                background-color: bg2l; }
+
+            /* Checkbox & Radio */
+            input[type="checkbox"],
+            input[type="radio"] {
+                background-color: fg6l; }
+
+            /* Checkbox & Radio: Color check */
+            input[type="checkbox"]:before,
+            input[type="checkbox"]:checked,
+            input[type="checkbox"]:checked:before,
+            input[type="radio"]:before,
+            input[type="radio"]:checked,
+            input[type="radio"]:checked:before {
+                background-color: fg4l !important; }
+
+            input[type="radio"]:checked:after {
+                background-color: fg1l !important; }
+
+            /* Range */
+            input[type="range"]::-webkit-slider-thumb {
+                background: fg4l;
+                box-shadow: -80px 0 0 75px fg4l;
+                border-right: 1px solid fg3l !important; }
+
+            input[disabled] {
+                background-color: fg6l; }
 
             /* Button */
-            button,
-            .vjs-slider,
-            .vjs-control-bar button,
-            .vjs-icon-placeholder,
-            .vjs-icon-share,
-            .vjs-playback-rate-value .vjs-control-text,
-            button:hover,
-            .vjs-slider::before,
-            .vjs-control-bar button:hover,
-            .vjs-icon-placeholder:hover,
-            .vjs-icon-share:hover,
-            .vjs-playback-rate-value .vjs-control-text:hover {
-                color: fg1l; }
+            .pure-button-primary,
+            .pure-button-secondary,
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid fg3l !important;
+                color: fg1l !important; }
 
-            /* Progress Bar */
-            .vjs-load-progress,
-            .vjs-load-progress div {
-                background-color: fg5l; }
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid cb1l !important; }
 
-            .vjs-slider {
-                background-color: fg7l !important; }
+            .pure-button-primary,
+            .pure-button-secondary {
+                background-color: fg4l !important; }
 
-            /* Sliders */
-            .vjs-volume-level {
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                background-color: fg5l !important; }
+
+            /* Button: Subscribe */
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus {
+                border: 1px solid fg3l !important;
+                color: bg1l !important; }
+
+            #subscribe:focus {
+                border: 1px solid cb1l !important; }
+
+            #subscribe {
+                background-color: ca2l !important; }
+
+            #subscribe:hover,
+            #subscribe:focus {
                 background-color: ca1l !important; }
 
-            .vjs-play-progress,
-            .vjs-volume-level {
+            if checkbox-subscribe-text-light {
+                #subscribe,
+                #subscribe:hover,
+                #subscribe:focus,
+                .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                    color: fg1l !important; } }
+
+            /* Invidious Logo */
+            .navbar .index-link,
+            #search-widget #logo .pure-menu-heading {
+                color: ca2l; }
+
+            .navbar {
+                .index-link:hover,
+                .index-link:visited,
+                .index-link:focus {
+                    color: ca1l !important; } }
+
+            /* Log in & Icons */
+            .pure-g .navbar i,
+            a.pure-menu-heading input,
+            .pure-u-1-3 a.pure-menu-heading {
+                color: fg2l !important; }
+
+            .pure-g .navbar i:hover,
+            a.pure-menu-heading input:hover,
+            .pure-u-1-3 a.pure-menu-heading:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Only Highlights YouTube Video's */
+            a[href^="/watch?v="] p:not(.length),
+            a[href^="/watch?v="] p:not(.length):hover {
+                color: fg1l; }
+
+            /* Thumbnail: Length Time*/
+            p.length {
+                color: bg1l !important;
+                background-color: fg8l !important; }
+
+            /* Thumbnail: Little icons beside video */
+            i.icon.ion-logo-youtube,
+            i.icon.ion-md-headset,
+            i.icon.ion-md-jet {
+                color: fg2l !important; }
+
+            i.icon.ion-logo-youtube:hover,
+            i.icon.ion-md-headset:hover,
+            i.icon.ion-md-jet:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Link Channel Name */
+            p.channel-name,
+            #channel-name,
+            .pure-u-1 .pure-u-14-24 a {
+                color: fg2l !important; }
+
+            p.channel-name:hover,
+            #channel-name:hover,
+            .pure-u-1 .pure-u-14-24 a:hover {
+                color: fg1l !important; }
+
+            /* Thumbnail: Video Data */
+            p.video-data,
+            div.pure-u-10-24,
+            p.video-data:hover,
+            div.pure-u-10-24:hover {
+                color: fg1l; }
+
+            /* Thumbnail: Watched */
+            div.watched-indicator {
+                background-color: ca1l; }
+
+            div.watched-overlay {
+                background-color: ca3l; }
+
+            /* Thumbnail Button: Watch, Delete from history */
+            .top-left-overlay,
+            .bottom-right-overlay,
+            .watched {
+                .pure-button-secondary {
+                    color: fg1l !important;
+                    border: 1px solid fg5l !important;
+                    background-color: bg1l !important; }
+
+                .pure-button-secondary:hover,
+                .pure-button-secondary:focus {
+                    background-color: bg2l !important; }
+
+                .pure-button-secondary:focus {
+                    border: 1px solid cb1l !important; } }
+
+            /* Searchbox */
+            .pure-form input[type="search"] {
+                border: 1px solid fg3l;
+                background-color: transparent;
+                color: fg1l; }
+
+            .pure-form input[type="search"]:focus {
+                border: 1px solid cb1l; }
+
+            /* Search: Filter box */
+            #filters-box {
+                border: 1px solid fg3l;
+                background-color: fg4l !important; }
+
+            /* Video Player */
+            .video-js {
+                /* Video player: Title Overlay */
+                .vjs-overlay-top a {
+                    color: bg1l !important; }
+
+                .vjs-overlay-top {
+                    background-color: fg9l !important; }
+
+                /* Play button */
+                .vjs-big-play-button {
+                    background-color: ca1l !important; }
+
+                .vjs-big-play-button .vjs-icon-placeholder {
+                    color: bg1l; }
+
+                /* Video player: Controls: Color */
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content {
+                    background-color: bg1l;
+                    color: fg1l; }
+
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content,
+                .vjs-share__social {
+                    border: 1px solid fg3l !important; }
+
+                /* Button */
+                button,
+                .vjs-slider,
+                .vjs-control-bar button,
+                .vjs-icon-placeholder,
+                .vjs-icon-share,
+                .vjs-playback-rate-value .vjs-control-text,
+                button:hover,
+                .vjs-slider::before,
+                .vjs-control-bar button:hover,
+                .vjs-icon-placeholder:hover,
+                .vjs-icon-share:hover,
+                .vjs-playback-rate-value .vjs-control-text:hover {
+                    color: fg1l; }
+
+                /* Progress Bar */
+                .vjs-load-progress,
+                .vjs-load-progress div {
+                    background-color: fg5l; }
+
+                .vjs-slider {
+                    background-color: fg7l !important; }
+
+                /* Sliders */
+                .vjs-volume-level {
+                    background-color: ca1l !important; }
+
+                .vjs-play-progress,
+                .vjs-volume-level {
+                    color: ca1l; }
+
+                /* Controls Options: Hover */
+                .vjs-menu li.vjs-menu-item:focus,
+                .vjs-menu li.vjs-menu-item:hover {
+                    background-color: ca4l;
+                    color: bg3l; }
+
+                .vjs-menu li.vjs-selected,
+                .vjs-menu li.vjs-selected:focus,
+                .vjs-menu li.vjs-selected:hover {
+                    background-color: ca1l;
+                    color: bg1l; }
+
+                /* Tooltip time */
+                .vjs-mouse-display .vjs-time-tooltip {
+                    background-color: bg1l;
+                    color: fg1l; }
+
+                /* Settings, Share */
+                .vjs-share__short-link,
+                .vjs-share__btn,
+                .vjs-share__short-link-wrapper {
+                    background-color: bg3l;
+                    color: fg1l; }
+
+                .vjs-share__btn {
+                    border: 1px solid fg3l; }
+
+                .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+                .vjs-share__subtitle,
+                .vjs-share__title,
+                .vjs-text-track-settings legend {
+                    color: fg1l; }
+
+                /* Video player: Share Links */
+                .vjs-share__btn svg {
+                    filter: invert(1); }
+
+                /* Subtitles */
+                .vjs-text-track-display > div > div > div {
+                    background-color: fg11l !important;
+                    color: bg1l !important; }
+                
+                /* Loading */
+                .vjs-loading-spinner::before, .vjs-loading-spinner::after {
+                    border: 6px solid ca1l } }
+
+            #player,
+            #player_html5_api {
+                background-color: bg1l !important; }
+
+            /*.player-dimensions.vjs-fluid {
+                border: 1px solid fg3l; }*/
+            /* Video player: Controls: Progress Bar */
+            .video-js.player-style-invidious .vjs-play-progress {
+                background-color: ca1l !important; }
+
+            /* Video player: close button */
+            .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+                color: fg1l; }
+
+            /* Description: Genre */
+            p#genre a,
+            p#genre a:hover {
+                color: fg1l; }
+
+            /* Description: Show More */
+            #description-box label a,
+            #description-box label a:hover,
+            #description-box label a:focus {
+                color: fg1l !important; }
+
+            /* Comment Section: By creator */
+            a.channel-owner,
+            a.channel-owner:hover {
+                border: 1px solid fg3l !important; }
+
+            a.channel-owner {
+                background-color: fg4l !important; }
+
+            a.channel-owner:hover {
+                background-color: fg4l !important; }
+
+            .pure-u-md-22-24 {
+                .channel-owner a,
+                .channel-owner a:hover,
+                .channel-owner a:visited,
+                .channel-owner .icon.ion.ion-md-checkmark-circle {
+                    color: fg2l !important; } }
+
+            /* Comment Section: Replies */
+            .pure-u-23-24 a[href="javascript:void(0)"] {
+                color: cb2l !important; }
+
+            .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+                color: cb1l !important; }
+
+            /* Comment Section: Heart icon */
+            .icon.ion-ios-heart.creator-heart-small-container {
                 color: ca1l; }
 
-            /* Controls Options: Hover */
-            .vjs-menu li.vjs-menu-item:focus,
-            .vjs-menu li.vjs-menu-item:hover {
-                background-color: ca2l;
-                color: bg3l; }
-
-            .vjs-menu li.vjs-selected,
-            .vjs-menu li.vjs-selected:focus,
-            .vjs-menu li.vjs-selected:hover {
-                background-color: ca1l;
-                color: bg1l; }
-
-            /* Tooltip time */
-            .vjs-mouse-display .vjs-time-tooltip {
-                background-color: bg1l;
+            /* Settings: Volume Text */
+            span#volume-value {
                 color: fg1l; }
 
-            /* Settings, Share */
-            .vjs-share__short-link,
-            .vjs-share__btn,
-            .vjs-share__short-link-wrapper {
-                background-color: bg3l;
-                color: fg1l; }
+            /* Hr, Section */
+            hr,
+            .pure-form legend,
+            .pure-form-aligned legend,
+            .underlined {
+                border-color: fg3l; }
 
-            .vjs-share__btn {
-                border: 1px solid fg3l; }
-
-            .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
-            .vjs-share__subtitle,
-            .vjs-share__title,
-            .vjs-text-track-settings legend {
-                color: fg1l; }
-
-            /* Video player: Share Links */
-            .vjs-share__btn svg {
-                filter: invert(1); }
-
-            /* Subtitles */
-            .vjs-text-track-display > div > div > div {
-                background-color: fg9l !important;
-                color: bg1l !important; } }
-
-        #player,
-        #player_html5_api {
-            background-color: bg1l !important; }
-
-        .player-dimensions.vjs-fluid {
-            border: 1px solid fg3l; }
-
-        /* Video player: Controls: Progress Bar */
-        .video-js.player-style-invidious .vjs-play-progress {
-            background-color: ca1l !important; }
-
-        /* Video player: close button */
-        .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
-            color: fg1l; }
-
-        /* Description: Genre */
-        p#genre a,
-        p#genre a:hover {
-            color: fg1l; }
-
-        /* Description: Show More */
-        #description-box label a,
-        #description-box label a:hover,
-        #description-box label a:focus {
-            color: fg1l !important; }
-
-        /* Comment Section: By creator */
-        a.channel-owner,
-        a.channel-owner:hover {
-            border: 1px solid fg3l !important; }
-
-        a.channel-owner {
-            background-color: fg4l !important; }
-
-        a.channel-owner:hover {
-            background-color: fg4l !important; }
-
-        .pure-u-md-22-24 {
-            .channel-owner a,
-            .channel-owner a:hover,
-            .channel-owner a:visited,
-            .channel-owner .icon.ion.ion-md-checkmark-circle {
-                color: fg2l !important; } }
-
-        /* Comment Section: Replies */
-        .pure-u-23-24 a[href="javascript:void(0)"] {
-            color: cb2l !important; }
-
-        .pure-u-23-24 a[href="javascript:void(0)"]:hover {
-            color: cb1l !important; }
-
-        /* Comment Section: Heart icon */
-        .icon.ion-ios-heart.creator-heart-small-container {
-            color: ca1l; }
-
-        /* Settings: Volume Text */
-        span#volume-value {
-            color: fg1l; }
-
-        /* Hr, Section */
-        hr,
-        .pure-form legend,
-        .pure-form-aligned legend,
-        .underlined {
-            border-color: fg3l; }
-
-        /* Placeholder */
-        ::placeholder {
-            color: fg2l; } }
+            /* Placeholder */
+            ::placeholder {
+                color: fg2l; } }
 
     /* Dark Theme */
     @media (prefers-color-scheme: dark) {
 
         .no-theme {
+            /* Background, Foreground */
+            body,
+            .pure-g,
+            .pure-form legend {
+                background: bg1d;
+                color: fg1d; }
+
+            /* Links */
+            a,
+            a:active,
+            a:visited,
+            summary,
+            a.feed-menu-item.pure-menu-heading,
+            a:link:not(.pure-button):not(.channel-owner) {
+                color: fg2d; }
+
+            footer a {
+                color: fg2d !important; }
+
+            a:hover,
+            summary:hover,
+            a.feed-menu-item.pure-menu-heading:hover,
+            a:link:not(.pure-button):not(.channel-owner):hover {
+                color: fg1d; }
+
+            footer a:hover {
+                color: fg1d !important; }
+
+            /* Links Outside of Invidious */
+            a[href^="https://www.youtube.com"],
+            a[href^="https://redirect.invidious.io"],
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
+            #descriptionWrapper a {
+                color: cl2d !important; }
+
+            a[href^="https://www.youtube.com"]:hover,
+            a[href^="https://redirect.invidious.io"]:hover,
+            div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
+            #descriptionWrapper a:hover {
+                color: cl1d !important; }
+
+            /* Input, select & textarea */
+            input,
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            input[type="text"],
+            input[type="submit"],
+            input[type="checkbox"],
+            input[type='radio'],
+            input[type='range'],
+            select,
+            textarea {
+                border: 1px solid fg3d;
+                -webkit-border: 1px solid fg3d;
+                background-color: fg4d;
+                color: fg1d; }
+
+            input:focus,
+            input[type="email"]:focus,
+            input[type="number"]:focus,
+            input[type="password"]:focus,
+            input[type="text"]:focus,
+            input[type="submit"]:focus,
+            input[type="checkbox"]:focus,
+            input[type="radio"]:focus,
+            input[type='range']:focus,
+            select:focus,
+            textarea:focus {
+                border: 1px solid cb1d;
+                -webkit-border: 1px solid cb1d; }
+
+            select {
+                background-color: fg4d; }
+
+            select:focus {
+                background-color: bg2d; }
+
+            /* Checkbox & Radio */
+            input[type="checkbox"],
+            input[type='radio'] {
+                background-color: fg6d; }
+
+            /* Checkbox & Radio: Color check */
+            input[type="checkbox"]:before,
+            input[type="checkbox"]:checked,
+            input[type="checkbox"]:checked:before,
+            input[type='radio']:before,
+            input[type='radio']:checked,
+            input[type='radio']:checked:before {
+                background-color: fg4d !important; }
+
+            input[type='radio']:checked:after {
+                background-color: fg1d !important; }
+
+            /* Range */
+            input[type='range']::-webkit-slider-thumb {
+                background: fg3d;
+                box-shadow: -80px 0 0 75px fg3d;
+                border-right: 1px solid fg3d !important; }
+
+            input[disabled] {
+                background-color: fg6d; }
+
+            /* Button */
+            .pure-button-primary,
+            .pure-button-secondary,
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid fg3d !important;
+                color: fg1d !important; }
+
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                border: 1px solid cb1d !important; }
+
+            .pure-button-primary,
+            .pure-button-secondary {
+                background-color: fg4d !important; }
+
+            .pure-button-primary:hover,
+            .pure-button-secondary:hover,
+            .pure-button-primary:focus,
+            .pure-button-secondary:focus {
+                background-color: fg5d !important; }
+
+            /* Button: Subscribe */
+            #subscribe,
+            #subscribe:hover,
+            #subscribe:focus {
+                border: 1px solid fg3d !important;
+                color: fg1d !important; }
+
+            #subscribe:focus {
+                border: 1px solid cb1d !important; }
+
+            #subscribe {
+                background-color: ca2d !important; }
+
+            #subscribe:hover,
+            #subscribe:focus {
+                background-color: ca1d !important; }
+
+            if checkbox-subscribe-text-dark {
+                #subscribe,
+                #subscribe:hover,
+                #subscribe:focus,
+                .video-js .vjs-big-play-button .vjs-icon-placeholder {
+                    color: bg1d !important; } }
+
+            /* Invidious Logo */
+            .navbar .index-link,
+            #search-widget #logo .pure-menu-heading {
+                color: ca2d; }
+
+            .navbar .index-link:hover {
+                color: ca1d !important; }
+
+            /* Log in & Icons */
+            .pure-g .navbar i,
+            a.pure-menu-heading input,
+            .pure-u-1-3 a.pure-menu-heading {
+                color: fg2d !important; }
+
+            .pure-g .navbar i:hover,
+            a.pure-menu-heading input:hover,
+            .pure-u-1-3 a.pure-menu-heading:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Only Highlights YouTube Video's */
+            a[href^="/watch?v="] p:not(.length),
+            a[href^="/watch?v="] p:not(.length):hover {
+                color: fg1d; }
+
+            /* Thumbnail: Length Time*/
+            p.length {
+                color: fg1d !important;
+                background-color: bg3d !important; }
+
+            /* Thumbnail: Little icons beside video */
+            i.icon.ion-logo-youtube,
+            i.icon.ion-md-headset,
+            i.icon.ion-md-jet {
+                color: fg2d !important; }
+
+            i.icon.ion-logo-youtube:hover,
+            i.icon.ion-md-headset:hover,
+            i.icon.ion-md-jet:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Link Channel Name */
+            p.channel-name,
+            #channel-name,
+            .pure-u-1 .pure-u-14-24 a {
+                color: fg2d !important; }
+
+            p.channel-name:hover,
+            #channel-name:hover,
+            .pure-u-1 .pure-u-14-24 a:hover {
+                color: fg1d !important; }
+
+            /* Thumbnail: Video Data */
+            p.video-data,
+            div.pure-u-10-24,
+            p.video-data:hover,
+            div.pure-u-10-24:hover {
+                color: fg2d; }
+
+            /* Thumbnail: Watched */
+            div.watched-indicator {
+                background-color: ca1d; }
+
+            div.watched-overlay {
+                background-color: ca3d; }
+
+            /* Thumbnail Button: Watch, Delete from history */
+            .top-left-overlay,
+            .bottom-right-overlay,
+            .watched {
+                .pure-button-secondary {
+                    color: fg1d !important;
+                    border: 1px solid fg3d !important;
+                    background-color: bg1d !important; }
+
+                .pure-button-secondary:hover,
+                .pure-button-secondary:focus {
+                    background-color: bg2d !important; }
+
+                .pure-button-secondary:focus {
+                    border: 1px solid cb1d !important; } }
+
+            /* Searchbox */
+            .pure-form input[type="search"] {
+                border: 1px solid fg3d;
+                background-color: transparent;
+                color: fg1d; }
+
+            .pure-form input[type="search"]:focus {
+                border: 1px solid cb1d; }
+
+            /* Search: Filter box */
+            #filters-box {
+                border: 1px solid fg3d;
+                background: fg6d !important; }
+
+            /* Video Player */
+            .video-js {
+                /* Video player: Title Overlay */
+                .vjs-overlay-top a {
+                    color: fg1d !important; }
+
+                .vjs-overlay-top {
+                    background-color: bg6d !important; }
+
+                /* Play button */
+                .vjs-big-play-button {
+                    border: 1px solid fg3d;
+                    background-color: ca1d !important; }
+
+                .vjs-big-play-button .vjs-icon-placeholder {
+                    color: fg1d; }
+
+                /* Video player: Controls: Color */
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content {
+                    background-color: bg1d;
+                    color: fg1d; }
+
+                .vjs-control-bar,
+                .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
+                .vjs-modal-dialog .vjs-modal-dialog-content,
+                .vjs-share__social {
+                    border: 1px solid fg3d !important; }
+
+                /* Button */
+                button,
+                .vjs-slider,
+                .vjs-control-bar button,
+                .vjs-icon-placeholder,
+                .vjs-icon-share,
+                .vjs-playback-rate-value .vjs-control-text,
+                button:hover,
+                .vjs-slider::before,
+                .vjs-control-bar button:hover,
+                .vjs-icon-placeholder:hover,
+                .vjs-icon-share:hover,
+                .vjs-playback-rate-value .vjs-control-text:hover {
+                    color: fg1d; }
+
+                /* Progress Bar */
+                .vjs-load-progress,
+                .vjs-load-progress div {
+                    background-color: fg3d !important }
+
+                .vjs-slider {
+                    background-color: fg4d !important; }
+
+                /* Sliders */
+                .vjs-volume-level {
+                    background-color: ca1d !important; }
+
+                .vjs-play-progress,
+                .vjs-volume-level {
+                    color: ca1d; }
+
+                /* Controls Options: Hover */
+                .vjs-menu li.vjs-menu-item:focus,
+                .vjs-menu li.vjs-menu-item:hover {
+                    background-color: ca4d;
+                    color: fg1d; }
+
+                .vjs-menu li.vjs-selected,
+                .vjs-menu li.vjs-selected:focus,
+                .vjs-menu li.vjs-selected:hover {
+                    background-color: ca1d;
+                    color: fg1d; }
+
+                /* Tooltip time */
+                .vjs-mouse-display .vjs-time-tooltip {
+                    border: 1px solid fg3d !important;
+                    background-color: bg1d;
+                    color: fg1d; }
+
+                /* Settings, Share */
+                .vjs-share__short-link,
+                .vjs-share__btn,
+                .vjs-share__short-link-wrapper {
+                    background-color: bg2d;
+                    color: fg1d; }
+
+                .vjs-share__btn {
+                    border: 1px solid fg3d; }
+
+                .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
+                .vjs-share__subtitle,
+                .vjs-share__title,
+                .vjs-text-track-settings legend {
+                    color: fg1d; }
+
+                /* Subtitles */
+                .vjs-text-track-display > div > div > div {
+                    background-color: bg7d !important;
+                    color: fg1d !important; }
+
+                /* Loading */
+                .vjs-loading-spinner::before, .vjs-loading-spinner::after {
+                    border: 6px solid ca1d } }
+
+            #player,
+            #player_html5_api {
+                background-color: bg4d !important; }
+
+            /* Video player: Controls: Progress Bar */
+            .video-js.player-style-invidious .vjs-play-progress {
+                background-color: ca1d !important; }
+
+            /* Video player: close button */
+            .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
+                color: fg1d; }
+
+            /* Description: Genre */
+            p#genre a,
+            p#genre a:hover {
+                color: fg1d; }
+
+            /* Description: Show More */
+            #description-box label a,
+            #description-box label a:hover,
+            #description-box label a:focus {
+                color: fg1d; }
+
+            /* Comment Section: By creator */
+            a.channel-owner,
+            a.channel-owner:hover {
+                border: 1px solid fg3d !important; }
+
+            a.channel-owner {
+                background-color: fg4d !important; }
+
+            a.channel-owner:hover {
+                background-color: fg4d !important; }
+
+            body a.channel-owner,
+            body a.channel-owner:hover,
+            .channel-owner:visited,
+            .channel-owner .icon.ion.ion-md-checkmark-circle {
+                color: fg1d !important; }
+
+            /* Comment Section: Replies */
+            .pure-u-23-24 a[href="javascript:void(0)"] {
+                color: cb2d !important; }
+
+            .pure-u-23-24 a[href="javascript:void(0)"]:hover {
+                color: cb1d !important; }
+
+            /* Comment Section: Heart icon */
+            .icon.ion-ios-heart.creator-heart-small-container {
+                color: ca1d; }
+
+            /* Settings: Volume Text */
+            span#volume-value {
+                color: fg1d; }
+
+            /* Hr, Section */
+            hr,
+            .pure-form legend,
+            .pure-form-aligned legend,
+            .underlined {
+                border-color: fg3d; }
+
+            /* Placeholder */
+            ::placeholder {
+                color: fg1d; } }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            background-color: bg1d; }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: fg1d; } }
+
+    .dark-theme {
             /* Background, Foreground */
             body,
             .pure-g,
@@ -1324,12 +1759,12 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
 
                 /* Subtitles */
                 .vjs-text-track-display > div > div > div {
-                    background-color: bg6d !important;
+                    background-color: bg7d !important;
                     color: fg1d !important; }
 
                 /* Loading */
                 .vjs-loading-spinner::before, .vjs-loading-spinner::after {
-                    border: 6px solid ca1l } }
+                    border: 6px solid ca1d } }
 
             #player,
             #player_html5_api {
@@ -1397,428 +1832,8 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
             ::placeholder {
                 color: fg1d; } }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            background-color: bg4d; }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: bg5d; } }
-
-    .dark-theme {
-        /* Background, Foreground */
-        body,
-        .pure-g,
-        .pure-form legend {
-            background: bg1d;
-            color: fg1d; }
-
-        /* Links */
-        a,
-        a:active,
-        a:visited,
-        summary,
-        a.feed-menu-item.pure-menu-heading,
-        a:link:not(.pure-button):not(.channel-owner) {
-            color: fg2d; }
-
-        footer a {
-            color: fg2d !important; }
-
-        a:hover,
-        summary:hover,
-        a.feed-menu-item.pure-menu-heading:hover,
-        a:link:not(.pure-button):not(.channel-owner):hover {
-            color: fg1d; }
-
-        footer a:hover {
-            color: fg1d !important; }
-
-        /* Links Outside of Invidious */
-        a[href^="https://www.youtube.com"],
-        a[href^="https://redirect.invidious.io"],
-        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a,
-        #descriptionWrapper a {
-            color: cl2d !important; }
-
-        a[href^="https://www.youtube.com"]:hover,
-        a[href^="https://redirect.invidious.io"]:hover,
-        div.pure-u-md-22-24 p[style="white-space:pre-wrap"] a:hover,
-        #descriptionWrapper a:hover {
-            color: cl1d !important; }
-
-        /* Input, select & textarea */
-        input,
-        input[type="email"],
-        input[type="number"],
-        input[type="password"],
-        input[type="text"],
-        input[type="submit"],
-        input[type="checkbox"],
-        input[type='radio'],
-        input[type='range'],
-        select,
-        textarea {
-            border: 1px solid fg3d;
-            -webkit-border: 1px solid fg3d;
-            background-color: fg4d;
-            color: fg1d; }
-
-        input:focus,
-        input[type="email"]:focus,
-        input[type="number"]:focus,
-        input[type="password"]:focus,
-        input[type="text"]:focus,
-        input[type="submit"]:focus,
-        input[type="checkbox"]:focus,
-        input[type="radio"]:focus,
-        input[type='range']:focus,
-        select:focus,
-        textarea:focus {
-            border: 1px solid cb1d;
-            -webkit-border: 1px solid cb1d; }
-
-        select {
-            background-color: fg4d; }
-
-        select:focus {
-            background-color: bg2d; }
-
-        /* Checkbox & Radio */
-        input[type="checkbox"],
-        input[type='radio'] {
-            background-color: fg6d; }
-
-        /* Checkbox & Radio: Color check */
-        input[type="checkbox"]:before,
-        input[type="checkbox"]:checked,
-        input[type="checkbox"]:checked:before,
-        input[type='radio']:before,
-        input[type='radio']:checked,
-        input[type='radio']:checked:before {
-            background-color: fg4d !important; }
-
-        input[type='radio']:checked:after {
-            background-color: fg1d !important; }
-
-        /* Range */
-        input[type='range']::-webkit-slider-thumb {
-            background: fg3d;
-            box-shadow: -80px 0 0 75px fg3d;
-            border-right: 1px solid fg3d !important; }
-
-        input[disabled] {
-            background-color: fg6d; }
-
-        /* Button */
-        .pure-button-primary,
-        .pure-button-secondary,
-        .pure-button-primary:hover,
-        .pure-button-secondary:hover,
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            border: 1px solid fg3d !important;
-            color: fg1d !important; }
-
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            border: 1px solid cb1d !important; }
-
-        .pure-button-primary,
-        .pure-button-secondary {
-            background-color: fg4d !important; }
-
-        .pure-button-primary:hover,
-        .pure-button-secondary:hover,
-        .pure-button-primary:focus,
-        .pure-button-secondary:focus {
-            background-color: fg5d !important; }
-
-        /* Button: Subscribe */
-        #subscribe,
-        #subscribe:hover,
-        #subscribe:focus {
-            border: 1px solid fg3d !important;
-            color: fg1d !important; }
-
-        #subscribe:focus {
-            border: 1px solid cb1d !important; }
-
-        #subscribe {
-            background-color: ca2d !important; }
-
-        #subscribe:hover,
-        #subscribe:focus {
-            background-color: ca1d !important; }
-
-        if checkbox-subscribe-text-dark {
-            #subscribe,
-            #subscribe:hover,
-            #subscribe:focus,
-            .video-js .vjs-big-play-button .vjs-icon-placeholder {
-                color: bg1d !important; } }
-
-        /* Invidious Logo */
-        .navbar .index-link,
-        #search-widget #logo .pure-menu-heading {
-            color: ca2d; }
-
-        .navbar .index-link:hover {
-            color: ca1d !important; }
-
-        /* Log in & Icons */
-        .pure-g .navbar i,
-        a.pure-menu-heading input,
-        .pure-u-1-3 a.pure-menu-heading {
-            color: fg2d !important; }
-
-        .pure-g .navbar i:hover,
-        a.pure-menu-heading input:hover,
-        .pure-u-1-3 a.pure-menu-heading:hover {
-            color: fg1d !important; }
-
-        /* Thumbnail: Only Highlights YouTube Video's */
-        a[href^="/watch?v="] p:not(.length),
-        a[href^="/watch?v="] p:not(.length):hover {
-            color: fg1d; }
-
-        /* Thumbnail: Length Time*/
-        p.length {
-            color: fg1d !important;
-            background-color: bg3d !important; }
-
-        /* Thumbnail: Little icons beside video */
-        i.icon.ion-logo-youtube,
-        i.icon.ion-md-headset,
-        i.icon.ion-md-jet {
-            color: fg2d !important; }
-
-        i.icon.ion-logo-youtube:hover,
-        i.icon.ion-md-headset:hover,
-        i.icon.ion-md-jet:hover {
-            color: fg1d !important; }
-
-        /* Thumbnail: Link Channel Name */
-        p.channel-name,
-        #channel-name,
-        .pure-u-1 .pure-u-14-24 a {
-            color: fg2d !important; }
-
-        p.channel-name:hover,
-        #channel-name:hover,
-        .pure-u-1 .pure-u-14-24 a:hover {
-            color: fg1d !important; }
-
-        /* Thumbnail: Video Data */
-        p.video-data,
-        div.pure-u-10-24,
-        p.video-data:hover,
-        div.pure-u-10-24:hover {
-            color: fg2d; }
-
-        /* Thumbnail: Watched */
-        div.watched-indicator {
-            background-color: ca1d; }
-
-        div.watched-overlay {
-            background-color: ca3d; }
-
-        /* Thumbnail Button: Watch, Delete from history */
-        .top-left-overlay,
-        .bottom-right-overlay,
-        .watched {
-            .pure-button-secondary {
-                color: fg1d !important;
-                border: 1px solid fg3d !important;
-                background-color: bg1d !important; }
-
-            .pure-button-secondary:hover,
-            .pure-button-secondary:focus {
-                background-color: bg2d !important; }
-
-            .pure-button-secondary:focus {
-                border: 1px solid cb1d !important; } }
-
-        /* Searchbox */
-        .pure-form input[type="search"] {
-            border: 1px solid fg3d;
-            background-color: transparent;
-            color: fg1d; }
-
-        .pure-form input[type="search"]:focus {
-            border: 1px solid cb1d; }
-
-        /* Search: Filter box */
-        #filters-box {
-            border: 1px solid fg3d;
-            background: fg6d !important; }
-
-        /* Video Player */
-        .video-js {
-            /* Video player: Title Overlay */
-            .vjs-overlay-top a {
-                color: fg1d !important; }
-
-            .vjs-overlay-top {
-                background-color: bg6d !important; }
-
-            /* Play button */
-            .vjs-big-play-button {
-                border: 1px solid fg3d;
-                background-color: ca1d !important; }
-
-            .vjs-big-play-button .vjs-icon-placeholder {
-                color: fg1d; }
-
-            /* Video player: Controls: Color */
-            .vjs-control-bar,
-            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
-            .vjs-modal-dialog .vjs-modal-dialog-content {
-                background-color: bg1d;
-                color: fg1d; }
-
-            .vjs-control-bar,
-            .vjs-menu-button-popup .vjs-menu .vjs-menu-content,
-            .vjs-modal-dialog .vjs-modal-dialog-content,
-            .vjs-share__social {
-                border: 1px solid fg3d !important; }
-
-            /* Button */
-            button,
-            .vjs-slider,
-            .vjs-control-bar button,
-            .vjs-icon-placeholder,
-            .vjs-icon-share,
-            .vjs-playback-rate-value .vjs-control-text,
-            button:hover,
-            .vjs-slider::before,
-            .vjs-control-bar button:hover,
-            .vjs-icon-placeholder:hover,
-            .vjs-icon-share:hover,
-            .vjs-playback-rate-value .vjs-control-text:hover {
-                color: fg1d; }
-
-            /* Progress Bar */
-            .vjs-load-progress,
-            .vjs-load-progress div {
-                background-color: fg3d !important }
-
-            .vjs-slider {
-                background-color: bg2d !important; }
-
-            /* Sliders */
-            .vjs-volume-level {
-                background-color: ca1d !important; }
-
-            .vjs-play-progress,
-            .vjs-volume-level {
-                color: ca1d; }
-
-            /* Controls Options: Hover */
-            .vjs-menu li.vjs-menu-item:focus,
-            .vjs-menu li.vjs-menu-item:hover {
-                background-color: ca4d;
-                color: fg1d; }
-
-            .vjs-menu li.vjs-selected,
-            .vjs-menu li.vjs-selected:focus,
-            .vjs-menu li.vjs-selected:hover {
-                background-color: ca1d;
-                color: fg1d; }
-
-            /* Tooltip time */
-            .vjs-mouse-display .vjs-time-tooltip {
-                background-color: bg1d;
-                color: fg1d; }
-
-            /* Settings, Share */
-            .vjs-share__short-link,
-            .vjs-share__btn,
-            .vjs-share__short-link-wrapper {
-                background-color: bg2d;
-                color: fg1d; }
-
-            .vjs-share__btn {
-                border: 1px solid fg3d; }
-
-            .vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button,
-            .vjs-share__subtitle,
-            .vjs-share__title,
-            .vjs-text-track-settings legend {
-                color: fg1d; }
-
-            /* Subtitles */
-            .vjs-text-track-display > div > div > div {
-                background-color: bg6d !important;
-                color: fg1d !important; } }
-
-        #player,
-        #player_html5_api {
-            background-color: bg1d !important; }
-
-        .player-dimensions.vjs-fluid {
-            border: 1px solid fg3d; }
-
-        /* Video player: Controls: Progress Bar */
-        .video-js.player-style-invidious .vjs-play-progress {
-            background-color: ca1d !important; }
-
-        /* Video player: close button */
-        .video-js.vjs-videojs-share_open .vjs-modal-dialog .vjs-close-button {
-            color: fg1d; }
-
-        /* Description: Genre */
-        p#genre a,
-        p#genre a:hover {
-            color: fg1d; }
-
-        /* Description: Show More */
-        #description-box label a,
-        #description-box label a:hover,
-        #description-box label a:focus {
-            color: fg1d; }
-
-        /* Comment Section: By creator */
-        a.channel-owner,
-        a.channel-owner:hover {
-            border: 1px solid fg3d !important; }
-
-        a.channel-owner {
-            background-color: fg4d !important; }
-
-        a.channel-owner:hover {
-            background-color: fg4d !important; }
-
-        body a.channel-owner,
-        body a.channel-owner:hover,
-        .channel-owner:visited,
-        .channel-owner .icon.ion.ion-md-checkmark-circle {
-            color: fg1d !important; }
-
-        /* Comment Section: Replies */
-        .pure-u-23-24 a[href="javascript:void(0)"] {
-            color: cb2d !important; }
-
-        .pure-u-23-24 a[href="javascript:void(0)"]:hover {
-            color: cb1d !important; }
-
-        /* Comment Section: Heart icon */
-        .icon.ion-ios-heart.creator-heart-small-container {
-            color: ca1d; }
-
-        /* Settings: Volume Text */
-        span#volume-value {
-            color: fg1d; }
-
-        /* Hr, Section */
-        hr,
-        .pure-form legend,
-        .pure-form-aligned legend,
-        .underlined {
-            border-color: fg3d; }
-
-        /* Placeholder */
-        ::placeholder {
-            color: fg1d; } }
+    ::-webkit-scrollbar {
+        width: 5px !important }
 
     /* Font */
     html,
@@ -2316,28 +2331,7 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
         .pure-form-aligned .pure-control-group a,
         .pure-form-aligned .pure-controls {
             padding: 0px; } }
-
-   /* if checkbox-animations {
-        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box,
-        .pure-g:not(.searchbar) > .searchbar,
-        .pure-form-aligned {
-            transition: all 0.2s; }
-
-        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box:hover {
-            transform: scale(1.020);
-            transition: all 0.2s;
-            opacity: 1;
-            z-index: 99999; }
-
-        .pure-g:not(.h-box) > .pure-u-md-1-4 .h-box:hover {
-            box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.3); }
-
-        .pure-u-md-20-24 > .h-box > img {
-            box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.3); }
-
-        #player-container {
-            transition: all 0.2s; } }*/
-
+            
     .feed-menu {
         margin-bottom: 1.25em; } }
 
