@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.2.3
+@version        1.2.4
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -521,6 +521,10 @@ domain("studio.youtube.com") {
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
             color: fg1l; }
             
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+            color: fg1l;
+            background-color: fg3l; }
+            
         /* Share -> Copy */
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
             color: bg1l;
@@ -848,6 +852,10 @@ domain("studio.youtube.com") {
         /* Comment Section: Like, dislike, reply */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
             color: fg1d; }
+            
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+            color: fg1d;
+            background-color: fg6d; }
             
         /* Share -> Copy */
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
