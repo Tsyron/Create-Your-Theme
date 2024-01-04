@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.2.4
+@version        1.2.5
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -160,6 +160,7 @@ domain("studio.youtube.com") {
         --yt-spec-static-overlay-text-primary: fg1d;
         --yt-spec-static-overlay-touch-response: fg1l;
         --yt-spec-suggested-action: cb4l;
+        --yt-spec-suggested-action-inverse: fg1l;
         --yt-spec-text-disabled: fg8l;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: fg1l;
@@ -213,6 +214,7 @@ domain("studio.youtube.com") {
         --yt-deprecated-white-opacity-lighten-1: fg10l;
         --yt-deprecated-luna-black-opacity-lighten-2: fg9l;
         --yt-deprecated-opalescence-soft-grey: bg6l;
+        /*--yt-endpoint-color: cb1l;*/
         
         --ytls-menu-header-background: bg3l !important;
 
@@ -308,6 +310,7 @@ domain("studio.youtube.com") {
         --yt-spec-static-overlay-text-primary: fg1d;
         --yt-spec-static-overlay-touch-response: fg1d;
         --yt-spec-suggested-action: cb3d;
+        --yt-spec-suggested-action-inverse: fg1d;
         --yt-spec-text-disabled: fg8d;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
         --yt-spec-text-primary: fg1d;
@@ -364,6 +367,7 @@ domain("studio.youtube.com") {
 
         --yt-compact-link-icon-color: fg1d !important;
         --yt-deprecated-white-opacity-lighten-1: fg9d;
+       /* --yt-endpoint-color: cbd;*/
         
         --ytls-menu-header-background: bg5d !important;
 
@@ -408,7 +412,13 @@ domain("studio.youtube.com") {
         --ytcp-text-secondary: fg9d !important;
         --ytcp-themed-blue: cbd !important; 
         --ytcp-themed-green: cgd !important;
-        --ytcp-themed-red: ca1d !important; }
+        --ytcp-themed-red: ca1d !important;
+    
+        /* YouTube Music */
+        --ytmusic-color-white1: fg1d;
+        --ytmusic-color-black1: bg1d;
+        --ytmusic-color-youtubered: ca1d;
+        --ytmusic-color-lightblue: cbd; }
     
     html,
     html[light],
@@ -659,6 +669,12 @@ domain("studio.youtube.com") {
         
         .yt-tab-shape-wiz__tab {
             color: fg10l; }
+            
+        .yt-tab-group-shape-wiz__slider {
+            background-color: fg1l; }
+        
+        .yt-tab-shape-wiz:hover .yt-tab-shape-wiz__tab-bar {
+            background-color: fg8l; }
             
         /* Watched Underline */
         #progress {
@@ -983,6 +999,12 @@ domain("studio.youtube.com") {
         
         .yt-tab-shape-wiz__tab {
             color: fg9d; }
+            
+        .yt-tab-group-shape-wiz__slider {
+            background-color: fg1d; }
+        
+        .yt-tab-shape-wiz:hover .yt-tab-shape-wiz__tab-bar {
+            background-color: fg8d; }
         
         /* Watched Underline */
         #progress {

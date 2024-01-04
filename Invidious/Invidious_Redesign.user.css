@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Invidious - Create Your Theme [Redesign]
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/Invidious
-@version        1.0.1
+@version        1.0.2
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -2150,12 +2150,12 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
         .vjs-text-track-display > div > div > div {
             border-radius: br1 !important;
             padding: 1px 6px !important;
-            font-size: 20pt; }
+            /*font-size: 20pt;*/ }
 
         .vjs-fullscreen .vjs-text-track-display > div > div > div {
             border-radius: br2 !important;
             padding: 1px 12px !important;
-            font-size: 30pt; }
+            /*font-size: 30pt;*/ }
 
         .vjs-modal-dialog {
             background: linear-gradient(180deg, transparent, transparent); }
