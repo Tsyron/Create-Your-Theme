@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Invidious - Create Your Theme [Redesign]
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/Invidious
-@version        1.0.2
+@version        1.0.3
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -1954,9 +1954,12 @@ domain("pjsfi2szfkb4guqzmfmlyq4no46fayertjrwt4h2uughccrh2lvq.b32.i2p") {
         .pure-u-md-1-6,
         .pure-u-md-1-12,
         .pure-u-md-4-24,
-        .pure-u-md-20-24,
+        .pure-u-md-20-24/*,
+        .pure-u-md-12-24*/ {
+            width: 0% !important; }
+        
         .pure-u-md-12-24 {
-            width: 0% !important; } }
+            width: 100% !important; } }
 
     .pure-u-1.pure-u-md-2-24 {
         width: 0%; }
