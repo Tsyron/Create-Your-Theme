@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.2.8
+@version        1.2.9
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -97,6 +97,7 @@ domain("studio.youtube.com") {
     bg11d=rgba(bg1d, 0.8)
     bg12d=rgba(bg1d, 0.9)
     bg13d=rgba(bg1d, 0.08)
+    bg14d=rgba(bg1d, 0.6)
         
     fg1d=color-foreground-dark
     fg2d=rgba(fg1d, 0.075)
@@ -667,8 +668,7 @@ domain("studio.youtube.com") {
         /* Icons Hover Thumbnail */
         .ytd-thumbnail-overlay-toggle-button-renderer {
             fill: bg1l;
-            color: bg1l;
-            box-shadow: none; } }
+            color: bg1l; } }
 
     html[dark],
     [dark],
@@ -803,6 +803,7 @@ domain("studio.youtube.com") {
 
         /* Video Player: Paid content badge */
         .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
+            background-color: bg14d;
             border-left: 4px solid cb1d; }
 
         /* Video Player: Progress Bar: Ad */
@@ -908,7 +909,12 @@ domain("studio.youtube.com") {
             color: fg12d; }
         
         /* background hover progress bar */.ytp-tooltip.ytp-preview:not(.ytp-text-detail) {
-            background-color: bg1d; } }
+            background-color: bg1d; }
+
+        /* Icons Hover Thumbnail */
+        .ytd-thumbnail-overlay-toggle-button-renderer {
+            fill: fg1d;
+            color: fg1d; } }
 
     /* YouTube Logo, thanks to: Mihachika */
     #logo-icon > .yt-icon > .yt-spec-icon-shape > div > svg > svg > g > path,
