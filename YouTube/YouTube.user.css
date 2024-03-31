@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.2.9
+@version        1.3.0
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -98,6 +98,7 @@ domain("studio.youtube.com") {
     bg12d=rgba(bg1d, 0.9)
     bg13d=rgba(bg1d, 0.08)
     bg14d=rgba(bg1d, 0.6)
+    bg15d=rgba(bg1d, 0.75)
         
     fg1d=color-foreground-dark
     fg2d=rgba(fg1d, 0.075)
@@ -111,6 +112,7 @@ domain("studio.youtube.com") {
     fg10d=rgba(fg1d, 0.8)
     fg11d=rgba(fg1d, 0.9)
     fg12d=rgba(fg1d, 0.6)
+    fg13d=rgba(fg1d, 0.3)
         
     ca1d=color-accent-dark
     ca2d=darken(ca1d, 20%)
@@ -141,7 +143,8 @@ domain("studio.youtube.com") {
         --yt-spec-brand-icon-active: fg1l;
         --yt-spec-brand-icon-inactive: fg1l;
         --yt-spec-brand-link-text: ca1l;
-        --yt-spec-button-chip-background-hover: fg2l;
+        --yt-spec-badge-chip-background: fg2l;
+        --yt-spec-button-chip-background-hover: fg3l;
         --yt-spec-call-to-action-hover: cb3l;
         --yt-spec-call-to-action-inverse: cb1l;
         --yt-spec-call-to-action: cb1l;
@@ -166,7 +169,7 @@ domain("studio.youtube.com") {
         --yt-spec-static-brand-white: bg1l;
         --yt-spec-static-overlay-background-brand: ca3l;
         --yt-spec-static-overlay-background-heavy: fg11l;
-        --yt-spec-static-overlay-text-primary: fg1d;
+        --yt-spec-static-overlay-text-primary: bg1l;
         --yt-spec-static-overlay-touch-response: fg1l;
         --yt-spec-suggested-action: cb4l;
         --yt-spec-suggested-action-inverse: fg1l;
@@ -178,7 +181,7 @@ domain("studio.youtube.com") {
         --yt-spec-themed-green: cgl;
         --yt-spec-themed-overlay-background: bg3l;
         --yt-spec-touch-response-inverse: fg1l;
-        --yt-spec-touch-response: fg1d;
+        --yt-spec-touch-response: fg1l;
         --yt-spec-wordmark-text: fg1l;
 
         --ytd-searchbox-background: bg1l;
@@ -291,6 +294,7 @@ domain("studio.youtube.com") {
         --yt-spec-brand-icon-active: fg1d;
         --yt-spec-brand-icon-inactive: fg1d;
         --yt-spec-brand-link-text: ca1d;
+        --yt-spec-badge-chip-background: fg2d;
         --yt-spec-button-chip-background-hover: fg6d;
         --yt-spec-call-to-action-hover: cb2d !important;
         --yt-spec-call-to-action-inverse: bg1d;
@@ -329,7 +333,7 @@ domain("studio.youtube.com") {
         --yt-spec-themed-green: cgd;
         --yt-spec-themed-overlay-background: bg5d;
         --yt-spec-touch-response-inverse: fg1d;
-        --yt-spec-touch-response: fg1l;
+        --yt-spec-touch-response: fg1d;
         --yt-spec-wordmark-text: fg1d;
 
         --ytd-searchbox-background: bg2d;
@@ -492,6 +496,13 @@ domain("studio.youtube.com") {
             border-color: 1px solid fg3l; }
 
         /* Buttons: Mono: Video Player */
+        .ytp-sb-subscribe {
+            color: bg1l;
+            background-color: fg1l; }
+
+        .ytp-sb-subscribe:hover {
+            background-color: fg13l; }
+            
         .ytp-sb-unsubscribe {
             color: fg1d;
             background: fg3d; }
@@ -574,6 +585,13 @@ domain("studio.youtube.com") {
 
         .ytp-hover-progress-light {
             background-color: bg10l; }
+            
+        /* Video player: Overlay*/            
+        .ytp-ce-website-metadata, .ytp-ce-channel-metadata {
+            color: fg8l; }
+            
+        .ytp-ce-channel-metadata {
+            border-top: 1px solid fg3l; }
 
         /* Video player: Subtitles: Settings */
         .ytp-panel-footer-content-link {
@@ -705,12 +723,12 @@ domain("studio.youtube.com") {
             background: fg8d; }
 
         /* Buttons: Mono */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
-            background-color: fg11d; }
-
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
             color: fg1d;
             background-color: fg3d; }
+
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+            background-color: fg11d; }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
             color: fg1d;
@@ -792,7 +810,14 @@ domain("studio.youtube.com") {
 
         .yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__icon {
             color: fg1d; }
-
+            
+        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline {
+            color: fg1d !important;
+            border-color: fg13d !important; }
+            
+        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline:hover {
+            background-color: fg3d !important; }
+            
         /* Buttons: Label */
         .yt-spec-button-shape-with-label__label {
             color: fg1d; }
@@ -801,10 +826,19 @@ domain("studio.youtube.com") {
         .yt-spec-button-shape-next--disabled.yt-spec-button-shape-next--text {
             color: fg8d; }
 
-        /* Video Player: Paid content badge */
+        /* Video Player: Overlay */
         .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
             background-color: bg14d;
             border-left: 4px solid cb1d; }
+        
+        #caption-window-1 {
+            background-color: bg14d !important; }
+            
+        .ytp-ce-website-metadata, .ytp-ce-channel-metadata {
+            color: fg8d; }
+            
+        .ytp-ce-channel-metadata {
+            border-top: 1px solid fg6d; }
 
         /* Video Player: Progress Bar: Ad */
         .ad-interrupting .ytp-play-progress.ytp-swatch-background-color,
@@ -825,9 +859,12 @@ domain("studio.youtube.com") {
         .ytp-hover-progress-light {
             background-color: fg8d; }
 
-        /* Video player: Subtitles: Settings */
+        /* Video player: Subtitles */
         .ytp-panel-footer-content-link {
             color: cb1d; }
+            
+        .ytp-caption-segment {
+            background-color: bg15d !important; }
 
         /* Video Player: Cards */
         .ytp-cards-teaser .ytp-cards-teaser-box {
@@ -924,11 +961,11 @@ domain("studio.youtube.com") {
 
     /* Title */
     .page-header-view-model-wiz__page-header-title {
-            color: var(--yt-spec-text-primary); }
+        color: var(--yt-spec-text-primary); }
 
     /* Searchbar: Colours */
     .sbpqs_a, .gsfs {
-            color: var(--yt-spec-text-primary); }
+        color: var(--yt-spec-text-primary); }
 
     /* Searchbox: Outline, Shadow */
     ytd-searchbox[has-focus] #container.ytd-searchbox,
@@ -955,12 +992,12 @@ domain("studio.youtube.com") {
         
     /* Buttons: Mono */
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-            color: var(--yt-spec-text-primary-inverse);
-            background-color: var(--yt-spec-text-primary); }
+        color: var(--yt-spec-text-primary-inverse);
+        background-color: var(--yt-spec-text-primary); }
 
     /* Buttons: Mono: Video Player */
-        .ytp-sb-subscribe {
-            background-color: var(--yt-spec-text-primary); }
+    .ytp-sb-subscribe {
+        background-color: var(--yt-spec-text-primary); }
 
     /* Buttons: Call to action */
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
@@ -1026,7 +1063,25 @@ domain("studio.youtube.com") {
     /* Video Player: Preview Controls */
     .ytp-inline-preview-ui .ytp-subtitles-button[aria-pressed=true]:after {
         background-color: ca1d !important; }
-
+            
+    /* Video Player: Overlay */
+    .ytp-ce-video-duration, .ytp-ce-expanding-icon, .ytp-ce-playlist-count {
+        border-radius: 6px;
+        background-color: var(--yt-spec-static-overlay-background-heavy); }
+        
+    .ytp-ce-expanding-overlay-background {
+        background-color: var(--yt-spec-base-background);
+        color: var(--yt-spec-text-primary) !important; }
+        
+    .ytp-ce-website-title {
+        color: var(--yt-spec-text-primary) !important; }
+        
+    .ytp-ce-website-title, .yt-ui-ellipsis {
+        background-color: var(--yt-spec-base-background); }
+        
+    a.ytp-ce-link, a.ytp-ce-link:hover {
+        color: var(--yt-spec-call-to-action); }
+        
     /* Thumbnail: Watched Underline */
     #progress {
         color: var(--yt-spec-static-brand-red); }
@@ -1074,7 +1129,7 @@ domain("studio.youtube.com") {
         background-color: transparent !important; }
             
     .ytp-tooltip.ytp-text-detail.ytp-preview.ytp-has-duration .ytp-tooltip-duration {
-            background-color: var(--yt-spec-static-overlay-background-heavy); }
+        background-color: var(--yt-spec-static-overlay-background-heavy); }
 
     /* Login Pop-up */
     .ytd-popup-container {
