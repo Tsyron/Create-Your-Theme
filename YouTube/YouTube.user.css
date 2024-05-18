@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.3.1
+@version        1.3.2
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -214,7 +214,7 @@ domain("studio.youtube.com") {
         --paper-toggle-button-unchecked-button-color: bg1l;
         --paper-tooltip-background: fg1l !important;
         --paper-tooltip-text-color: bg1l;
-        --paper-dialog-background-color: var(--yt-spec-base-background);
+        --paper-dialog-background-color: var(--yt-spec-menu-background);
 
         --yt-compact-link-icon-color: c1fl !important;
         --yt-deprecated-white-opacity-lighten-1: fg10l;
@@ -369,7 +369,7 @@ domain("studio.youtube.com") {
         --paper-toggle-button-unchecked-button-color: fg1d;
         --paper-tooltip-background: bg6d !important;
         --paper-tooltip-text-color: fg1d;
-        --paper-dialog-background-color: var(--yt-spec-base-background);
+        --paper-dialog-background-color: var(--yt-spec-menu-background);
 
         --disabled-text-color: fg9d !important;
 
@@ -585,6 +585,12 @@ domain("studio.youtube.com") {
             
         .YtPlayerStoryboardTimestamp {
             color: bg1l; }
+
+        .YtProgressBarPlayheadProgressBarPlayheadDot, .YtProgressBarLineProgressBarPlayed { 
+            background-color: ca1l; }
+        
+        .YtProgressBarLineProgressBarBackground, .YtProgressBarLineProgressBarLoaded, .YtProgressBarLineProgressBarHovered {
+            background-color: bg1l; }
 
         /* Video Player: Paid content badge */
         .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
@@ -842,6 +848,12 @@ domain("studio.youtube.com") {
             
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline:hover {
             background-color: fg3d !important; }
+
+        .YtProgressBarPlayheadProgressBarPlayheadDot, .YtProgressBarLineProgressBarPlayed { 
+            background-color: ca1d; }
+        
+        .YtProgressBarLineProgressBarBackground, .YtProgressBarLineProgressBarLoaded, .YtProgressBarLineProgressBarHovered {
+            background-color: fg1d; }
             
         /* Buttons: Label */
         .yt-spec-button-shape-with-label__label {
