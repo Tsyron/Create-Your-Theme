@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.3.2
+@version        1.3.4
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -36,7 +36,7 @@
 ==/UserStyle== */
 @-moz-document regexp("^https:\\/\\/www\\.youtube\\.com.+"),
 domain("music.youtube.com"),
-domain("studio.youtube.com") {
+domain("studio.youtube.com"), domain("m.youtube.com") {
     
     /* Light Theme */
     bg1l=color-background-light
@@ -434,7 +434,7 @@ domain("studio.youtube.com") {
     html[system-icons],
     html:not(.style-scope) {
         /* YouTube Logo, thanks to: Mihachika */
-        #logo-icon > .yt-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
+        #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
         #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2) {
             fill: var(--yt-spec-base-background); }
@@ -723,7 +723,7 @@ domain("studio.youtube.com") {
     [dark],
     html:not(.style-scope)[dark] {
         /* YouTube Logo, thanks to: Mihachika */
-        #logo-icon > .yt-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
+        #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
         #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2) {
             fill: fg1d; }
@@ -1017,7 +1017,7 @@ domain("studio.youtube.com") {
             color: fg1d; } }
 
     /* YouTube Logo, thanks to: Mihachika */
-    #logo-icon > .yt-icon > .yt-spec-icon-shape > div > svg > svg > g > path,
+    #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path,
     #logo-icon > svg > g > g:nth-child(1) > path,
     #logo-icon-container > svg > g > g:nth-child(1) > path {
         fill: var(--yt-spec-static-brand-red); }
