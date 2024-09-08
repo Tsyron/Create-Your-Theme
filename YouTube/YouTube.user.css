@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.3.6
+@version        1.3.7
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -617,8 +617,11 @@ domain("studio.youtube.com") {
         .ytp-hover-progress-light {
             background-color: bg10l; }
 
-        .ytp-progress-bar:focus {
+        .ytp-probably-keyboard-focus .ytp-progress-bar:focus {
             box-shadow: 0 0 0 2px cb6l; }
+           
+        .ytp-probably-keyboard-focus .ytp-button:focus {
+            box-shadow: inset 0 0 0 2px cb6l; }
 
         /* Video player: Subtitles: Settings */
         .ytp-panel-footer-content-link {
@@ -921,8 +924,11 @@ domain("studio.youtube.com") {
         .ytp-hover-progress-light {
             background-color: fg8d; }
            
-        .ytp-progress-bar:focus {
+        .ytp-probably-keyboard-focus .ytp-progress-bar:focus {
             box-shadow: 0 0 0 2px cb6d; }
+           
+        .ytp-probably-keyboard-focus .ytp-button:focus {
+            box-shadow: inset 0 0 0 2px cb6d; }
 
         /* Video player: Subtitles */
         .ytp-panel-footer-content-link {
