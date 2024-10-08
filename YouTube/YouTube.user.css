@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.3.7
+@version        1.3.8
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -50,6 +50,7 @@ domain("studio.youtube.com") {
     bg9l=rgba(bg1l, 0.2)
     bg10l=rgba(bg1l, 0.5)
     bg11l=rgba(bg1l, 0.6)
+    bg12l=rgba(bg1l, 0.7)
        
     fg1l=color-foreground-light
     fg2l=rgba(fg1l, 0.05)
@@ -536,8 +537,17 @@ domain("studio.youtube.com") {
         .yt-core-attributed-string__link--call-to-action-color {
             color: cb1l !important; }
 
-        .yt-core-attributed-string--link-inherit-color {
+        .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
+            color: fg1l; }
+            
+        #description-inline-expander .yt-core-attributed-string--link-inherit-color {
             color: fg1l !important; }
+            
+        .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
+            color: fg10l; }
+            
+        #marquee-scroll-inner-container .yt-core-attributed-string--link-inherit-color, .YtReelSoundMetadataViewModelIcon {
+            color: bg1l !important; }
 
         /* Buttons: Overlay */
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
@@ -608,7 +618,7 @@ domain("studio.youtube.com") {
 
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
-            background-color: fg7l; }
+            background-color: bg12l; }
 
         /* Video Player: Progress Background*/
         .ytp-progress-list {
@@ -616,12 +626,19 @@ domain("studio.youtube.com") {
 
         .ytp-hover-progress-light {
             background-color: bg10l; }
-
-        .ytp-probably-keyboard-focus .ytp-progress-bar:focus {
-            box-shadow: 0 0 0 2px cb6l; }
-           
-        .ytp-probably-keyboard-focus .ytp-button:focus {
-            box-shadow: inset 0 0 0 2px cb6l; }
+                
+        .ytp-probably-keyboard-focus {
+            .ytp-button:focus, .ytp-volume-panel:focus {
+                box-shadow: inset 0 0 0 2px cb6l; }
+            .ytp-progress-bar:focus {
+                box-shadow: 0 0 0 2px cb6l; }
+            .ytp-menuitem:focus {
+                .ytp-menuitem-label {
+                    box-shadow: inset 0 2px 0 cb6l, inset 0 -2px 0 cb6l; }
+                .ytp-menuitem-icon, .ytp-menuitem-content {
+                    box-shadow: inset -2px -2px 0 cb6l, inset 0 2px 0 cb6l; }
+                .ytp-menuitem-icon {
+                    box-shadow: inset 2px 2px 0 cb6l, inset 0 -2px 0 cb6l; } } }
 
         /* Video player: Subtitles: Settings */
         .ytp-panel-footer-content-link {
@@ -705,6 +722,14 @@ domain("studio.youtube.com") {
 
         .ytp-promotooltip-pointer {
             border-color: cb1l transparent transparent transparent; }
+            
+        /* Shorts */
+        #shorts-container {
+            background-color: bg1l; }
+            
+        .YtReelSoundMetadataViewModelMarqueeContainer {
+            color: bg1l;
+        }
 
         /* Tooltip: Video Player*/
         /* background */.ytp-tooltip-text {
@@ -832,8 +857,17 @@ domain("studio.youtube.com") {
         .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
         .yt-core-attributed-string__link--call-to-action-color {
             color: cb1d !important; }
-
-        .yt-core-attributed-string--link-inherit-color {
+            
+        .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
+            color: fg1d; }
+            
+        #description-inline-expander .yt-core-attributed-string--link-inherit-color {
+            color: fg1d !important; }
+            
+        .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
+            color: fg9d; }
+            
+        #marquee-scroll-inner-container .yt-core-attributed-string--link-inherit-color, .YtReelSoundMetadataViewModelIcon {
             color: fg1d !important; }
 
         /* Buttons: Overlay */
@@ -924,11 +958,18 @@ domain("studio.youtube.com") {
         .ytp-hover-progress-light {
             background-color: fg8d; }
            
-        .ytp-probably-keyboard-focus .ytp-progress-bar:focus {
-            box-shadow: 0 0 0 2px cb6d; }
-           
-        .ytp-probably-keyboard-focus .ytp-button:focus {
-            box-shadow: inset 0 0 0 2px cb6d; }
+        .ytp-probably-keyboard-focus {
+            .ytp-button:focus, .ytp-volume-panel:focus {
+                box-shadow: inset 0 0 0 2px cb6d; }
+            .ytp-progress-bar:focus {
+                box-shadow: 0 0 0 2px cb6d; }
+            .ytp-menuitem:focus {
+                .ytp-menuitem-label {
+                    box-shadow: inset 0 2px 0 cb6d, inset 0 -2px 0 cb6d; }
+                .ytp-menuitem-icon, .ytp-menuitem-content {
+                    box-shadow: inset -2px -2px 0 cb6d, inset 0 2px 0 cb6d; }
+                .ytp-menuitem-icon {
+                    box-shadow: inset 2px 2px 0 v, inset 0 -2px 0 cb6d; } } }
 
         /* Video player: Subtitles */
         .ytp-panel-footer-content-link {
@@ -1008,6 +1049,10 @@ domain("studio.youtube.com") {
 
         .ytp-promotooltip-pointer {
             border-color: cb1d transparent transparent transparent; }
+            
+        /* Shorts */
+        #shorts-container {
+            background-color: bg1d; }
 
         /* Tooltip: Video Player*/
         /* background */.ytp-tooltip-text {
@@ -1188,7 +1233,11 @@ domain("studio.youtube.com") {
        
     .vk-btn:hover {
         color: var(--yt-spec-text-primary); }
-
+        
+    /* Masthead */
+    .ytd-masthead {
+        background-color: var(--yt-spec-base-background); }
+           
     /* Tooltip Redesign */
     #tooltip.tp-yt-paper-tooltip,
     ytcp-paper-tooltip-placeholder[type=label] #tooltip.ytcp-paper-tooltip-placeholder,
