@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.3.8
+@version        1.4.1
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -70,6 +70,7 @@ domain("studio.youtube.com") {
     ca1l=color-accent-light
     ca2l=darken(ca1l, 20%)
     ca3l=rgba(ca2l, 0.9)
+    ca4l=lighten(ca1l, 30%)
        
     cb1l=color-blue-light
     cb2l=lighten(cb1l, 32%)
@@ -114,6 +115,7 @@ domain("studio.youtube.com") {
     ca1d=color-accent-dark
     ca2d=darken(ca1d, 20%)
     ca3d=darken(ca2d, 0.9)
+    ca4d=lighten(ca1d, 30%)
        
     cb1d=color-blue-dark
     cb2d=lighten(cb1d, 10%)
@@ -159,6 +161,7 @@ domain("studio.youtube.com") {
         --yt-spec-additive-background: fg2l;
         --yt-spec-outline: fg2l;
         --yt-spec-raised-background: bg3l;
+        --yt-spec-red-indicator: ca1l;
         --yt-spec-selected-nav-text: ca1l;
         --yt-spec-static-ad-yellow: ca1l;
         --yt-spec-static-brand-red: ca1l;
@@ -310,6 +313,7 @@ domain("studio.youtube.com") {
         --yt-spec-additive-background: fg3d;
         --yt-spec-outline: fg6d;
         --yt-spec-raised-background: bg5d;
+        --yt-spec-red-indicator: ca1d;
         --yt-spec-selected-nav-text: ca1d;
         --yt-spec-static-ad-yellow: ca1d;
         --yt-spec-static-brand-black: bg5d;
@@ -439,18 +443,39 @@ domain("studio.youtube.com") {
         /* YouTube Logo, thanks to: Mihachika */
         #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
-        #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2) {
+        #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2),
+        #logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path:nth-child(2) {
             fill: var(--yt-spec-base-background); }
 
         /* Searchbar: Colours */
+        .ytSearchboxComponentInputBox {
+            background-color: bg1l;
+            border-color: fg5l;
+            box-shadow: none; }
+           
+        .ytSearchboxComponentSearchButton {
+            background-color: bg4l;
+            border-color: fg5l; }
+           
+        .ytSearchboxComponentHostDark {
+            color: fg1l; }
+           
+        .ytSearchboxComponentInputBox.ytSearchboxComponentInputBoxHasFocus {
+            border-color: cb1l; }
+           
+        .ytSearchboxComponentSuggestionsContainer,
         div.sbsb_a,
         .sbfl_b {
             background-color: bg2l; }
+           
+        .ytSuggestionComponentSuggestionHover {
+            color: fg1l; }
 
-        .sbsb_c.gsfs.sbsb_d:hover,
+        .ytSuggestionComponentSuggestionHover:hover, .sbsb_c.gsfs.sbsb_d:hover,
         .sbsb_d {
             background-color: bg5l; }
 
+        .ytSearchboxComponentReportButton,
         div.sbfl_b:hover,
         div.sbfl_b:active {
             color: cb1l; }
@@ -539,13 +564,13 @@ domain("studio.youtube.com") {
 
         .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
             color: fg1l; }
-            
+           
         #description-inline-expander .yt-core-attributed-string--link-inherit-color {
             color: fg1l !important; }
-            
+           
         .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
             color: fg10l; }
-            
+           
         #marquee-scroll-inner-container .yt-core-attributed-string--link-inherit-color, .YtReelSoundMetadataViewModelIcon {
             color: bg1l !important; }
 
@@ -603,6 +628,9 @@ domain("studio.youtube.com") {
        
         .YtProgressBarLineProgressBarBackground, .YtProgressBarLineProgressBarLoaded, .YtProgressBarLineProgressBarHovered {
             background-color: bg1l; }
+           
+        ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+            background: linear-gradient(to right, ca1l 80%, ca4l 100%); }
 
         /* Video Player: Paid content badge */
         .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
@@ -615,6 +643,10 @@ domain("studio.youtube.com") {
 
         .ytp-flyout-cta .ytp-flyout-cta-action-button.ytp-flyout-cta-action-button-rounded {
             background-color: cb1l; }
+           
+        /* Video Player: Progress Bar */        
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress {
+            background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4l 100%); }
 
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
@@ -626,7 +658,7 @@ domain("studio.youtube.com") {
 
         .ytp-hover-progress-light {
             background-color: bg10l; }
-                
+               
         .ytp-probably-keyboard-focus {
             .ytp-button:focus, .ytp-volume-panel:focus {
                 box-shadow: inset 0 0 0 2px cb6l; }
@@ -722,11 +754,11 @@ domain("studio.youtube.com") {
 
         .ytp-promotooltip-pointer {
             border-color: cb1l transparent transparent transparent; }
-            
+           
         /* Shorts */
         #shorts-container {
             background-color: bg1l; }
-            
+           
         .YtReelSoundMetadataViewModelMarqueeContainer {
             color: bg1l;
         }
@@ -758,21 +790,42 @@ domain("studio.youtube.com") {
         /* YouTube Logo, thanks to: Mihachika */
         #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path:nth-child(2),
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
-        #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2) {
+        #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2)
+        #logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path:nth-child(2) {
             fill: fg1d; }
 
         /* Searchbar: Colours */
+        .ytSearchboxComponentInputBoxDark {
+            background-color: bg2d !important;
+            border-color: fg4d !important; }
+           
+        .ytSearchboxComponentSearchButtonDark {
+            background-color: bg4d !important;
+            border-color: fg4d !important; }
+           
+        .ytSearchboxComponentHostDark {
+            color: fg1d !important; }
+           
+        .ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus {
+            border-color: cb1d !important; }
+           
+        .ytSearchboxComponentSuggestionsContainer,
         div.sbsb_a,
         .sbfl_b {
-            background-color: bg3d; }
-
+            background-color: bg3d !important; }
+           
+        .ytSuggestionComponentSuggestionHover {
+            color: fg1d !important; }
+           
+        .ytSuggestionComponentSuggestionHover:hover,
         .sbsb_c.gsfs.sbsb_d:hover,
         .sbsb_d {
-            background-color: bg5d; }
+            background-color: bg5d !important; }
 
+        .ytSearchboxComponentReportButton,
         div.sbfl_b:hover,
         div.sbfl_b:active {
-            color: cb1d; }
+            color: cb1d !important; }
 
         .sbdd_b {
             border: 1px solid bg3d;
@@ -857,16 +910,16 @@ domain("studio.youtube.com") {
         .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
         .yt-core-attributed-string__link--call-to-action-color {
             color: cb1d !important; }
-            
+           
         .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
             color: fg1d; }
-            
+           
         #description-inline-expander .yt-core-attributed-string--link-inherit-color {
             color: fg1d !important; }
-            
+           
         .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
             color: fg9d; }
-            
+           
         #marquee-scroll-inner-container .yt-core-attributed-string--link-inherit-color, .YtReelSoundMetadataViewModelIcon {
             color: fg1d !important; }
 
@@ -938,6 +991,13 @@ domain("studio.youtube.com") {
            
         .YtPlayerStoryboardTimestamp {
             color: fg1d; }
+           
+        ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+            background: linear-gradient(to right, ca1d 80%, ca4d 100%); }
+           
+        /* Video Player: Progress Bar */        
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress {
+            background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4d 100%); }
 
         /* Video Player: Progress Bar: Ad */
         .ad-interrupting .ytp-play-progress.ytp-swatch-background-color,
@@ -1049,7 +1109,7 @@ domain("studio.youtube.com") {
 
         .ytp-promotooltip-pointer {
             border-color: cb1d transparent transparent transparent; }
-            
+           
         /* Shorts */
         #shorts-container {
             background-color: bg1d; }
@@ -1078,7 +1138,8 @@ domain("studio.youtube.com") {
     /* YouTube Logo, thanks to: Mihachika */
     #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path,
     #logo-icon > svg > g > g:nth-child(1) > path,
-    #logo-icon-container > svg > g > g:nth-child(1) > path {
+    #logo-icon-container > svg > g > g:nth-child(1) > path,
+#logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path {
         fill: var(--yt-spec-static-brand-red); }
 
     /* Title */
@@ -1098,7 +1159,8 @@ domain("studio.youtube.com") {
         box-shadow: 0 1px 0 transparent; }
 
     /* Notification */
-    #icon > #button > .ytd-notification-topbar-button-renderer > div > .yt-spec-icon-badge-shape__badge {
+    #icon>#button>.ytd-notification-topbar-button-renderer>div>.yt-spec-icon-badge-shape__badge,
+.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge {
         background-color: var(--yt-spec-static-brand-red); }
 
     /* Like Button, removed by youtube recently */
@@ -1233,7 +1295,7 @@ domain("studio.youtube.com") {
        
     .vk-btn:hover {
         color: var(--yt-spec-text-primary); }
-        
+       
     /* Masthead */
     .ytd-masthead {
         background-color: var(--yt-spec-base-background); }
