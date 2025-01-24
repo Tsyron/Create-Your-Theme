@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.4.1
+@version        1.4.3
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -483,6 +483,9 @@ domain("studio.youtube.com") {
         .sbdd_b {
             border: 1px solid bg2l;
             background: bg2l; }
+            
+        .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
+            color: fg1l; }
 
         /* Searchbox: Select Outline */
         ytd-searchbox[has-focus] #container.ytd-searchbox {
@@ -651,6 +654,12 @@ domain("studio.youtube.com") {
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
             background-color: bg12l; }
+            
+        yt-page-navigation-progress[enable-refresh-signature-moments-web] #progress.yt-page-navigation-progress,
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress,
+        .PlayerControlsProgressBarHostProgressBarPlayed,
+        .PlayerControlsProgressBarHostProgressBarPlayheadDot {
+            background: linear-gradient(to right, ca1l 80%, ca4l 100%); }
 
         /* Video Player: Progress Background*/
         .ytp-progress-list {
@@ -760,8 +769,7 @@ domain("studio.youtube.com") {
             background-color: bg1l; }
            
         .YtReelSoundMetadataViewModelMarqueeContainer {
-            color: bg1l;
-        }
+            color: bg1l; }
 
         /* Tooltip: Video Player*/
         /* background */.ytp-tooltip-text {
@@ -830,6 +838,9 @@ domain("studio.youtube.com") {
         .sbdd_b {
             border: 1px solid bg3d;
             background: bg3d; }
+            
+        .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
+            color: fg1d; }
 
         /* Searchbox: Outline */
         ytd-searchbox[has-focus] #container.ytd-searchbox {
@@ -1010,6 +1021,12 @@ domain("studio.youtube.com") {
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
             background-color: fg7d; }
+            
+        yt-page-navigation-progress[enable-refresh-signature-moments-web] #progress.yt-page-navigation-progress,
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress,
+        .PlayerControlsProgressBarHostProgressBarPlayed,
+        .PlayerControlsProgressBarHostProgressBarPlayheadDot {
+            background: linear-gradient(to right, ca1d 80%, ca4d 100%); }
 
         /* Video Player: Progress Background*/
         .ytp-progress-list {
