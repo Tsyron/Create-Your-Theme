@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.4.3
+@version        1.4.8
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -78,7 +78,7 @@ domain("studio.youtube.com") {
     cb4l=rgba(cb1l, 0.1)
     cb5l=rgba(cb1l, 0.2)
     cb6l=rgba(cb1l, 0.8)
-    cgl=color-green-light
+    cg1l=color-green-light
     cyl=color-yellow-light
        
     /* Dark Theme */
@@ -123,7 +123,7 @@ domain("studio.youtube.com") {
     cb4d=rgba(cb1d, 0.2)
     cb5d=rgba(cb1d, 0.1)
     cb6d=rgba(cb1d, 0.8)
-    cgd=color-green-dark
+    cg1d=color-green-dark
     cyd=color-yellow-dark
 
     /* Light Theme */
@@ -177,7 +177,7 @@ domain("studio.youtube.com") {
         --yt-spec-text-primary: fg1l;
         --yt-spec-text-secondary: fg10l;
         --yt-spec-themed-blue: cb1l !important;
-        --yt-spec-themed-green: cgl;
+        --yt-spec-themed-green: cg1l;
         --yt-spec-themed-overlay-background: bg3l;
         --yt-spec-touch-response-inverse: fg1l;
         --yt-spec-touch-response: fg1l;
@@ -268,10 +268,15 @@ domain("studio.youtube.com") {
         --ytcp-text-primary: fg1l !important;
         --ytcp-text-secondary: fg10l !important;
         --ytcp-themed-blue: cb1l !important;
-        --ytcp-themed-green: cgl !important;
+        --ytcp-themed-green: cg1l !important;
         --ytcp-themed-red: ca1l !important;
 
-        --paper-progress-container-color: cb1l; }
+        --paper-progress-container-color: cb1l;
+   
+        /* Sponsorblock */
+        --sb-category-sponsor: cg1l;
+        --sb-category-poi_highlight: ca1l;
+        --sb-category-text-preview-sponsor: green; }
 
     /* Dark Theme */
     html[dark],
@@ -330,7 +335,7 @@ domain("studio.youtube.com") {
         --yt-spec-text-primary: fg1d;
         --yt-spec-text-secondary: fg9d;
         --yt-spec-themed-blue: cb1d !important;
-        --yt-spec-themed-green: cgd;
+        --yt-spec-themed-green: cg1d;
         --yt-spec-themed-overlay-background: bg5d;
         --yt-spec-touch-response-inverse: fg1d;
         --yt-spec-touch-response: fg1d;
@@ -424,7 +429,7 @@ domain("studio.youtube.com") {
         --ytcp-text-primary: fg1d !important;
         --ytcp-text-secondary: fg9d !important;
         --ytcp-themed-blue: cb1d !important;
-        --ytcp-themed-green: cgd !important;
+        --ytcp-themed-green: cg1d !important;
         --ytcp-themed-red: ca1d !important;
 
         --paper-progress-container-color: cb1d;
@@ -433,7 +438,11 @@ domain("studio.youtube.com") {
         --ytmusic-color-white1: fg1d;
         --ytmusic-color-black1: bg1d;
         --ytmusic-color-youtubered: ca1d;
-        --ytmusic-color-lightblue: cb1d; }
+        --ytmusic-color-lightblue: cb1d;
+
+        /* Sponsorblock */
+        --sb-category-sponsor: cg1d;
+        --sb-category-poi_highlight: ca1d; }
 
     html,
     html[light],
@@ -483,7 +492,7 @@ domain("studio.youtube.com") {
         .sbdd_b {
             border: 1px solid bg2l;
             background: bg2l; }
-            
+           
         .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
             color: fg1l; }
 
@@ -648,18 +657,18 @@ domain("studio.youtube.com") {
             background-color: cb1l; }
            
         /* Video Player: Progress Bar */        
-        .ytp-cairo-refresh-signature-moments .ytp-play-progress {
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress, .ytp-play-progress {
             background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4l 100%); }
 
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
             background-color: bg12l; }
-            
+           
         yt-page-navigation-progress[enable-refresh-signature-moments-web] #progress.yt-page-navigation-progress,
         .ytp-cairo-refresh-signature-moments .ytp-play-progress,
         .PlayerControlsProgressBarHostProgressBarPlayed,
-        .PlayerControlsProgressBarHostProgressBarPlayheadDot {
-            background: linear-gradient(to right, ca1l 80%, ca4l 100%); }
+        .PlayerControlsProgressBarHostProgressBarPlayheadDot, .yt-page-navigation-progress {
+            background: linear-gradient(to right, ca1l 80%, ca4l 100%) !important; }
 
         /* Video Player: Progress Background*/
         .ytp-progress-list {
@@ -838,7 +847,7 @@ domain("studio.youtube.com") {
         .sbdd_b {
             border: 1px solid bg3d;
             background: bg3d; }
-            
+           
         .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
             color: fg1d; }
 
@@ -1007,7 +1016,7 @@ domain("studio.youtube.com") {
             background: linear-gradient(to right, ca1d 80%, ca4d 100%); }
            
         /* Video Player: Progress Bar */        
-        .ytp-cairo-refresh-signature-moments .ytp-play-progress {
+        .ytp-cairo-refresh-signature-moments .ytp-play-progress, .ytp-play-progress {
             background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4d 100%); }
 
         /* Video Player: Progress Bar: Ad */
@@ -1021,12 +1030,12 @@ domain("studio.youtube.com") {
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
             background-color: fg7d; }
-            
+           
         yt-page-navigation-progress[enable-refresh-signature-moments-web] #progress.yt-page-navigation-progress,
         .ytp-cairo-refresh-signature-moments .ytp-play-progress,
         .PlayerControlsProgressBarHostProgressBarPlayed,
-        .PlayerControlsProgressBarHostProgressBarPlayheadDot {
-            background: linear-gradient(to right, ca1d 80%, ca4d 100%); }
+        .PlayerControlsProgressBarHostProgressBarPlayheadDot, .yt-page-navigation-progress {
+            background: linear-gradient(to right, ca1d 80%, ca4d 100%) !important; }
 
         /* Video Player: Progress Background*/
         .ytp-progress-list {
@@ -1132,7 +1141,7 @@ domain("studio.youtube.com") {
             background-color: bg1d; }
 
         /* Tooltip: Video Player*/
-        /* background */.ytp-tooltip-text {
+        /* background */.ytp-tooltip-text, .ytp-tooltip-bottom-text {
             background-color: bg6d; }
                
         /* text */#tooltip.tp-yt-paper-tooltip, .ytp-tooltip:not([aria-hidden="true"]), .ytp-tooltip {
@@ -1282,6 +1291,10 @@ domain("studio.youtube.com") {
        
     a.ytp-ce-link, a.ytp-ce-link:hover {
         color: var(--yt-spec-call-to-action); }
+           
+        /* Video Player: Pop-up Sponsorblock */
+    .sponsorSkipNoticeTableContainer {
+            background-color: bg12d !important; }
        
     /* Thumbnail: Watched Underline */
     #progress {
@@ -1319,8 +1332,7 @@ domain("studio.youtube.com") {
            
     /* Tooltip Redesign */
     #tooltip.tp-yt-paper-tooltip,
-    ytcp-paper-tooltip-placeholder[type=label] #tooltip.ytcp-paper-tooltip-placeholder,
-    .ytp-tooltip-text {
+    ytcp-paper-tooltip-placeholder[type=label] #tooltip.ytcp-paper-tooltip-placeholder {
         padding: 5px 8px;
         opacity: 1 !important;
         line-height: 14px;
@@ -1332,12 +1344,16 @@ domain("studio.youtube.com") {
         .ytp-tooltip-duration {
             border-radius: 5px; } }
            
-    /* Tooltip: Video Player*/
+    /* Tooltip: Video Player */
     .ytp-preview .ytp-tooltip-text {
         background-color: transparent !important; }
 
-    /* Login Pop-up */
+    /* Pop-up Login */
     .ytd-popup-container {
+        border-radius: 12px; }
+       
+    /* Pop-up Cookies */
+    #dialog {
         border-radius: 12px; }
 
     if checkbox-animations {
