@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.4.8
+@version        1.5.0
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -79,7 +79,7 @@ domain("studio.youtube.com") {
     cb5l=rgba(cb1l, 0.2)
     cb6l=rgba(cb1l, 0.8)
     cg1l=color-green-light
-    cyl=color-yellow-light
+    cy1l=color-yellow-light
        
     /* Dark Theme */
     bg1d=color-background-dark
@@ -97,6 +97,7 @@ domain("studio.youtube.com") {
     bg13d=rgba(bg1d, 0.08)
     bg14d=rgba(bg1d, 0.6)
     bg15d=rgba(bg1d, 0.75)
+    bg16d=rgba(bg1d, 0.1)
        
     fg1d=color-foreground-dark
     fg2d=rgba(fg1d, 0.075)
@@ -124,7 +125,7 @@ domain("studio.youtube.com") {
     cb5d=rgba(cb1d, 0.1)
     cb6d=rgba(cb1d, 0.8)
     cg1d=color-green-dark
-    cyd=color-yellow-dark
+    cy1d=color-yellow-dark
 
     /* Light Theme */
     html,
@@ -132,58 +133,70 @@ domain("studio.youtube.com") {
     [light],
     html[system-icons],
     html:not(.style-scope) {
-        /* --yt-spec-10-percent-layer: fg3l;*/
-        --yt-spec-ad-indicator: ca1l;
-        --yt-spec-base-background: bg1l;
+        --cyt-background-100: bg1l;
+        --cyt-foreground-5: fg2l;
+        --cyt-foreground-10: fg3l;
+        --cyt-foreground-20: fg5l;
+        --cyt-foreground-50: fg8l;
+        --cyt-foreground-90: fg13l;
+        --cyt-foreground-100: fg1l;
+        --cyt-blue-darken-10: cb3l;
+        --cyt-blue-100: cb1l;
+        --cyt-accent-100: ca1l;
+        --cyt-yellow-100: cy1l;
+        
+        --yt-spec-10-percent-layer: var(--cyt-foreground-10);
+        --yt-spec-ad-indicator: var(--cyt-accent-100);
+        --yt-spec-base-background: var(--cyt-background-100);
         --yt-spec-brand-background-primary: bg3l;
-        --yt-spec-brand-background-solid: bg1l;
-        --yt-spec-brand-button-background: ca1l;
-        --yt-spec-brand-icon-active: fg1l;
-        --yt-spec-brand-icon-inactive: fg1l;
-        --yt-spec-brand-link-text: ca1l;
-        --yt-spec-badge-chip-background: fg2l;
-        --yt-spec-button-chip-background-hover: fg3l;
-        --yt-spec-call-to-action-hover: cb3l;
-        --yt-spec-call-to-action-inverse: cb1l;
-        --yt-spec-call-to-action: cb1l;
-        --yt-spec-error-background: bg1d;
-        --yt-spec-error-indicator: ca1l;
+        --yt-spec-brand-background-solid: var(--cyt-background-100);
+        --yt-spec-brand-button-background: var(--cyt-accent-100);
+        --yt-spec-brand-icon-active: var(--cyt-foreground-100);
+        --yt-spec-brand-icon-inactive: var(--cyt-foreground-100);
+        --yt-spec-brand-link-text: var(--cyt-accent-100);
+        --yt-spec-badge-chip-background: var(--cyt-foreground-5);
+        --yt-spec-button-chip-background-hover: var(--cyt-foreground-10);
+        --yt-spec-call-to-action-hover: var(--cyt-blue-darken-10);
+        --yt-spec-call-to-action-inverse: var(--cyt-blue-100);
+        --yt-spec-call-to-action: var(--cyt-blue-100);
+        --yt-spec-error-background: var(--cyt-foreground-100);
+        --yt-spec-error-indicator: var(--cyt-accent-100);
         --yt-spec-filled-button-focus-outline: fg9l;
         --yt-spec-filled-button-text: bg2l;
         --yt-spec-general-background-a: bg2l;
         --yt-spec-general-background-b: bg2l;
         --yt-spec-general-background-c: bg2l;
-        --yt-spec-icon-active-other: fg1l;
+        --yt-spec-icon-active-other: var(--cyt-foreground-100);
         --yt-spec-icon-disabled: fg8l;
-        --yt-spec-icon-inactive: fg1l;
-        --yt-spec-inverted-background: fg1l;
+        --yt-spec-icon-inactive: var(--cyt-foreground-100);
+        --yt-spec-inverted-background: var(--cyt-foreground-100);
         --yt-spec-menu-background: bg3l;
-        --yt-spec-additive-background: fg2l;
-        --yt-spec-outline: fg2l;
+        --yt-spec-additive-background: var(--cyt-foreground-005);
+        --yt-spec-outline: var(--cyt-foreground-005);
         --yt-spec-raised-background: bg3l;
-        --yt-spec-red-indicator: ca1l;
-        --yt-spec-selected-nav-text: ca1l;
-        --yt-spec-static-ad-yellow: ca1l;
-        --yt-spec-static-brand-red: ca1l;
-        --yt-spec-static-brand-white: bg1l;
+        --yt-spec-red-indicator: var(--cyt-accent-100);
+        --yt-spec-selected-nav-text: var(--cyt-accent-100);
+        --yt-spec-static-ad-yellow: var(--cyt-accent-100);
+        --yt-spec-static-brand-red: var(--cyt-accent-100);
+        --yt-spec-static-brand-white: var(--cyt-background-100);
         --yt-spec-static-overlay-background-brand: ca3l;
         --yt-spec-static-overlay-background-heavy: fg11l;
-        --yt-spec-static-overlay-text-primary: bg1l;
-        --yt-spec-static-overlay-touch-response: fg1l;
+        --yt-spec-static-overlay-text-primary: var(--cyt-background-100);
+        --yt-spec-static-overlay-touch-response: var(--cyt-foreground-100);
         --yt-spec-suggested-action: cb4l;
-        --yt-spec-suggested-action-inverse: fg1l;
+        --yt-spec-suggested-action-inverse: var(--cyt-foreground-100);
         --yt-spec-text-disabled: fg8l;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
-        --yt-spec-text-primary: fg1l;
+        --yt-spec-text-primary: var(--cyt-foreground-100);
         --yt-spec-text-secondary: fg10l;
-        --yt-spec-themed-blue: cb1l !important;
+        --yt-spec-themed-blue: var(--cyt-blue-100) !important;
         --yt-spec-themed-green: cg1l;
         --yt-spec-themed-overlay-background: bg3l;
-        --yt-spec-touch-response-inverse: fg1l;
-        --yt-spec-touch-response: fg1l;
-        --yt-spec-wordmark-text: fg1l;
+        --yt-spec-touch-response-inverse: var(--cyt-foreground-100);
+        --yt-spec-touch-response: var(--cyt-foreground-100);
+        --yt-spec-wordmark-text: var(--cyt-foreground-100);
 
-        --ytd-searchbox-background: bg1l;
+        --ytd-searchbox-background: var(--cyt-background-100);
         --ytd-searchbox-border-color: fg5l;
         --ytd-searchbox-legacy-border-color: fg5l;
         --ytd-searchbox-legacy-border-shadow-color: transparent;
@@ -192,23 +205,23 @@ domain("studio.youtube.com") {
         --ytd-searchbox-legacy-button-hover-color: bg4l;
         --ytd-searchbox-legacy-button-focus-color: bg4l;
         --ytd-searchbox-legacy-button-hover-border-color: fg5l;
-        --ytd-searchbox-legacy-button-icon-color: fg1l;
-        --ytd-searchbox-text-color: fg1l;
+        --ytd-searchbox-legacy-button-icon-color: var(--cyt-foreground-100);
+        --ytd-searchbox-text-color: var(--cyt-foreground-100);
 
-        --yt-live-chat-author-chip-owner-background-color: cyl;
-        --yt-live-chat-author-chip-owner-text-color: fg1l;
-        --yt-live-chat-action-panel-background-color: bg1l;
+        --yt-live-chat-author-chip-owner-background-color: var(--cyt-yellow-100);
+        --yt-live-chat-author-chip-owner-text-color: var(--cyt-foreground-100);
+        --yt-live-chat-action-panel-background-color: var(--cyt-background-100);
         /*--yt-live-chat-panel-pages-border-color: fg5l;*/
-        --yt-live-chat-background-color: bg1l;
+        --yt-live-chat-background-color: var(--cyt-background-100);
         --yt-live-chat-banner-gradient-scrim: linear-gradient(bg2l, transparent);
         /*--yt-live-chat-banner-border-color: fg5l;*/
-        --yt-live-chat-enabled-send-button-color: fg1l;
+        --yt-live-chat-enabled-send-button-color: var(--cyt-foreground-100);
         --yt-live-chat-product-picker-hover-color: var(--yt-spec-badge-chip-background);
-        --yt-live-chat-tertiary-text-color: fg1l;
+        --yt-live-chat-tertiary-text-color: var(--cyt-foreground-100);
         --yt-live-chat-text-input-field-inactive-underline-color: fg6l;
-        --yt-live-chat-toast-background-color: bg1l;
-        --yt-live-chat-toast-text-color: fg1l;
-        --yt-live-chat-toast-action-color: cb1l;
+        --yt-live-chat-toast-background-color: var(--cyt-background-100);
+        --yt-live-chat-toast-text-color: var(--cyt-foreground-100);
+        --yt-live-chat-toast-action-color: var(--cyt-blue-100);
         --yt-live-chat-vem-background-color: bg6l;
 
         --yt-emoji-picker-category-background-color: bg2l;
@@ -216,10 +229,10 @@ domain("studio.youtube.com") {
 
         --paper-input-container-focus-color: bg3l;
         --paper-toast-background-color: bg3l !important;
-        --paper-toggle-button-checked-button-color: cb1l;
-        --paper-toggle-button-unchecked-button-color: bg1l;
-        --paper-tooltip-background: fg1l !important;
-        --paper-tooltip-text-color: bg1l;
+        --paper-toggle-button-checked-button-color: var(--cyt-blue-100);
+        --paper-toggle-button-unchecked-button-color: var(--cyt-background-100);
+        --paper-tooltip-background: var(--cyt-foreground-100) !important;
+        --paper-tooltip-text-color: var(--cyt-background-100);
         --paper-dialog-background-color: var(--yt-spec-menu-background);
 
         --yt-compact-link-icon-color: c1fl !important;
@@ -229,54 +242,57 @@ domain("studio.youtube.com") {
         /*--yt-endpoint-color: cb1l;*/
         --ytls-menu-header-background: bg3l !important;
 
-        --ytd-icon-color: fg1l;
+        --ytd-icon-color: var(--cyt-foreground-100);
 
-        --iron-icon-fill-color: fg1l;
+        --iron-icon-fill-color: var(--cyt-foreground-100);
+
+        --yt-frosted-glass-desktop: bg8l;
+        --yt-frosted-glass-mobile: bg8l;
 
         scrollbar-color: var(--yt-spec-text-secondary) var(--yt-spec-base-background);
 
         /* YouTube Studio, thanks to: Lesboy */
-        --ytcp-analytics-overview: ca1l !important;
+        --ytcp-analytics-overview: var(--cyt-accent-100) !important;
         --ytcp-badge-blue: cb4l !important;
         --ytcp-brand-background-solid: bg2l !important;
-        --ytcp-call-to-action-raised-background: cb1l !important;
+        --ytcp-call-to-action-raised-background: var(--cyt-blue-100) !important;
         --ytcp-call-to-action-raised-disabled-background: fg8l !important;
-        --ytcp-call-to-action-raised-disabled: bg1l !important;
-        --ytcp-call-to-action-raised: bg1l !important;
-        --ytcp-call-to-action: cb1l !important;
+        --ytcp-call-to-action-raised-disabled: var(--cyt-background-100) !important;
+        --ytcp-call-to-action-raised: var(--cyt-background-100) !important;
+        --ytcp-call-to-action: var(--cyt-blue-100) !important;
         --ytcp-container-border-color: fg5l !important;
         --ytcp-container-border: 1px solid fg5l;
         --ytcp-container-hovered-border-color: fg5l !important;
-        --ytcp-error-red: ca1l !important;
-        --ytcp-focus: cb1l !important;
-        --ytcp-general-background-a: bg1l !important;
+        --ytcp-error-red: var(--cyt-accent-100) !important;
+        --ytcp-focus: var(--cyt-blue-100) !important;
+        --ytcp-general-background-a: var(--cyt-background-100) !important;
         --ytcp-general-background-b: bg3l !important;
         --ytcp-general-background-c: bg2l !important;
         --ytcp-hover-item: var(--yt-spec-badge-chip-background) !important;
         --ytcp-icon-disabled: fg8l !important;
-        --ytcp-icon-inactive: fg1l !important;
+        --ytcp-icon-inactive: var(--cyt-foreground-100) !important;
         --ytcp-line-divider-solid: fg5l !important;
         --ytcp-line-divider: fg5l !important;
         --ytcp-menu-background: bg3l !important;
         --ytcp-selected-item: var(--yt-spec-10-percent-layer) !important;
-        --ytcp-static-background-inverse: bg1l;
-        --ytcp-static-brand-red: ca1l;
-        --ytcp-static-overlay-text-primary: fg1l !important;
+        --ytcp-static-background-inverse: var(--cyt-background-100);
+        --ytcp-static-brand-red: var(--cyt-accent-100);
+        --ytcp-static-overlay-text-primary: var(--cyt-foreground-100) !important;
         --ytcp-static-overlay-text-secondary: fg10l;
         --ytcp-static-overlay-tooltip-background: bg3l !important;
         --ytcp-text-disabled: fg8l !important;
-        --ytcp-text-primary: fg1l !important;
+        --ytcp-text-primary: var(--cyt-foreground-100) !important;
         --ytcp-text-secondary: fg10l !important;
-        --ytcp-themed-blue: cb1l !important;
+        --ytcp-themed-blue: var(--cyt-blue-100) !important;
         --ytcp-themed-green: cg1l !important;
-        --ytcp-themed-red: ca1l !important;
+        --ytcp-themed-red: var(--cyt-accent-100) !important;
 
-        --paper-progress-container-color: cb1l;
+        --paper-progress-container-color: var(--cyt-blue-100);
    
         /* Sponsorblock */
         --sb-category-sponsor: cg1l;
-        --sb-category-poi_highlight: ca1l;
-        --sb-category-text-preview-sponsor: green; }
+        --sb-category-poi_highlight: var(--cyt-accent-100);
+        --sb-category-text-preview-sponsor: cg1l; }
 
     /* Dark Theme */
     html[dark],
@@ -289,57 +305,68 @@ domain("studio.youtube.com") {
     html[darker-dark-theme] [dark],
     html[system-icons][dark],
     html:not(.style-scope)[dark] {
-        /*--yt-spec-10-percent-layer: fg6d;*/
-        --yt-spec-ad-indicator: ca1d;
-        --yt-spec-base-background: bg1d;
+        --cyt-background-100: bg1d;
+        --cyt-foreground-100: fg1d;
+        --cyt-foreground-90: fg11d;
+        --cyt-foreground-10: fg3d;
+        --cyt-foreground-50: fg8d;
+        --cyt-foreground-20: fg6d;
+        --cyt-blue-100: cb1d;
+        --cyt-accent-100: ca1d;
+        --cyt-yellow-100: cy1d;
+        --cyt-blue-lighten-10: cb2d;
+        
+        --yt-spec-10-percent-layer: var(--cyt-foreground-20);
+        --yt-spec-ad-indicator: var(--cyt-accent-100);
+        --yt-spec-base-background: var(--cyt-background-100);
         --yt-spec-brand-background-primary: bg5d;
-        --yt-spec-brand-background-solid: bg1d;
-        --yt-spec-brand-button-background: ca1d;
-        --yt-spec-brand-icon-active: fg1d;
-        --yt-spec-brand-icon-inactive: fg1d;
-        --yt-spec-brand-link-text: ca1d;
+        --yt-spec-brand-background-solid: var(--cyt-background-100);
+        --yt-spec-brand-button-background: var(--cyt-accent-100);
+        --yt-spec-brand-icon-active: var(--cyt-foreground-100);
+        --yt-spec-brand-icon-inactive: var(--cyt-foreground-100);
+        --yt-spec-brand-link-text: var(--cyt-accent-100);
         --yt-spec-badge-chip-background: fg2d;
         --yt-spec-button-chip-background-hover: fg6d;
-        --yt-spec-call-to-action-hover: cb2d !important;
-        --yt-spec-call-to-action-inverse: bg1d;
-        --yt-spec-call-to-action: cb1d;
-        --yt-spec-error-background: bg1l;
-        --yt-spec-error-indicator: ca1d;
+        --yt-spec-call-to-action-hover: var(--cyt-blue-lighten-10) !important;
+        --yt-spec-call-to-action-inverse: var(--cyt-background-100);
+        --yt-spec-call-to-action: var(--cyt-blue-100);
+        --yt-spec-error-background: var(--cyt-foreground-100);
+        --yt-spec-error-indicator: var(--cyt-accent-100);
         --yt-spec-filled-button-focus-outline: fg9d;
         --yt-spec-filled-button-text: bg3d;
         --yt-spec-general-background-a: bg3d;
-        --yt-spec-general-background-b: bg1d;
+        --yt-spec-general-background-b: var(--cyt-background-100);
         --yt-spec-general-background-c: bg8d;
-        --yt-spec-icon-active-other: fg1d;
+        --yt-spec-icon-active-other: var(--cyt-foreground-100);
         --yt-spec-icon-disabled: fg8d;
-        --yt-spec-icon-inactive: fg1d;
-        --yt-spec-inverted-background: fg1d;
+        --yt-spec-icon-inactive: var(--cyt-foreground-100);
+        --yt-spec-inverted-background: var(--cyt-foreground-100);
         --yt-spec-menu-background: bg5d;
         --yt-spec-additive-background: fg3d;
         --yt-spec-outline: fg6d;
         --yt-spec-raised-background: bg5d;
-        --yt-spec-red-indicator: ca1d;
-        --yt-spec-selected-nav-text: ca1d;
-        --yt-spec-static-ad-yellow: ca1d;
+        --yt-spec-red-indicator: var(--cyt-accent-100);
+        --yt-spec-selected-nav-text: var(--cyt-accent-100);
+        --yt-spec-static-ad-yellow: var(--cyt-accent-100);
         --yt-spec-static-brand-black: bg5d;
-        --yt-spec-static-brand-red: ca1d;
-        --yt-spec-static-brand-white: fg1d;
+        --yt-spec-static-brand-red: var(--cyt-accent-100);
+        --yt-spec-static-brand-white: var(--cyt-foreground-100);
         --yt-spec-static-overlay-background-brand: ca3d;
         --yt-spec-static-overlay-background-heavy: bg11d;
-        --yt-spec-static-overlay-text-primary: fg1d;
-        --yt-spec-static-overlay-touch-response: fg1d;
+        --yt-spec-static-overlay-text-primary: var(--cyt-foreground-100);
+        --yt-spec-static-overlay-touch-response: var(--cyt-foreground-100);
         --yt-spec-suggested-action: cb3d;
-        --yt-spec-suggested-action-inverse: fg1d;
+        --yt-spec-suggested-action-inverse: var(--cyt-foreground-100);
         --yt-spec-text-disabled: fg8d;
         --yt-spec-text-primary-inverse: var(--yt-spec-base-background);
-        --yt-spec-text-primary: fg1d;
+        --yt-spec-text-primary: var(--cyt-foreground-100);
         --yt-spec-text-secondary: fg9d;
-        --yt-spec-themed-blue: cb1d !important;
+        --yt-spec-themed-blue: var(--cyt-blue-100) !important;
         --yt-spec-themed-green: cg1d;
         --yt-spec-themed-overlay-background: bg5d;
-        --yt-spec-touch-response-inverse: fg1d;
-        --yt-spec-touch-response: fg1d;
-        --yt-spec-wordmark-text: fg1d;
+        --yt-spec-touch-response-inverse: var(--cyt-foreground-100);
+        --yt-spec-touch-response: var(--cyt-foreground-100);
+        --yt-spec-wordmark-text: var(--cyt-foreground-100);
 
         --ytd-searchbox-background: bg2d;
         --ytd-searchbox-border-color: fg4d;
@@ -350,26 +377,26 @@ domain("studio.youtube.com") {
         --ytd-searchbox-legacy-button-hover-color: bg4d;
         --ytd-searchbox-legacy-button-focus-color: fg4d;
         --ytd-searchbox-legacy-button-hover-border-color: fg2d;
-        --ytd-searchbox-legacy-button-icon-color: fg1d;
-        --ytd-searchbox-text-color: fg1d;
+        --ytd-searchbox-legacy-button-icon-color: var(--cyt-foreground-100);
+        --ytd-searchbox-text-color: var(--cyt-foreground-100);
 
-        --yt-live-chat-action-panel-background-color: bg1d;
+        --yt-live-chat-action-panel-background-color: var(--cyt-background-100);
         /*--yt-live-chat-panel-pages-border-color: fg6d;*/
-        --yt-live-chat-author-chip-owner-background-color: cyd;
-        --yt-live-chat-author-chip-owner-text-color: bg1d;
-        --yt-live-chat-background-color: bg1d;
+        --yt-live-chat-author-chip-owner-background-color: var(--cyt-yellow-100);
+        --yt-live-chat-author-chip-owner-text-color: var(--cyt-background-100);
+        --yt-live-chat-background-color: var(--cyt-background-100);
         --yt-live-chat-banner-gradient-scrim: linear-gradient(bg3d, transparent);
         /* --yt-live-chat-banner-border-color: fg6d; */
-        --yt-live-chat-enabled-send-button-color: fg1d;
-        --yt-live-chat-header-background-color: bg1d;
+        --yt-live-chat-enabled-send-button-color: var(--cyt-foreground-100);
+        --yt-live-chat-header-background-color: var(--cyt-background-100);
         --yt-live-chat-product-picker-hover-color: var(--yt-spec-badge-chip-background);
         --yt-live-chat-secondary-text-color: fg9d;
-        --yt-live-chat-slider-active-color: cb1d;
-        --yt-live-chat-tertiary-text-color: fg1d;
+        --yt-live-chat-slider-active-color: var(--cyt-blue-100);
+        --yt-live-chat-tertiary-text-color: var(--cyt-foreground-100);
         --yt-live-chat-text-input-field-inactive-underline-color: fg6d;
-        --yt-live-chat-toast-background-color: bg1d;
-        --yt-live-chat-toast-text-color: fg1d;
-        --yt-live-chat-toast-action-color: cb1d;
+        --yt-live-chat-toast-background-color: var(--cyt-background-100);
+        --yt-live-chat-toast-text-color: var(--cyt-foreground-100);
+        --yt-live-chat-toast-action-color: var(--cyt-blue-100);
         --yt-live-chat-vem-background-color: bg6d;
 
         --yt-emoji-picker-category-background-color: bg3d;
@@ -377,72 +404,76 @@ domain("studio.youtube.com") {
 
         --paper-input-container-focus-color: bg5d;
         --paper-toast-background-color: bg5d !important;
-        --paper-toggle-button-checked-button-color: cb1d;
-        --paper-toggle-button-unchecked-button-color: fg1d;
+        --paper-toggle-button-checked-button-color: var(--cyt-blue-100);
+        --paper-toggle-button-unchecked-button-color: var(--cyt-foreground-100);
         --paper-tooltip-background: bg6d !important;
-        --paper-tooltip-text-color: fg1d;
+        --paper-tooltip-text-color: var(--cyt-foreground-100);
         --paper-dialog-background-color: var(--yt-spec-menu-background);
 
         --disabled-text-color: fg9d !important;
 
-        --yt-compact-link-icon-color: fg1d !important;
+        --yt-compact-link-icon-color: var(--cyt-foreground-100) !important;
         --yt-deprecated-white-opacity-lighten-1: fg9d;
         /* --yt-endpoint-color: cb1d;*/
         --ytls-menu-header-background: bg5d !important;
 
-        --ytd-icon-color: fg1d;
+        --ytd-icon-color: var(--cyt-foreground-100);
 
-        --iron-icon-fill-color: fg1d;
+        --iron-icon-fill-color: var(--cyt-foreground-100);
+
+        --yt-frosted-glass-desktop: bg11d;
+        --yt-frosted-glass-mobile: bg11d;
 
         scrollbar-color: var(--yt-spec-text-secondary) var(--yt-spec-base-background);
 
         /* YouTube Studio, thanks to: Lesboy */
-        --ytcp-analytics-overview: ca1d !important;
+        --ytcp-analytics-overview: var(--cyt-accent-100) !important;
         --ytcp-badge-blue: cb3d !important;
         --ytcp-brand-background-solid: bg3d !important;
-        --ytcp-call-to-action-raised-background: cb1d !important;
+        --ytcp-call-to-action-raised-background: var(--cyt-blue-100) !important;
         --ytcp-call-to-action-raised-disabled-background: fg8d !important;
-        --ytcp-call-to-action-raised-disabled: bg1d !important;
-        --ytcp-call-to-action-raised: bg1d !important;
-        --ytcp-call-to-action: cb1d !important;
+        --ytcp-call-to-action-raised-disabled: var(--cyt-background-100) !important;
+        --ytcp-call-to-action-raised: var(--cyt-background-100) !important;
+        --ytcp-call-to-action: var(--cyt-blue-100) !important;
         --ytcp-container-border-color: fg6d !important;
         --ytcp-container-border: 1px solid fg6d !important;
         --ytcp-container-hovered-border-color: fg6d !important;
-        --ytcp-error-red: ca1d !important;
-        --ytcp-focus: cb1d !important;
-        --ytcp-general-background-a: bg1d !important;
+        --ytcp-error-red: var(--cyt-accent-100) !important;
+        --ytcp-focus: var(--cyt-blue-100) !important;
+        --ytcp-general-background-a: var(--cyt-background-100) !important;
         --ytcp-general-background-b: bg5d !important;
         --ytcp-general-background-c: bg3d !important;
         --ytcp-hover-item: var(--yt-spec-badge-chip-background) !important;
         --ytcp-icon-disabled: fg8d !important;
-        --ytcp-icon-inactive: fg1d !important;
+        --ytcp-icon-inactive: var(--cyt-foreground-100) !important;
         --ytcp-line-divider-solid: fg6d !important;
         --ytcp-line-divider: fg6d !important;
         --ytcp-menu-background: bg5d !important;
         --ytcp-selected-item: fg6d !important;
-        --ytcp-static-background-inverse: bg1d;
-        --ytcp-static-brand-red: ca1d;
-        --ytcp-static-overlay-text-primary: fg1d !important;
+        --ytcp-static-background-inverse: var(--cyt-background-100);
+        --ytcp-static-brand-red: var(--cyt-accent-100);
+        --ytcp-static-overlay-text-primary: var(--cyt-foreground-100) !important;
         --ytcp-static-overlay-text-secondary: fg9d;
         --ytcp-static-overlay-tooltip-background: bg5d !important;
         --ytcp-text-disabled: fg8d !important;
-        --ytcp-text-primary: fg1d !important;
+        --ytcp-text-primary: var(--cyt-foreground-100) !important;
         --ytcp-text-secondary: fg9d !important;
-        --ytcp-themed-blue: cb1d !important;
+        --ytcp-themed-blue: var(--cyt-blue-100) !important;
         --ytcp-themed-green: cg1d !important;
-        --ytcp-themed-red: ca1d !important;
+        --ytcp-themed-red: var(--cyt-accent-100) !important;
 
-        --paper-progress-container-color: cb1d;
+        --paper-progress-container-color: var(--cyt-blue-100);
 
         /* YouTube Music */
-        --ytmusic-color-white1: fg1d;
-        --ytmusic-color-black1: bg1d;
-        --ytmusic-color-youtubered: ca1d;
-        --ytmusic-color-lightblue: cb1d;
+        --ytmusic-color-white1: var(--cyt-foreground-100);
+        --ytmusic-color-black1: var(--cyt-background-100);
+        --ytmusic-color-youtubered: var(--cyt-accent-100);
+        --ytmusic-color-lightblue: var(--cyt-blue-100);
 
         /* Sponsorblock */
         --sb-category-sponsor: cg1d;
-        --sb-category-poi_highlight: ca1d; }
+        --sb-category-poi_highlight: var(--cyt-accent-100);
+        --sb-category-text-preview-sponsor: cg1d; }
 
     html,
     html[light],
@@ -454,131 +485,78 @@ domain("studio.youtube.com") {
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
         #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2),
         #logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path:nth-child(2) {
-            fill: var(--yt-spec-base-background); }
+            fill: var(--cyt-background-100); }
 
         /* Searchbar: Colours */
         .ytSearchboxComponentInputBox {
-            background-color: bg1l;
-            border-color: fg5l;
+            background-color: var(--cyt-background-100);
+            border-color: var(--cyt-foreground-20);
             box-shadow: none; }
            
         .ytSearchboxComponentSearchButton {
             background-color: bg4l;
-            border-color: fg5l; }
+            border-color: var(--cyt-foreground-20); }
            
         .ytSearchboxComponentHostDark {
-            color: fg1l; }
+            color: var(--cyt-foreground-100); }
            
         .ytSearchboxComponentInputBox.ytSearchboxComponentInputBoxHasFocus {
-            border-color: cb1l; }
+            border-color: var(--cyt-blue-100); }
            
         .ytSearchboxComponentSuggestionsContainer,
         div.sbsb_a,
         .sbfl_b {
             background-color: bg2l; }
-           
-        .ytSuggestionComponentSuggestionHover {
-            color: fg1l; }
 
-        .ytSuggestionComponentSuggestionHover:hover, .sbsb_c.gsfs.sbsb_d:hover,
+        .ytSuggestionComponentSuggestionHover:hover, 
+        .sbsb_c.gsfs.sbsb_d:hover,
         .sbsb_d {
             background-color: bg5l; }
-
-        .ytSearchboxComponentReportButton,
-        div.sbfl_b:hover,
-        div.sbfl_b:active {
-            color: cb1l; }
 
         .sbdd_b {
             border: 1px solid bg2l;
             background: bg2l; }
-           
-        .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
-            color: fg1l; }
-
-        /* Searchbox: Select Outline */
-        ytd-searchbox[has-focus] #container.ytd-searchbox {
-            border: 1px solid cb1l; }
-
-        /* Like Button, removed by youtube recently */
-        #ryd-bar-container {
-            background: fg8l; }
 
         /* Buttons: Mono */
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
-            background-color: fg13l; }
-
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-            color: fg1l;
-            background-color: fg2l; }
+            background-color: var(--cyt-foreground-5); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
-            color: fg1l;
-            background-color: fg3l; }
-
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-            color: fg1l; }
+            background-color: var(--cyt-foreground-10); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
-            color: fg1l;
-            border-color: 1px solid fg3l; }
+            border-color: 1px solid var(--cyt-foreground-10); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover,
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
-            background-color: fg3l;
-            border-color: 1px solid fg3l; }
+            background-color: var(--cyt-foreground-10);
+            border-color: 1px solid var(--cyt-foreground-10); }
 
         /* Buttons: Mono: Video Player */
-        .ytp-sb-subscribe {
-            color: bg1l;
-            background-color: fg1l; }
-
-        .ytp-sb-subscribe:hover {
-            background-color: fg13l; }
-           
         .ytp-sb-unsubscribe {
             color: fg1d;
             background: fg3d; }
 
         /* Buttons: Call to action */
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
-            color: cb1l;
             border-color: 1px solid fg3l; }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
             background-color: cb4l;
             border-color: 1px solid cb4l; }
 
-        .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
-            color: cb1l; }
-
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
             background-color: cb4l; }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--tonal {
-            color: cb1l;
             background-color: cb4l; }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--tonal:hover {
             background-color: cb5l; }
 
-        .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
-            color: bg1l;
-            background-color: cb1l; }
-
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
             color: bg1l;
-            background-color: cb3l; }
-
-        .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
-        .yt-core-attributed-string__link--call-to-action-color {
-            color: cb1l !important; }
-
-        .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
-            color: fg1l; }
-           
-        #description-inline-expander .yt-core-attributed-string--link-inherit-color {
-            color: fg1l !important; }
+            background-color: --cyt-blue-darken-10; }
            
         .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
             color: fg10l; }
@@ -587,13 +565,6 @@ domain("studio.youtube.com") {
             color: bg1l !important; }
 
         /* Buttons: Overlay */
-        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
-            color: fg1l; }
-
-        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
-            color: fg1l;
-            background-color: bg1l; }
-
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover {
             background-color: bg8l; }
 
@@ -625,40 +596,20 @@ domain("studio.youtube.com") {
             background: fg9l !important; }
            
         .YtmPaidContentOverlayLink {
-            background-color: fg9l;
-            border-left: 4px solid cb1l; }
-           
-        .YtPlayerStoryboardStoryboardImageWrapper {
-            background-color: bg1l;
-            border: 2px solid bg1l; }
+            background-color: fg9l; }
            
         .YtPlayerStoryboardTimestamp {
             color: bg1l; }
-
-        .YtProgressBarPlayheadProgressBarPlayheadDot, .YtProgressBarLineProgressBarPlayed {
-            background-color: ca1l; }
        
         .YtProgressBarLineProgressBarBackground, .YtProgressBarLineProgressBarLoaded, .YtProgressBarLineProgressBarHovered {
             background-color: bg1l; }
            
         ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
             background: linear-gradient(to right, ca1l 80%, ca4l 100%); }
-
-        /* Video Player: Paid content badge */
-        .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
-            border-left: 4px solid cb1l; }
-
-        /* Video Player: Progress Bar: Ad */
-        .ad-interrupting .ytp-play-progress.ytp-swatch-background-color,
-        .ytp-ad-persistent-progress-bar {
-            background-color: cyl; }
-
-        .ytp-flyout-cta .ytp-flyout-cta-action-button.ytp-flyout-cta-action-button-rounded {
-            background-color: cb1l; }
            
         /* Video Player: Progress Bar */        
         .ytp-cairo-refresh-signature-moments .ytp-play-progress, .ytp-play-progress {
-            background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4l 100%); }
+            background: linear-gradient(to right, var(--cyt-accent-100) 80%, ca4l 100%); }
 
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
@@ -691,9 +642,6 @@ domain("studio.youtube.com") {
                     box-shadow: inset 2px 2px 0 cb6l, inset 0 -2px 0 cb6l; } } }
 
         /* Video player: Subtitles: Settings */
-        .ytp-panel-footer-content-link {
-            color: cb1l; }
-           
         .ytp-caption-segment {
             background: bg15d !important; }
 
@@ -708,23 +656,9 @@ domain("studio.youtube.com") {
         #player-error-message-container .yt-spec-icon-shape {
             color: fg1d }
 
-        /* Video Player: Cards */
-        .ytp-cards-teaser .ytp-cards-teaser-box {
-            background: bg1l;
-            border-bottom: 1px solid bg1l; }
-
-        .ytp-cards-teaser .ytp-cards-teaser-text {
-            color: fg1l; }
-
         /* Channel: Tabs */
-        .yt-tab-shape-wiz__tab--tab-selected {
-            color: fg1l !important; }
-
         .yt-tab-shape-wiz__tab {
             color: fg10l; }
-
-        .yt-tab-group-shape-wiz__slider {
-            background-color: fg1l; }
 
         .yt-tab-shape-wiz:hover .yt-tab-shape-wiz__tab-bar {
             background-color: fg8l; }
@@ -746,32 +680,10 @@ domain("studio.youtube.com") {
             background: bg6l; }
 
         /* Homepage Skeleton*/
-        #home-container-skeleton,
-        #guide-skeleton,
-        #home-chips,
-        #player,
-        #watch-page-skeleton,
-        ytd-masthead.shell {
-            background-color: bg1l !important; }
-
         #home-page-skeleton .skeleton-bg-color,
         .masthead-skeleton-icon,
         .skeleton-bg-color {
             background-color: fg4l !important; }
-
-        /* Callout */
-        #callout,
-        #divot,
-        #divot.ytcp-feature-discovery-callout {
-            background-color: cb1l;
-            border-color: cb1l; }
-
-        .ytp-promotooltip-container {
-            background-color: cb1l;
-            color: fg1l; }
-
-        .ytp-promotooltip-pointer {
-            border-color: cb1l transparent transparent transparent; }
            
         /* Shorts */
         #shorts-container {
@@ -790,7 +702,8 @@ domain("studio.youtube.com") {
         .ytp-tooltip.ytp-text-detail .ytp-tooltip-title {
             color: bg11l; }
            
-        /* background hover progress bar */.ytp-tooltip.ytp-preview:not(.ytp-text-detail) {
+        /* background hover progress bar */
+        .ytp-tooltip.ytp-preview:not(.ytp-text-detail) {
             background-color: bg1l; }
            
         .ytp-tooltip.ytp-text-detail.ytp-preview.ytp-has-duration .ytp-tooltip-duration {
@@ -809,7 +722,7 @@ domain("studio.youtube.com") {
         #logo-icon > svg > g > g:nth-child(1) > path:nth-child(2),
         #logo-icon-container > svg > g > g:nth-child(1) > path:nth-child(2)
         #logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path:nth-child(2) {
-            fill: fg1d; }
+            fill: var(--cyt-foreground-100); }
 
         /* Searchbar: Colours */
         .ytSearchboxComponentInputBoxDark {
@@ -821,76 +734,41 @@ domain("studio.youtube.com") {
             border-color: fg4d !important; }
            
         .ytSearchboxComponentHostDark {
-            color: fg1d !important; }
+            color: var(--cyt-foreground-100) !important; }
            
         .ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus {
-            border-color: cb1d !important; }
+            border-color: var(--cyt-blue-100) !important; }
            
         .ytSearchboxComponentSuggestionsContainer,
         div.sbsb_a,
         .sbfl_b {
             background-color: bg3d !important; }
            
-        .ytSuggestionComponentSuggestionHover {
-            color: fg1d !important; }
-           
         .ytSuggestionComponentSuggestionHover:hover,
         .sbsb_c.gsfs.sbsb_d:hover,
         .sbsb_d {
             background-color: bg5d !important; }
 
-        .ytSearchboxComponentReportButton,
-        div.sbfl_b:hover,
-        div.sbfl_b:active {
-            color: cb1d !important; }
-
         .sbdd_b {
             border: 1px solid bg3d;
             background: bg3d; }
-           
-        .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
-            color: fg1d; }
-
-        /* Searchbox: Outline */
-        ytd-searchbox[has-focus] #container.ytd-searchbox {
-            border: 1px solid cb1d; }
-
-        /* Like Button, removed by youtube recently */
-        #ryd-bar-container {
-            background: fg8d; }
 
         /* Buttons: Mono */
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-            color: fg1d;
-            background-color: fg3d; }
-
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
-            background-color: fg11d; }
+            background-color: var(--cyt-foreground-10); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
-            color: fg1d;
-            background-color: fg6d; }
+            background-color: var(--cyt-foreground-20); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
-            color: fg1d;
-            border-color: 1px solid fg6d; }
-
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-            color: fg1d; }
+            border-color: 1px solid var(--cyt-foreground-20); }
 
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover,
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
-            border-color: 1px solid fg6d;
-            background-color: fg6d; }
+            border-color: 1px solid var(--cyt-foreground-20);
+            background-color: var(--cyt-foreground-20); }
 
         /* Buttons: Mono: Video Player */
-        .ytp-sb-subscribe {
-            color: bg1d;
-            background-color: fg1d; }
-
-        .ytp-sb-subscribe:hover {
-            background-color: fg11d; }
-
         .ytp-sb-unsubscribe {
             color: fg1d; }
 
@@ -899,43 +777,24 @@ domain("studio.youtube.com") {
 
         /* Buttons: Call to action */
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
-            color: cb1d;
             border-color: 1px solid fg6d; }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline:hover {
             background-color: cb4d;
             border-color: 1px solid cb4d; }
 
-        .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
-            color: cb1d; }
-
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
             background-color: cb4d; }
 
-        .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
-            color: bg1d;
-            background-color: cb1d; }
-
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
             color: bg1d;
-            background-color: cb2d; }
+            background-color: var(--cyt-blue-lighten-10); }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--tonal {
-            color: cb1d;
             background-color: cb5d; }
 
         .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--tonal:hover {
             background-color: cb4d; }
-
-        .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
-        .yt-core-attributed-string__link--call-to-action-color {
-            color: cb1d !important; }
-           
-        .yt-core-attributed-string--link-inherit-color, .truncated-text-wiz__absolute-button, .ShortsLockupViewModelHostOutsideMetadataEndpoint {
-            color: fg1d; }
-           
-        #description-inline-expander .yt-core-attributed-string--link-inherit-color {
-            color: fg1d !important; }
            
         .yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string--link-inherit-color, .truncated-text-wiz, .ShortsLockupViewModelHostOutsideMetadataSubhead {
             color: fg9d; }
@@ -944,13 +803,6 @@ domain("studio.youtube.com") {
             color: fg1d !important; }
 
         /* Buttons: Overlay */
-        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
-            color: fg1d !important; }
-           
-        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
-            color: bg1d;
-            background-color: fg1d; }
-           
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled:hover {
             background-color: fg11d; }
 
@@ -963,9 +815,6 @@ domain("studio.youtube.com") {
            
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline:hover {
             background-color: fg3d !important; }
-
-        .YtProgressBarPlayheadProgressBarPlayheadDot, .YtProgressBarLineProgressBarPlayed {
-            background-color: ca1d; }
        
         .YtProgressBarLineProgressBarBackground, .YtProgressBarLineProgressBarLoaded, .YtProgressBarLineProgressBarHovered {
             background-color: fg1d; }
@@ -985,8 +834,7 @@ domain("studio.youtube.com") {
 
         /* Video Player: Overlay */
         .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
-            background-color: bg14d;
-            border-left: 4px solid cb1d; }
+            background-color: bg14d; }
            
         .ytp-ce-website-metadata, .ytp-ce-channel-metadata {
             color: fg8d; }
@@ -1002,12 +850,7 @@ domain("studio.youtube.com") {
             background: bg14d !important; }
            
         .YtmPaidContentOverlayLink {
-            background-color: bg14d;
-            border-left: 4px solid cb1d; }
-           
-        .YtPlayerStoryboardStoryboardImageWrapper {
-            background-color: bg1d;
-            border: 2px solid bg1d; }
+            background-color: bg14d; }
            
         .YtPlayerStoryboardTimestamp {
             color: fg1d; }
@@ -1017,15 +860,7 @@ domain("studio.youtube.com") {
            
         /* Video Player: Progress Bar */        
         .ytp-cairo-refresh-signature-moments .ytp-play-progress, .ytp-play-progress {
-            background: linear-gradient(to right, var(--yt-spec-static-brand-red) 80%, ca4d 100%); }
-
-        /* Video Player: Progress Bar: Ad */
-        .ad-interrupting .ytp-play-progress.ytp-swatch-background-color,
-        .ytp-ad-persistent-progress-bar {
-            background-color: cyd; }
-
-        .ytp-flyout-cta .ytp-flyout-cta-action-button.ytp-flyout-cta-action-button-rounded {
-            background-color: cb1d; }
+            background: linear-gradient(to right, var(--cyt-accent-100) 80%, ca4d 100%); }
 
         /* Video Player: Progress Loaded */
         .ytp-load-progress {
@@ -1057,34 +892,17 @@ domain("studio.youtube.com") {
                 .ytp-menuitem-icon {
                     box-shadow: inset 2px 2px 0 v, inset 0 -2px 0 cb6d; } } }
 
-        /* Video player: Subtitles */
-        .ytp-panel-footer-content-link {
-            color: cb1d; }
-           
+        /* Video player: Subtitles */           
         .ytp-caption-segment {
             background-color: bg15d !important; }
-
-        /* Video Player: Cards */
-        .ytp-cards-teaser .ytp-cards-teaser-box {
-            background: bg5d;
-            border-bottom: 1px solid bg5d; }
-
-        .ytp-cards-teaser .ytp-cards-teaser-text {
-            color: fg1d; }
 
         /* Video Player: Black Borders */
         #movie_player {
             background-color: bg7d; }
 
         /* Channel Tabs */
-        .yt-tab-shape-wiz__tab--tab-selected {
-            color: fg1d !important; }
-
         .yt-tab-shape-wiz__tab {
             color: fg9d; }
-
-        .yt-tab-group-shape-wiz__slider {
-            background-color: fg1d; }
 
         .yt-tab-shape-wiz:hover .yt-tab-shape-wiz__tab-bar {
             background-color: fg8d; }
@@ -1109,32 +927,10 @@ domain("studio.youtube.com") {
             filter: invert(1); }
 
         /* Homepage Skeleton*/
-        #home-container-skeleton,
-        #guide-skeleton,
-        #home-chips,
-        #player,
-        #watch-page-skeleton,
-        ytd-masthead.shell {
-            background-color: bg1d !important; }
-
         #home-page-skeleton .skeleton-bg-color,
         .masthead-skeleton-icon,
         .skeleton-bg-color {
             background-color: fg5d !important; }
-
-        /* Callout */
-        #callout,
-        #divot,
-        #divot.ytcp-feature-discovery-callout {
-            background-color: cb1d;
-            border-color: cb1d; }
-
-        .ytp-promotooltip-container {
-            background-color: cb1d;
-            color: fg1d; }
-
-        .ytp-promotooltip-pointer {
-            border-color: cb1d transparent transparent transparent; }
            
         /* Shorts */
         #shorts-container {
@@ -1150,7 +946,8 @@ domain("studio.youtube.com") {
         .ytp-tooltip.ytp-text-detail .ytp-tooltip-title {
             color: fg12d; }
        
-        /* background hover progress bar */.ytp-tooltip.ytp-preview:not(.ytp-text-detail) {
+        /* background hover progress bar */
+        .ytp-tooltip.ytp-preview:not(.ytp-text-detail) {
             background-color: bg1d; }
            
         .ytp-tooltip.ytp-text-detail.ytp-preview.ytp-has-duration .ytp-tooltip-duration {
@@ -1165,21 +962,35 @@ domain("studio.youtube.com") {
     #logo-icon > .yt-spec-icon-shape > div > svg > svg > g > path,
     #logo-icon > svg > g > g:nth-child(1) > path,
     #logo-icon-container > svg > g > g:nth-child(1) > path,
-#logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path {
-        fill: var(--yt-spec-static-brand-red); }
+    #logo-icon > .yt-spec-icon-shape > div > svg > g:nth-child(1) > path {
+        fill: var(--cyt-accent-100); }
 
     /* Title */
     .page-header-view-model-wiz__page-header-title {
-        color: var(--yt-spec-text-primary); }
+        color: var(--cyt-background-100); }
 
     /* Searchbar: Colours */
     .sbpqs_a, .gsfs {
-        color: var(--yt-spec-text-primary); }
+        color: var(--cyt-background-100); }
+
+    .ytSearchboxComponentReportButton,
+        div.sbfl_b:hover,
+        div.sbfl_b:active {
+            color: var(--cyt-blue-100); }
+           
+    .ytSuggestionComponentSuggestionHover {
+        color: var(--cyt-foreground-100); }
+           
+    .ytSearchboxComponentDesktop .ytSearchboxComponentClearButtonIcon {
+        color: var(--cyt-background-100); }
 
     /* Searchbox: Outline, Shadow */
     ytd-searchbox[has-focus] #container.ytd-searchbox,
     ytd-searchbox #container.ytd-searchbox {
         box-shadow: inset 0 0 0; }
+        
+    ytd-searchbox[has-focus] #container.ytd-searchbox {
+            border: 1px solid var(--cyt-blue-100); }
 
     #search-icon-legacy.ytd-searchbox:hover {
         box-shadow: 0 1px 0 transparent; }
@@ -1187,36 +998,95 @@ domain("studio.youtube.com") {
     /* Notification */
     #icon>#button>.ytd-notification-topbar-button-renderer>div>.yt-spec-icon-badge-shape__badge,
 .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge {
-        background-color: var(--yt-spec-static-brand-red); }
+        background-color: var(--cyt-accent-100); }
 
     /* Like Button, removed by youtube recently */
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(2) > path:nth-child(1),
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(4) > path:nth-child(1),
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(2),
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(2) {
-        stroke: var(--yt-spec-text-primary) !important; }
+        stroke: var(cyt-foreground-100) !important; }
 
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(1) > path:nth-child(1),
     yt-animated-icon[animated-icon-type="LIKE"] > ytd-lottie-player > lottie-component > svg > g:nth-child(2) > g:nth-child(2) > g:nth-child(3) > path:nth-child(1) {
-        fill: var(--yt-spec-text-primary) !important; }
+        fill: var(cyt-foreground-100) !important; }
        
     /* Buttons: Mono */
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-        color: var(--yt-spec-text-primary-inverse);
-        background-color: var(--yt-spec-text-primary); }
+        color: var(--cyt-background-100);
+        background-color: var(cyt-foreground-100); }
+
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+        background-color: var(--cyt-foreground-90); }
+
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        color: var(--cyt-foreground-100); }
+        
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
+        color: var(--cyt-foreground-100); }
+        
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+        color: var(--cyt-foreground-100); }
+        
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+        color: var(--cyt-foreground-100); }
 
     /* Buttons: Mono: Video Player */
     .ytp-sb-subscribe {
-        background-color: var(--yt-spec-text-primary); }
+        color: var(--cyt-background-100);
+        background-color: var(--cyt-foreground-100); }
+        
+    .ytp-sb-subscribe:hover {
+        background-color: var(--cyt-foreground-90); }
+
+    .ytp-sb-unsubscribe {
+        background-color: var(--cyt-foreground-100); }
 
     /* Buttons: Call to action */
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled {
+        color: var(--cyt-background-100);
+        background-color: var(--cyt-blue-100); }
+            
     .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled:hover {
         background-color: var(--yt-spec-call-to-action-hover); }
+        
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
+        color: var(--cyt-blue-100); }
+        
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
+        color: var(--cyt-blue-100); }
+        
+    .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--tonal {
+        color: var(--cyt-blue-100); }
+        
+    .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
+    .yt-core-attributed-string__link--call-to-action-color {
+        color: var(--cyt-blue-100) !important; }
 
+    .yt-core-attributed-string--link-inherit-color,
+    .truncated-text-wiz__absolute-button,
+    .ShortsLockupViewModelHostOutsideMetadataEndpoint {
+        color: var(--cyt-foreground-100); }
+           
+    #description-inline-expander .yt-core-attributed-string--link-inherit-color {
+        color: var(--cyt-foreground-100) !important; }
+
+    /* Buttons: Overlay */
+    .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
+         color: var(--cyt-foreground-100) !important; }
+           
+    .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
+         color: var(--cyt-background-100);
+         background-color: var(--cyt-foreground-100); }
+
+    /* Like Button, removed by youtube */
+    #ryd-bar-container {
+         background: var(--cyt-foreground-50); }
+        
     /* Video Player: Play Button */
     .ytp-cued-thumbnail-overlay:hover .ytp-large-play-button-bg,
     .ytp-large-play-button.ytp-touch-device .ytp-large-play-button-bg {
-        fill: var(--yt-spec-static-brand-red); }
+        fill: var(--cyt-accent-100); }
 
     /* Video Player: Progress Bar */
     .html5-play-progress,
@@ -1225,11 +1095,19 @@ domain("studio.youtube.com") {
     .ytp-scrubber-button,
     .html5-scrubber-button:hover,
     .ytp-scrubber-button:hover {
-        background-color: var(--yt-spec-static-brand-red); }
+        background-color: var(--cyt-accent-100); }
+
+    /* Video Player: Progress Bar: Ad */
+    .ytp-flyout-cta .ytp-flyout-cta-action-button.ytp-flyout-cta-action-button-rounded {
+            background-color: var(--cyt-blue-100); }
+            
+    .ad-interrupting .ytp-play-progress.ytp-swatch-background-color,
+    .ytp-ad-persistent-progress-bar {
+            background-color: var(--cyt-yellow-100); }
 
     /* Video Player: Live knob */
     .ytp-live-badge[disabled]::before {
-        background-color: var(--yt-spec-static-brand-red); }
+        background-color: var(--cyt-accent-100); }
 
     /* Video Player: Panel Menu Pop-up */
     .ytp-popup, .iv-branding .branding-context-container-inner, .ytp-has-duration, .ytp-tooltip.ytp-preview {
@@ -1241,25 +1119,22 @@ domain("studio.youtube.com") {
     .ytp-settings-button.ytp-5k-quality-badge::after,
     .ytp-settings-button.ytp-8k-quality-badge::after,
     .ytp-settings-button.ytp-3d-badge::after {
-        background-color: var(--yt-spec-static-brand-red); }
+        background-color: var(--cyt-accent-100); }
 
     .ytp-swatch-color-white {
-        color: var(--yt-spec-static-brand-red); }
+        color: var(--cyt-accent-100); }
 
     /* Video Player: Option toggle */
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
-        background: var(--yt-spec-static-brand-red); }
+        background: var(--cyt-accent-100); }
 
     /* Video Player: Subtitles Toggle */
     .ytp-chrome-controls .ytp-button[aria-pressed]::after {
-        background-color: var(--yt-spec-static-brand-red); }
+        background-color: var(--cyt-accent-100); }
 
     /* Video Player: Pop-up Menu */
     .ytp-popup {
         border-radius: 15px; }
-
-    .ytp-sb-unsubscribe {
-        background-color: var(--yt-spec-touch-response); }
 
     /* Video Player: Gradient */
     .ytp-gradient-bottom,
@@ -1278,27 +1153,45 @@ domain("studio.youtube.com") {
     .ytp-ce-video-duration, .ytp-ce-expanding-icon, .ytp-ce-playlist-count {
         border-radius: 6px;
         background-color: var(--yt-spec-static-overlay-background-heavy); }
+        
+    .YtPlayerStoryboardStoryboardImageWrapper {
+            background-color: var(--cyt-background-100);
+            border: 2px solid var(--cyt-background-100); }
        
     .ytp-ce-expanding-overlay-background {
-        background-color: var(--yt-spec-base-background);
-        color: var(--yt-spec-text-primary) !important; }
+        background-color: var(--cyt-background-100);
+        color: var(--cyt-foreground-100) !important; }
        
     .ytp-ce-website-title {
-        color: var(--yt-spec-text-primary) !important; }
+        color: var(--cyt-foreground-100) !important; }
        
     .ytp-ce-website-title, .yt-ui-ellipsis {
-        background-color: var(--yt-spec-base-background); }
+        background-color: var(--cyt-background-100); }
        
     a.ytp-ce-link, a.ytp-ce-link:hover {
-        color: var(--yt-spec-call-to-action); }
+        color: var(--cyt-blue-100); }
+    
+    .YtmPaidContentOverlayLink {
+        border-left: 4px solid var(--cyt-blue-100); }
+        
+    .YtProgressBarPlayheadProgressBarPlayheadDot, .YtProgressBarLineProgressBarPlayed {
+        background-color: var(--cyt-accent-100); }
+
+    /* Video player: Subtitles: Settings */
+    .ytp-panel-footer-content-link {
+        color: var(--cyt-blue-100); }
+
+    /* Video Player: Paid content badge */
+    .ytp-exp-ppp-update .ytp-paid-content-overlay-link {
+        border-left: 4px solid var(--cyt-blue-100); }
            
-        /* Video Player: Pop-up Sponsorblock */
+    /* Video Player: Pop-up Sponsorblock */
     .sponsorSkipNoticeTableContainer {
-            background-color: bg12d !important; }
+        background-color: bg12d !important; }
        
     /* Thumbnail: Watched Underline */
     #progress {
-        color: var(--yt-spec-static-brand-red); }
+        color: var(--cyt-accent-100); }
 
     /* Thumbnail: Hover Icon */
     .ytp-inline-preview-controls,
@@ -1308,27 +1201,53 @@ domain("studio.youtube.com") {
         background-color: bg10d;
         animation-delay: 0s; }
 
+    /* Channel: Tabs */
+    .yt-tab-shape-wiz__tab--tab-selected {
+        color: var(--cyt-foreground-100) !important; }
+
+    .yt-tab-group-shape-wiz__slider {
+        background-color: var(--cyt-foreground-100); }
+
+    /* Callout */
+    #callout,
+    #divot,
+    #divot.ytcp-feature-discovery-callout {
+        background-color: var(--cyt-blue-100);
+        border-color: var(--cyt-blue-100); }
+
+    .ytp-promotooltip-container {
+        background-color: var(--cyt-blue-100);
+        color: var(--cyt-foreground-100); }
+
+    .ytp-promotooltip-pointer {
+        border-color: var(--cyt-blue-100) transparent transparent transparent; }
+
     /* Virtual Keyboard */
     .vk-box {
-        background-color: var(--yt-spec-base-background);
+        background-color: var(--cyt-background-100);
         border: transparent;
         border-radius: 14px; }
 
     .vk-t {
-        color: var(--yt-spec-text-primary); }
+        color: var(--cyt-foreground-100); }
 
     .vk-btn {
-        color: var(--yt-spec-text-primary);
+        color: var(--cyt-foreground-100);
         background-image: linear-gradient(transparent, transparent);
         border: transparent;
         border-radius: 7px; }
        
     .vk-btn:hover {
-        color: var(--yt-spec-text-primary); }
-       
-    /* Masthead */
-    .ytd-masthead {
-        background-color: var(--yt-spec-base-background); }
+        color: var(--cyt-foreground-100); }
+        
+    /* Homepage Skeleton*/
+    #home-container-skeleton,
+    #guide-skeleton,
+    #home-chips,
+    #player,
+    #watch-page-skeleton,
+    ytd-masthead.shell {
+        background-color: var(--cyt-background-100) !important; }
            
     /* Tooltip Redesign */
     #tooltip.tp-yt-paper-tooltip,
@@ -1347,6 +1266,9 @@ domain("studio.youtube.com") {
     /* Tooltip: Video Player */
     .ytp-preview .ytp-tooltip-text {
         background-color: transparent !important; }
+        
+    .ytp-tooltip.ytp-text-detail.ytp-preview.ytp-has-duration .ytp-tooltip-duration {
+        border-radius: 5px; }
 
     /* Pop-up Login */
     .ytd-popup-container {
