@@ -824,7 +824,8 @@ domain("studio.youtube.com") {
 
     /* Video Player: Subtitles background */
     .ytp-caption-segment {
-        background-color: var(--cyt-subtitles-background) !important; }
+        background-color: var(--cyt-subtitles-background) !important; 
+        color: var(--yt-spec-white-1) !important; }
 
     /* Video player: Subtitles: Settings */
     .ytp-panel-footer-content-link {
