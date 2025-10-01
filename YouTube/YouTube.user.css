@@ -995,6 +995,9 @@ domain("studio.youtube.com") {
     /* Thumbnail: Watched Underline */
     #progress {
         color: var(--cyt-accent-100); }
+        
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: linear-gradient(to right, var(--cyt-accent-100) 80%, var(--cyt-accent-lighten-30) 100%) !important; }
 
     /* Thumbnail: Hover Icon */
     .ytp-inline-preview-controls,
