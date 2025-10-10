@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.5.5
+@version        1.5.6
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -19,7 +19,6 @@
 @var            color color-blue-dark "--- Blue" #3ea6ff
 @var            color color-green-dark "--- Green" #2ba640
 @var            color color-yellow-dark "--- Yellow" #ffd600
-
 ==/UserStyle== */
 @-moz-document domain("youtube.com"),
 domain("studio.youtube.com") {
@@ -216,6 +215,7 @@ domain("studio.youtube.com") {
         --yt-spec-white-5: var(--cyt-background-30);
         --yt-spec-black-1: var(--cyt-foreground-100);
         --yt-spec-black-2: var(--cyt-foreground-60);
+        --yt-spec-black-3: var(--cyt-foreground-30);
         --yt-spec-grey-4: var(--cyt-background-20);
 
         --yt-live-chat-author-chip-owner-text-color: var(--cyt-foreground-100);
@@ -336,6 +336,7 @@ domain("studio.youtube.com") {
         --yt-spec-white-5: var(--cyt-foreground-30);
         --yt-spec-black-1: var(--cyt-background-100);
         --yt-spec-black-2: var(--cyt-background-60);
+        --yt-spec-black-3: var(--cyt-background-30);
         --yt-spec-grey-4: var(--cyt-foreground-20);
 
         /*--yt-live-chat-panel-pages-border-color: var(--cyt-foreground-20);*/
@@ -688,6 +689,9 @@ domain("studio.youtube.com") {
         color: var(--cyt-foreground-100) !important;
         background-color: var(--cyt-overlay-filled-hover);
         border-color: var(--cyt-foreground-30) !important; }
+        
+    .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
+        background-color: var(--cyt-foreground-100); }
 
     /* Buttons: Disabled */
     .yt-spec-button-shape-next--disabled {
@@ -876,7 +880,13 @@ domain("studio.youtube.com") {
             [fill="#fff"],
             [fill="#FFF"],
             [fill="#FFFFFF"] {
-                fill: var(--yt-spec-white-1) !important; } } }
+                fill: var(--yt-spec-white-1) !important; } }
+            
+        .yt-spec-button-shape-next--overlay {
+            color: var(--yt-spec-white-1) !important; }
+            
+         .ytPlayerQuickActionButtonsHost:not(:empty) {
+             background: var(--yt-spec-black-3); } }
                 
     [fill="#fff"],
     .ytp-menuitem svg > path:not([fill="none"]) {
