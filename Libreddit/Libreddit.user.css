@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           Libreddit - Create Your Theme
+@name           Redlib/Libreddit - Create Your Theme
 @namespace      https://github.com/Tsyron/Create-Your-Theme/blob/main/Libreddit/Libreddit.user.styl
-@version        1.0.1
+@version        1.0.2
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -34,7 +34,10 @@ url-prefix("https://lr."),
 url-prefix("https://l."),
 url-prefix("https://reddit."),
 url-prefix("https://reddi."),
+url-prefix("https://red."),
+url-prefix("https://redlib."),
 url-prefix("https://rd"),
+url-prefix("https://rl."),
 url-prefix("https://r."),
 domain("bob.fr.to"),
 domain("safereddit.com"),
