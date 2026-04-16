@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.6.4
+@version        1.6.7
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -222,6 +222,24 @@ domain("studio.youtube.com") {
         --yt-spec-themed-overlay-background: var(--cyt-background-lighten-20);
         --yt-spec-text-secondary: var(--cyt-foreground-70);
         
+        --yt-sys-color-baseline--base-background: var(--cyt-background-100);
+        --yt-sys-color-baseline--menu-background: var(--yt-spec-menu-background);
+        --yt-sys-color-baseline--raised-background: var(--yt-spec-raised-background);
+        --yt-sys-color-baseline--additive-background: var(--cyt-badge-background);
+        --yt-sys-color-baseline--wordmark-text: var(foreground-100);
+        --yt-sys-color-baseline--text-primary: var(--cyt-foreground-100);
+        --yt-sys-color-baseline--text-secondary: var(--yt-spec-text-secondary);
+        --yt-sys-color-baseline--call-to-action: var(--cyt-blue-100);
+        --yt-sys-color-baseline--suggested-action: var(--yt-spec-suggested-action);
+        --yt-sys-color-baseline--outline: var(--yt-spec-outline);
+        --yt-sys-color-baseline--outline-opaque: var(--yt-spec-outline);
+        --yt-sys-color-baseline--outline-inverse-opaque: var(--cyt-foreground-100);
+        --yt-sys-color-baseline--overlay-background-medium-light: var(--yt-spec-static-overlay-background-medium-light);
+        --yt-sys-color-baseline--overlay-background-heavy: var(--yt-spec-static-overlay-background-heavy);
+        --yt-sys-color-baseline--overlay-background-solid: var(--yt-spec-static-overlay-background-solid);
+        --yt-sys-color-baseline--overlay-text-primary: var(--yt-spec-static-overlay-text-primary);
+        --yt-sys-color-baseline--frosted-glass-desktop: var(--cyt-background-90);
+        
         --paper-toggle-button-unchecked-button-color: var(--cyt-background-100);
         --paper-checkbox-checked-color: var(--cyt-blue-100);
         --paper-checkbox-checked-ink-color: var(--cyt-blue-100);
@@ -360,6 +378,24 @@ domain("studio.youtube.com") {
         --yt-spec-themed-overlay-background: var(--cyt-background-lighten-10);
         --yt-spec-text-secondary: var(--cyt-foreground-70);
         --yt-spec-touch-response-inverse: var(--cyt-foreground-100);
+        
+        --yt-sys-color-baseline--base-background: var(--cyt-background-100);
+        --yt-sys-color-baseline--menu-background: var(--yt-spec-menu-background);
+        --yt-sys-color-baseline--raised-background: var(--yt-spec-raised-background);
+        --yt-sys-color-baseline--additive-background: var(--cyt-badge-background);
+        --yt-sys-color-baseline--wordmark-text: redz;
+        --yt-sys-color-baseline--text-primary: var(--cyt-foreground-100);
+        --yt-sys-color-baseline--text-secondary: var(--yt-spec-text-secondary);
+        --yt-sys-color-baseline--call-to-action: var(--cyt-blue-100);
+        --yt-sys-color-baseline--suggested-action: var(--yt-spec-suggested-action);
+        --yt-sys-color-baseline--outline: var(--yt-spec-outline);
+        --yt-sys-color-baseline--outline-opaque: var(--yt-spec-outline);
+        --yt-sys-color-baseline--outline-inverse-opaque: var(--cyt-foreground-100);
+        --yt-sys-color-baseline--overlay-background-medium-light: var(--yt-spec-static-overlay-background-medium-light);
+        --yt-sys-color-baseline--overlay-background-heavy: var(--yt-spec-static-overlay-background-heavy);
+        --yt-sys-color-baseline--overlay-background-solid: var(--yt-spec-static-overlay-background-solid);
+        --yt-sys-color-baseline--overlay-text-primary: var(--yt-spec-static-overlay-text-primary);
+        --yt-sys-color-baseline--frosted-glass-desktop: var(--cyt-background-80);
         
         --paper-toggle-button-unchecked-button-color: var(--cyt-foreground-100);
         --paper-checkbox-checked-color: var(--cyt-blue-100);
@@ -715,6 +751,13 @@ domain("studio.youtube.com") {
 
     #description-inline-expander .yt-core-attributed-string--link-inherit-color {
         color: var(--cyt-foreground-100) !important; }
+        
+    /* Description */    
+    ytd-text-inline-expander .ytAttributedStringLinkInheritColor:not(.ytAttributedStringLink) {
+    color: var(--cyt-foreground-100) !important; }
+    
+    #description-inline-expander .ytAttributedStringLinkCallToActionColor {
+        color: var(--cyt-blue-100) !important; }
 
     /* Buttons: Overlay */
     .yt-spec-button-shape-next--overlay {
@@ -785,6 +828,9 @@ domain("studio.youtube.com") {
         
     .yt-core-attributed-string--inline-block-mod {
         color: var(--yt-spec-text-secondary); }
+        
+    .ytAttributedStringLinkInheritColor .ytIconWrapperHost {
+        color: var(--yt-spec-text-secondary); }
 
     /* Live Chat / Live Chat Replay */
     .ytCarouselTitleViewModelTitle,
@@ -817,7 +863,7 @@ domain("studio.youtube.com") {
         background: var(--yt-spec-badge-chip-background); }
 
     /* Video Item: Duration */
-    .yt-badge-shape--thumbnail-default  {
+    .yt-badge-shape--thumbnail-default, .ytBadgeShapeThumbnailDefault  {
         color: var(--cyt-vp-badge-duration-text);
         background: var(--cyt-vp-badge-duration); }
         
