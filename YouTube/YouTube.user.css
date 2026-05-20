@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.7.4
+@version        1.7.5
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -322,16 +322,19 @@ domain("studio.youtube.com") {
         --yt-sys-color-baseline--overlay-background-medium: var(--cyt-black-60);
         --yt-sys-color-baseline--overlay-background-medium-light: var(--cyt-black-30);
         --yt-sys-color-baseline--overlay-background-solid: var(--cyt-black-100);
-        --yt-sys-color-baseline--overlay-text-primary: var(--cyt-white-100);
+        --yt-sys-color-baseline--overlay-text-primary: var(--cyt-white-100) !important;
         --yt-sys-color-baseline--overlay-background-heavy: var(--cyt-black-80);
         --yt-sys-color-baseline--frosted-glass-desktop: var(--cyt-frosted-background);
         --yt-sys-color-baseline--overlay-background-brand: var(--cyt-accent-100);
+        --yt-sys-color-baseline--overlay-button-secondary: var(--cyt-white-10);
+        --yt-sys-color-baseline--inverted-background: var(--cyt-foreground-100);
+        --yt-sys-color-baseline--text-primary-inverse: var(--cyt-background-100);
 
         --t3e41d7b17b187f69: var(--cyt-background-100);
         --t518e925f61bdcb91: var(--cyt-spec-menu-background) !important;
         --t08a7c6c176cbc5c2: var(--cyt-spec-menu-background);
         --t4a6da19e16bf221a: var(--cyt-spec-text-secondary) !important;
-        --tffc2fd3a644f6275: var(--cyt-foreground-100);
+        --tffc2fd3a644f6275: var(--cyt-foreground-100) !important;
         --t4fb0f67b251e1a42: var(--cyt-foreground-100);
         --t904a88c623ca27ab: var(--cyt-green-100);
         --td8562cdc203bc683: var(--cyt-spec-badge-chip-background-2);
@@ -349,7 +352,7 @@ domain("studio.youtube.com") {
 
         --cyt-vp-badge-live: var(--cyt-accent-90);
         --cyt-badge-background: var(--cyt-foreground-10);
-        --cyt-vp-progress-hover: var(--cyt-white-50);
+        --cyt-vp-progress-hover: var(--cyt-white-50) !important;
         --cyt-subtitles-background: var(--cyt-black-70);
         --cyt-vp-badge-duration-background: var(--cyt-black-60);
         --cyt-vp-badge-duration-text: var(--cyt-white-100);
@@ -357,8 +360,6 @@ domain("studio.youtube.com") {
         --yt-frosted-glass-desktop: var(--cyt-frosted-background);
         --yt-spec-frosted-glass-desktop: var(--cyt-frosted-background);
         --yt-frosted-glass-mobile: var(--cyt-frosted-background);
-        
-        --reel-metadata-color: var(--cyt-white-100);
 
         /* YouTube Studio */
         --ytcp-analytics-overview: var(--cyt-accent-100) !important;
@@ -506,7 +507,13 @@ domain("studio.youtube.com") {
     .ytSpecButtonShapeNextOverlayDark.ytSpecButtonShapeNextTonal {
         background-color: var(--cyt-black-30) !important ; 
         color: var(--cyt-white-100) !important; }
-    
+        
+     .ytp-autonav-endscreen-upnext-thumbnail, .ytp-autonav-thumbnail-small {
+         border-color: var(--cyt-foreground-20); }
+         
+     .ytp-autonav-endscreen-upnext-thumbnail:hover, .ytp-autonav-thumbnail-small:hover {
+         border-color: var(--cyt-white-80); }
+        
     /* Button: Like */
     [animated-icon-type="LIKE"] path[fill] {
         fill: var(--cyt-foreground-100); }
@@ -527,7 +534,7 @@ domain("studio.youtube.com") {
         background-color: var(--cyt-spec-menu-background); }
 
     /* Video Item: Duration */
-    .ytBadgeShapeThumbnailDefault  {
+    .ytBadgeShapeThumbnailDefault, .ytp-autonav-live-stamp, .ytp-autonav-timestamp, .ytp-autonav-upcoming-stamp  {
         color: var(--cyt-vp-badge-duration-text);
         background: var(--cyt-vp-badge-duration-background); }
 
@@ -545,14 +552,14 @@ domain("studio.youtube.com") {
 
     /* Video Player: Progress Bar Hover */
     .ytp-hover-progress-light {
-        background-color: var(--cyt-vp-progress-hover); }
+        background: var(--cyt-vp-progress-hover); }
 
     /* Video Player: Progress Loaded */
     .ytp-progress-list {
-        background-color: var(--cyt-white-20); }
+        background: var(--cyt-white-20); }
 
     .ytp-load-progress {
-        background-color: var(--cyt-white-40); }
+        background: var(--cyt-white-40); }
 
     yt-page-navigation-progress[enable-refresh-signature-moments-web] #progress.yt-page-navigation-progress,
     .ytp-cairo-refresh-signature-moments .ytp-play-progress,
@@ -591,10 +598,6 @@ domain("studio.youtube.com") {
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
         background: var(--cyt-accent-100); }
 
-    /* Video Player: Subtitles Toggle */
-    .ytp-chrome-controls .ytp-button[aria-pressed]::after {
-        background-color: var(--cyt-accent-100); }
-
     /* Video Player: Subtitles background */
     .ytp-caption-segment {
         background-color: var(--cyt-subtitles-background) !important; 
@@ -617,9 +620,6 @@ domain("studio.youtube.com") {
 
         .ytp-volume-slider-handle::after {
             background-color: var(--cyt-white-20); }
-
-        .ytp-time-current, .ytp-time-separator, .ytp-time-duration {
-            color: var(--cyt-white-100); }
             
         .ytp-delhi-modern .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
             background-color: var(--cyt-white-30) !important; }
@@ -630,13 +630,10 @@ domain("studio.youtube.com") {
          .ytp-autonav-toggle-button[aria-checked="true"]::after {
              background-color: var(--cyt-black-100) !important; }
 
-        .ytp-panel-menu, .ytp-panel-header, .ytp-panel-footer, .ytp-premium-label, .ytp-menu-label-secondary, .ytd-menu-title-renderer {
+        .ytp-panel-menu, .ytp-panel-header, .ytp-panel-footer, .ytp-premium-label, .ytp-menu-label-secondary, .ytd-menu-title-renderer, .ytp-time-current, .ytp-time-separator, .ytp-time-duration {
             color: var(--cyt-white-100); }
 
-        .ytp-menuitem-icon {
-            fill: var(--cyt-white-100) !important; }
-
-        .yt-spec-icon-shape {
+        .yt-spec-icon-shape, .ytp-menuitem-icon {
             [fill="#FAFAFA"],
             [fill="#000"],
             [fill="#fff"],
@@ -719,10 +716,6 @@ domain("studio.youtube.com") {
     .ytp-modern-videowall-still-info-duration {
         padding: 3px; }
 
-    .YtPlayerStoryboardStoryboardImageWrapper {
-        background-color: var(--cyt-background-100);
-        border: 2px solid var(--cyt-background-100); }
-
     .ytp-ce-expanding-overlay-background {
         background-color: var(--cyt-background-100);
         color: var(--cyt-foreground-100) !important; }
@@ -760,6 +753,28 @@ domain("studio.youtube.com") {
     /* Endscreen */
     .html5-video-player.ytp-autonav-endscreen-cancelled-state.ended-mode {
         background-color: var(--cyt-vp-endscreen-background); }
+        
+    .ytp-autonav-endscreen-upnext-cancel-button {
+        background: var(--cyt-white-10); }
+    
+    .ytp-autonav-endscreen-upnext-button {
+        color: var(--cyt-white-100); }
+    
+    .ytp-autonav-endscreen-upnext-play-button {
+        background: var(--cyt-white-30); }
+    
+    .ytp-autonav-endscreen-upnext-header, .ytp-autonav-endscreen-upnext-alternative-header {
+        color: var(--cyt-white-70); }
+        
+    .ytp-autonav-endscreen-upnext-header-countdown-number, .ytp-autonav-endscreen-upnext-title {
+        color: var(--cyt-white-100); }
+        
+    .ytp-autonav-author-and-view, .ytp-autonav-endscreen-upnext-author, .ytp-autonav-view-and-date {
+        color: var(--cyt-spec-text-secondary); }
+    
+    .ytp-autonav-endscreen-countdown-overlay {
+        --w2w-start-background-color: var(--cyt-vp-endscreen-background);
+        --w2w-end-background-color: var(--cyt-vp-endscreen-background); }
         
     /* Video Player: Heat Map */
     .ytp-modern-heat-map {
@@ -812,8 +827,8 @@ domain("studio.youtube.com") {
         background-color: var(--cyt-spec-badge-chip-background); }
 
     /* Shorts */
-    #shorts-container {
-        background-color: var(--cyt-background-100); }
+    /*#shorts-container {
+        background-color: var(--cyt-background-100); }*/
 
     .YtReelSoundMetadataViewModelMarqueeContainer {
         color: var(--cyt-background-100); }
