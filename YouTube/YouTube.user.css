@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.7.5
+@version        1.7.6
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -553,6 +553,9 @@ domain("studio.youtube.com") {
     /* Video Player: Progress Bar Hover */
     .ytp-hover-progress-light {
         background: var(--cyt-vp-progress-hover); }
+        
+    .ytp-progress-bar-start.ytp-progress-bar-end {
+        background: var(--cyt-black-60); }
 
     /* Video Player: Progress Loaded */
     .ytp-progress-list {
@@ -922,4 +925,7 @@ domain("studio.youtube.com") {
     
     /* Ambient mode */
     #cinematics, #cinematic-container, #cinematic-shorts-scrim {
-        mix-blend-mode: lighten; } }
+        mix-blend-mode: lighten; }
+    
+    .ytSearchboxComponentInputBox, .ytSearchboxComponentInputBoxDark {
+        transition: all 0.3s ease; } }
