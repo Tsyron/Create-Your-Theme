@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.7.9
+@version        1.8.0
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -83,6 +83,7 @@ domain("studio.youtube.com") {
     bg10d=lighten(bg1d, 20%)
     bg11d=darken(bg1d, 40%)
     bg12d=rgba(bg8d, 0.9)
+    bg13d=lighten(bg1d, 7.5%)
     
     fg1d=color-foreground-dark
     fg16d=lighten(fg1d, 5.5%)
@@ -94,7 +95,7 @@ domain("studio.youtube.com") {
     fg7d=rgba(fg1d, 0.4)
     fg8d=rgba(fg1d, 0.3)
     fg9d=rgba(fg1d, 0.2)
-    fg11d=rgba(fg16d, 0.185)
+    fg11d=rgba(fg16d, 0.125)
     fg10d=rgba(fg1d, 0.133)
     fg12d=rgba(fg1d, 0.1)
     fg14d=rgba(fg16d, 0.08)
@@ -203,6 +204,7 @@ domain("studio.youtube.com") {
         --cyt-background-60: bg5d;
         --cyt-background-lighten-20: bg10d;
         --cyt-background-lighten-10: bg9d;
+        --cyt-background-lighten-7: bg13d;
         --cyt-background-lighten-5: bg8d;
         --cyt-foreground-100: fg1d;
         --cyt-foreground-90: fg2d;
@@ -243,6 +245,7 @@ domain("studio.youtube.com") {
 
         --cyt-searchbox-background: bg7d;
         --cyt-searchbox-border: fg11d;
+        
         --cyt-searchbox-button: fg14d;
         --cyt-call-to-action-hover: var(--cyt-blue-20);
         --cyt-overlay-filled-hover: var(--cyt-white-90);
@@ -258,7 +261,7 @@ domain("studio.youtube.com") {
 
         --cyt-spec-badge-chip-background: fg17d;
         --cyt-spec-badge-chip-background-2: var(--cyt-foreground-20);
-        --cyt-spec-menu-background: var(--cyt-background-lighten-10);
+        --cyt-spec-menu-background: var(--cyt-background-lighten-7);
         --cyt-spec-suggested-action: cb6d;
         
         --t1405e70a39276293: var(--cyt-foreground-lighten-20) !important;
@@ -322,7 +325,7 @@ domain("studio.youtube.com") {
         --yt-sys-color-baseline--outline-opaque: var(--cyt-spec-badge-chip-background-2);
         --yt-sys-color-baseline--outline-inverse-opaque: var(--cyt-foreground-100);
         --yt-sys-color-baseline--overlay-background-medium: var(--cyt-black-60);
-        --yt-sys-color-baseline--overlay-background-medium-light: var(--cyt-black-30);
+        --yt-sys-color-baseline--overlay-background-medium-light: var(--cyt-black-30) !important;
         --yt-sys-color-baseline--overlay-background-solid: var(--cyt-black-100);
         --yt-sys-color-baseline--overlay-text-primary: var(--cyt-white-100) !important;
         --yt-sys-color-baseline--overlay-background-heavy: var(--cyt-black-80);
@@ -347,7 +350,7 @@ domain("studio.youtube.com") {
         --t7f9b7e1603e20b94: var(--cyt-foreground-100);
         --t6216186c28b3834b: var(--cyt-background-100);
         --t8cdc9846a76caf1f: var(--cyt-foreground-90);
-        --t2d807bb79e75606d: var(--cyt-blue-100);
+        --t2d807bb79e75606d: var(--cyt-blue-100) !important;
         --tfa3475c508f5dfef: var(--cyt-call-to-action-hover);
         --t7e34d5baa4ea6277: var(--cyt-foreground-50) !important;
         --t7f4f2c6d54836ce0: var(--cyt-spec-badge-chip-background) !important;
