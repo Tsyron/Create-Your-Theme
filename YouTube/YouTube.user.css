@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.8.0
+@version        1.8.1
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -21,8 +21,7 @@
 @var            color color-yellow-dark "--- Yellow" #ffd600
 @var            checkbox checkbox-animations "Animations" 0
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.youtube.com/"),
-domain("studio.youtube.com") {
+@-moz-document url-prefix("https://www.youtube.com/"), domain("studio.youtube.com") {
 
     /* Light Theme */
     bg1l=color-background-light
@@ -417,6 +416,9 @@ domain("studio.youtube.com") {
     ytd-masthead.shell {
         background-color: var(--cyt-background-100) !important; }
 
+    /*#masthead {
+        background-color: var(--cyt-background-100); }*/
+
     #home-page-skeleton .skeleton-bg-color,
     .masthead-skeleton-icon,
     .skeleton-bg-color {
@@ -546,6 +548,11 @@ domain("studio.youtube.com") {
         
     .ytContextualSheetLayoutHost {
         background-color: var(--cyt-spec-menu-background); }
+        
+    /* Live */
+    .ytBadgeShapeLive {
+        color: var(--cyt-white-100);
+        background-color: var(--cyt-vp-badge-live); }
 
     /* Video Item: Duration */
     .ytBadgeShapeThumbnailDefault, .ytp-autonav-live-stamp, .ytp-autonav-timestamp, .ytp-autonav-upcoming-stamp  {
