@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.8.1
+@version        1.8.2
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -194,7 +194,7 @@
 
         --ytls-menu-header-background: var(--cyt-spec-menu-background) !important;
 
-        scrollbar-color: var(--cyt-spec-text-secondary) var(--cyt-background-100);  }
+        scrollbar-color: var(--cyt-spec-text-secondary) var(--cyt-background-100); }
 
     /* Dark Theme */
     html[dark], [dark] {
@@ -355,6 +355,7 @@
         --t7f4f2c6d54836ce0: var(--cyt-spec-badge-chip-background) !important;
         --tf3fc855af2285f5f: var(--cyt-spec-badge-chip-background-2) !important;
         --t416e5931fc464589: var(--cyt-spec-badge-chip-background-2) !important;
+        --t617db776af0de196: var(--cyt-blue-80);
 
         --cyt-vp-badge-live: var(--cyt-accent-90);
         --cyt-badge-background: var(--cyt-foreground-10);
@@ -403,6 +404,8 @@
         --sb-category-sponsor: var(--cyt-green-100);
         --sb-category-poi_highlight: var(--cyt-accent-100);
         --sb-category-text-preview-sponsor: var(--cyt-green-100);
+        --sb-category-exclusive_access: var(--cyt-green-100);
+        --sb-category-text-exclusive_access: var(--cyt-white-100);
 
         /* DeArrow */
         --cb-main-text-color: var(--cyt-foreground-100); }
@@ -413,7 +416,8 @@
     #home-chips,
     #player,
     #watch-page-skeleton,
-    ytd-masthead.shell {
+    ytd-masthead.shell,
+    #masthead [frosted-glass-mode="loading-without-chipbar"] #container.ytd-masthead {
         background-color: var(--cyt-background-100) !important; }
 
     /*#masthead {
@@ -431,17 +435,12 @@
         background-color: var(--cyt-foreground-20); }
 
     /* YouTube Logo's */
-    [fill="red"],
-    [fill="#F00"],
-    [fill="#FF0000"],
-    [fill="#f03"],
-    [fill="#FF0033"], 
+    [fill="red"], [fill="#F00"], [fill="#FF0000"], [fill="#f03"], [fill="#FF0033"], 
     .ytp-cued-thumbnail-overlay:hover .ytp-large-play-button-bg,
     .ytp-large-play-button.ytp-touch-device .ytp-large-play-button-bg {
         fill: var(--cyt-accent-100); }
 
-    [fill="white"],
-    [fill="#fff"] {
+    [fill="white"], [fill="#fff"] {
         fill: var(--cyt-white-100); }
         
     .ytp-large-play-button-bg {   
@@ -635,8 +634,7 @@
     .html5-video-player {
         color: var(--cyt-white-100);
 
-        .ytp-svg-fill,
-        [fill="#fff"], [fill="white"], .ytp-menuitem svg > path:not([fill="none"]) {
+        .ytp-svg-fill, [fill="#fff"], [fill="white"], .ytp-menuitem svg > path:not([fill="none"]) {
             fill: var(--cyt-white-100) !important; }
 
         .ytp-volume-slider-handle::before, .ytp-volume-slider-handle {
@@ -648,21 +646,17 @@
         .ytp-delhi-modern .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
             background-color: var(--cyt-white-30) !important; }
             
-         .ytp-menuitem-toggle-checkbox::after{
+        .ytp-menuitem-toggle-checkbox::after{
              background-color: var(--cyt-white-100) !important; }
              
-         .ytp-autonav-toggle-button[aria-checked="true"]::after {
+        .ytp-autonav-toggle-button[aria-checked="true"]::after {
              background-color: var(--cyt-black-100) !important; }
 
         .ytp-panel-menu, .ytp-panel-header, .ytp-panel-footer, .ytp-premium-label, .ytp-menu-label-secondary, .ytd-menu-title-renderer, .ytp-time-current, .ytp-time-separator, .ytp-time-duration {
             color: var(--cyt-white-100); }
 
         .yt-spec-icon-shape, .ytp-menuitem-icon {
-            [fill="#FAFAFA"],
-            [fill="#000"],
-            [fill="#fff"],
-            [fill="#FFF"],
-            [fill="#FFFFFF"] {
+            [fill="#FAFAFA"], [fill="#000"], [fill="#fff"], [fill="#FFF"], [fill="#FFFFFF"] {
                 fill: var(--cyt-white-100) !important; } }
             
         .ytPlayerQuickActionButtonsHost:not(:empty) {
@@ -671,7 +665,6 @@
         .ytp-menuitem:not([aria-disabled="true"]):hover {
             background-color: var(--cyt-white-10); } }
                 
-    [fill="#fff"],
     .ytp-menuitem svg > path:not([fill="none"]) {
         fill: var(--cyt-white-100) !important; }
             
@@ -848,8 +841,7 @@
         
     /* Comments: Emoji's */
     tp-yt-iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
-        color: var(--cyt-foreground-70) !important;
-    }
+        color: var(--cyt-foreground-70) !important; }
 
     /* Metadata */
     .ytVideoMetadataCarouselViewModelHost {
