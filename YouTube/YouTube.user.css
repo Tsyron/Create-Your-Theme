@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.8.2
+@version        1.8.3
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -470,7 +470,8 @@
         background-color: var(--cyt-foreground-10); }
 
     /* Notification */
-    #icon > #button > .ytd-notification-topbar-button-renderer > div > .yt-spec-icon-badge-shape__badge, .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge {
+    #icon > #button > .ytd-notification-topbar-button-renderer > div > .yt-spec-icon-badge-shape__badge, .yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge, .ytSpecIconBadgeShapeTypeNotification .ytSpecIconBadgeShapeBadge {
+        color: var(--cyt-white-100);
         background-color: var(--cyt-accent-100); }
         
     /* Suggestions */
