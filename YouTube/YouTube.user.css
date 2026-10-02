@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Create Your Theme
 @namespace      github.com/Tsyron/Create-Your-Theme/tree/main/YouTube
-@version        1.8.3
+@version        1.8.4
 @description    Create Your Theme by choosing a couple colours
 @author         Tsyron
 @preprocessor   stylus
@@ -556,8 +556,8 @@
 
     /* Video Item: Duration */
     .ytBadgeShapeThumbnailDefault, .ytp-autonav-live-stamp, .ytp-autonav-timestamp, .ytp-autonav-upcoming-stamp  {
-        color: var(--cyt-vp-badge-duration-text);
-        background: var(--cyt-vp-badge-duration-background); }
+        color: var(--cyt-vp-badge-duration-text) !important;
+        background: var(--cyt-vp-badge-duration-background) !important; }
 
     /* Video Player: Progress Bar */
     .ytp-play-progress,
