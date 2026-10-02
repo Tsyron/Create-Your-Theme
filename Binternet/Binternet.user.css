@@ -1,0 +1,63 @@
+/* ==UserStyle==
+@name           Binternet - Create Your Theme
+@namespace      github.com/Tsyron/Create-Your-Theme/tree/main/Binternet
+@version        1.0.1
+@description    A new userstyle
+@author         Tsyron
+@license        AGPLv3
+@preprocessor   stylus
+
+@var            color color-background-light "Light Mode: Background" #fff
+@var            color color-foreground-light "--- Foreground" #000
+@var            color color-accent-light "--- Accent" #0ebe98
+@var            color color-background-dark "Dark Mode: Background" #1f2120
+@var            color color-foreground-dark "--- Foreground" #fff
+@var            color color-accent-dark "--- Accent" #12e8b9
+
+==/UserStyle== */
+
+@-moz-document url-prefix("https://binternet"),
+url-prefix("https://bn"),
+domain("curate.liv.town"),
+domain("revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p"),
+domain("5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p") {
+     
+    /* Light Mode */
+    bg1l=color-background-light
+    bg2l=darken(bg1l, 10%)
+    
+    fg1l=color-foreground-light
+    fg2l=rgba(fg1l, 0.125)
+    
+    ca1l=color-accent-light
+    ca2l=darken(ca1l, 13.1%)
+    
+    /* Dark Mode */
+    bg1d=color-background-dark
+    bg2d=lighten(bg1d, 5.3%)
+    bg3d=lighten(bg1d, 8.4%)
+    
+    fg1d=color-foreground-dark
+    
+    ca1d=color-accent-dark
+    ca2d=darken(ca1d, 7.1%)
+    
+    @media (prefers-color-scheme: light) {
+         
+        :root {
+            --main: bg1l;
+            --main-second: bg2l;
+            --background-hover: fg2l;
+            --fg-color: fg1l;
+            --accent-color: ca1l;
+            --accent-color-hover: ca2l; } }
+    
+    @media (prefers-color-scheme: dark) {
+         
+        :root {
+            --main: bg1d;
+            --main-second: bg2d;
+            --background-hover: bg3d;
+            --fg-color: fg1d;
+            --accent-color: ca1d;
+            --accent-color-hover: ca2d; } } }
